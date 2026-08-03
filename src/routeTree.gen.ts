@@ -11,7 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
+import { Route as ServicesCleaningRouteImport } from './routes/services/cleaning'
+import { Route as ServicesConsultingRouteImport } from './routes/services/consulting'
+import { Route as ServicesExperiencesRouteImport } from './routes/services/experiences'
+import { Route as ServicesPropertyRouteImport } from './routes/services/property'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,39 +28,109 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
   path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesCleaningRoute = ServicesCleaningRouteImport.update({
+  id: '/services/cleaning',
+  path: '/services/cleaning',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesConsultingRoute = ServicesConsultingRouteImport.update({
+  id: '/services/consulting',
+  path: '/services/consulting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesExperiencesRoute = ServicesExperiencesRouteImport.update({
+  id: '/services/experiences',
+  path: '/services/experiences',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesPropertyRoute = ServicesPropertyRouteImport.update({
+  id: '/services/property',
+  path: '/services/property',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/portfolio': typeof PortfolioRoute
+  '/services/cleaning': typeof ServicesCleaningRoute
+  '/services/consulting': typeof ServicesConsultingRoute
+  '/services/experiences': typeof ServicesExperiencesRoute
+  '/services/property': typeof ServicesPropertyRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/portfolio': typeof PortfolioRoute
+  '/services/cleaning': typeof ServicesCleaningRoute
+  '/services/consulting': typeof ServicesConsultingRoute
+  '/services/experiences': typeof ServicesExperiencesRoute
+  '/services/property': typeof ServicesPropertyRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/portfolio': typeof PortfolioRoute
+  '/services/cleaning': typeof ServicesCleaningRoute
+  '/services/consulting': typeof ServicesConsultingRoute
+  '/services/experiences': typeof ServicesExperiencesRoute
+  '/services/property': typeof ServicesPropertyRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/services/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/portfolio'
+    | '/services/cleaning'
+    | '/services/consulting'
+    | '/services/experiences'
+    | '/services/property'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/services'
-  id: '__root__' | '/' | '/about' | '/services/'
+  to:
+    | '/'
+    | '/about'
+    | '/portfolio'
+    | '/services/cleaning'
+    | '/services/consulting'
+    | '/services/experiences'
+    | '/services/property'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/portfolio'
+    | '/services/cleaning'
+    | '/services/consulting'
+    | '/services/experiences'
+    | '/services/property'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  PortfolioRoute: typeof PortfolioRoute
+  ServicesCleaningRoute: typeof ServicesCleaningRoute
+  ServicesConsultingRoute: typeof ServicesConsultingRoute
+  ServicesExperiencesRoute: typeof ServicesExperiencesRoute
+  ServicesPropertyRoute: typeof ServicesPropertyRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
@@ -75,11 +150,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/': {
       id: '/services/'
       path: '/services'
       fullPath: '/services/'
       preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/cleaning': {
+      id: '/services/cleaning'
+      path: '/services/cleaning'
+      fullPath: '/services/cleaning'
+      preLoaderRoute: typeof ServicesCleaningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/consulting': {
+      id: '/services/consulting'
+      path: '/services/consulting'
+      fullPath: '/services/consulting'
+      preLoaderRoute: typeof ServicesConsultingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/experiences': {
+      id: '/services/experiences'
+      path: '/services/experiences'
+      fullPath: '/services/experiences'
+      preLoaderRoute: typeof ServicesExperiencesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/property': {
+      id: '/services/property'
+      path: '/services/property'
+      fullPath: '/services/property'
+      preLoaderRoute: typeof ServicesPropertyRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -88,6 +198,11 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  PortfolioRoute: PortfolioRoute,
+  ServicesCleaningRoute: ServicesCleaningRoute,
+  ServicesConsultingRoute: ServicesConsultingRoute,
+  ServicesExperiencesRoute: ServicesExperiencesRoute,
+  ServicesPropertyRoute: ServicesPropertyRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
