@@ -356,9 +356,10 @@ function Index() {
             src={logo}
             alt="TerraSu Living"
             loading="lazy"
-            width={1024}
+            width={915}
             height={1024}
-            className="h-16 w-auto object-contain"
+            className="h-20 w-auto object-contain"
+
           />
           <p className="max-w-xl text-xs font-light leading-relaxed text-muted-foreground">
             TerraSu Living, Gözde K. tarafından kurulmuş ve yönetilmektedir. Hukuki danışmanlık,
