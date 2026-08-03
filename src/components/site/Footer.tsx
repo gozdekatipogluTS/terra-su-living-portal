@@ -32,11 +32,11 @@ export function Footer() {
         </div>
 
         <FooterColumn title={t.footer.quickLinks}>
-          <FooterLink to={linkTo("/">{t.nav.home}</FooterLink>
-          <FooterLink to={linkTo("/about">{t.nav.about}</FooterLink>
-          <FooterLink to={linkTo("/services">{t.nav.services}</FooterLink>
-          <FooterLink to={linkTo("/portfolio">{t.nav.portfolio}</FooterLink>
-          <FooterLink to={linkTo("/contact">{t.nav.contact}</FooterLink>
+          <FooterLink to="/">{t.nav.home}</FooterLink>
+          <FooterLink to="/about">{t.nav.about}</FooterLink>
+          <FooterLink to="/services">{t.nav.services}</FooterLink>
+          <FooterLink to="/portfolio">{t.nav.portfolio}</FooterLink>
+          <FooterLink to="/contact">{t.nav.contact}</FooterLink>
         </FooterColumn>
 
         <FooterColumn title={t.footer.servicesTitle}>
@@ -48,10 +48,10 @@ export function Footer() {
         </FooterColumn>
 
         <FooterColumn title={t.footer.legalTitle}>
-          <FooterLink to={linkTo("/privacy">{t.footer.privacy}</FooterLink>
-          <FooterLink to={linkTo("/cookies">{t.footer.cookies}</FooterLink>
-          <FooterLink to={linkTo("/terms">{t.footer.terms}</FooterLink>
-          <FooterLink to={linkTo("/contact">{t.nav.contact}</FooterLink>
+          <FooterLink to="/privacy">{t.footer.privacy}</FooterLink>
+          <FooterLink to="/cookies">{t.footer.cookies}</FooterLink>
+          <FooterLink to="/terms">{t.footer.terms}</FooterLink>
+          <FooterLink to="/contact">{t.nav.contact}</FooterLink>
         </FooterColumn>
       </div>
 

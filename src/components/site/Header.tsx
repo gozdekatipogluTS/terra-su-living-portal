@@ -4,7 +4,6 @@ import { useState } from "react";
 
 import logo from "@/assets/terrasu-logo.png";
 import { useLanguage } from "@/i18n/LanguageProvider";
-import { linkTo } from "@/components/site/ui";
 import { servicePaths } from "@/i18n/content";
 import { cn } from "@/lib/utils";
 import { linkTo } from "@/components/site/ui";
@@ -23,7 +22,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-        <Link to={linkTo("/")} className="shrink-0")} aria-label={t.common.brand} onClick={() => setOpen(false)}>
+        <Link to={linkTo("/")} className="shrink-0" aria-label={t.common.brand} onClick={() => setOpen(false)}>
           <img
             src={logo}
             alt="TerraSu Living — by Gözde K."
@@ -48,7 +47,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <LanguageSwitcher lang={lang} setLang={setLang} />
           <Link
-            to={linkTo("/contact"
+            to={linkTo("/contact")}
             className="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:bg-primary/90 sm:inline-flex"
           >
             {t.nav.contact}
