@@ -110,23 +110,16 @@ function Index() {
     <div className="min-h-screen bg-background">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
-          <a href="#ana-sayfa" className="flex items-center gap-3">
+          <a href="#ana-sayfa" className="flex items-center">
             <img
               src={logo}
-              alt="TerraSu Living logosu"
-              width={1024}
+              alt="TerraSu Living — by Gözde K."
+              width={915}
               height={1024}
-              className="h-11 w-11 object-contain"
+              className="h-14 w-auto object-contain sm:h-16"
             />
-            <span className="flex flex-col leading-none">
-              <span className="font-serif text-lg tracking-wide text-foreground">
-                TerraSu Living
-              </span>
-              <span className="mt-0.5 text-[0.62rem] tracking-[0.22em] text-muted-foreground uppercase">
-                by Gözde K.
-              </span>
-            </span>
           </a>
+
 
           <nav className="hidden items-center gap-7 lg:flex">
             {nav.map((item) => (
@@ -231,12 +224,13 @@ function Index() {
               <div className="mt-8 rounded-[1.75rem] border border-border/70 bg-card p-7 shadow-soft">
                 <img
                   src={logo}
-                  alt="TerraSu Living monogramı"
+                  alt="TerraSu Living logosu"
                   loading="lazy"
-                  width={1024}
+                  width={915}
                   height={1024}
-                  className="h-24 w-full object-contain"
+                  className="mx-auto h-32 w-auto object-contain"
                 />
+
                 <span className="my-6 divider-leaf" />
                 <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase">Founder</p>
                 <p className="mt-1 font-serif text-2xl text-foreground">Gözde K.</p>
@@ -362,9 +356,10 @@ function Index() {
             src={logo}
             alt="TerraSu Living"
             loading="lazy"
-            width={1024}
+            width={915}
             height={1024}
-            className="h-16 w-auto object-contain"
+            className="h-20 w-auto object-contain"
+
           />
           <p className="max-w-xl text-xs font-light leading-relaxed text-muted-foreground">
             TerraSu Living, Gözde K. tarafından kurulmuş ve yönetilmektedir. Hukuki danışmanlık,
