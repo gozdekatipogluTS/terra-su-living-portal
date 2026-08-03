@@ -224,12 +224,13 @@ function Index() {
               <div className="mt-8 rounded-[1.75rem] border border-border/70 bg-card p-7 shadow-soft">
                 <img
                   src={logo}
-                  alt="TerraSu Living monogramı"
+                  alt="TerraSu Living logosu"
                   loading="lazy"
-                  width={1024}
+                  width={915}
                   height={1024}
-                  className="h-24 w-full object-contain"
+                  className="mx-auto h-32 w-auto object-contain"
                 />
+
                 <span className="my-6 divider-leaf" />
                 <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase">Founder</p>
                 <p className="mt-1 font-serif text-2xl text-foreground">Gözde K.</p>
