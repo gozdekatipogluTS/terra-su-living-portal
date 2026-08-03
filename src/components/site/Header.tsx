@@ -32,7 +32,7 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex")} aria-label={t.nav.menu}>
+        <nav className="hidden items-center gap-8 lg:flex" aria-label={t.nav.menu}>
           {links.map((link) => (
             <Link
               key={link.to}
@@ -66,7 +66,7 @@ export function Header() {
 
       {open && (
         <div className="border-t border-border/60 bg-background lg:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col px-5 py-3 sm:px-8")} aria-label={t.nav.menu}>
+          <nav className="mx-auto flex max-w-6xl flex-col px-5 py-3 sm:px-8" aria-label={t.nav.menu}>
             {[...links, { to: "/contact", label: t.nav.contact }].map((link) => (
               <Link
                 key={link.to}
