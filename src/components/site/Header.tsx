@@ -4,8 +4,10 @@ import { useState } from "react";
 
 import logo from "@/assets/terrasu-logo.png";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import { linkTo } from "@/components/site/ui";
 import { servicePaths } from "@/i18n/content";
 import { cn } from "@/lib/utils";
+import { linkTo } from "@/components/site/ui";
 
 export function Header() {
   const { t, lang, setLang } = useLanguage();
@@ -21,7 +23,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-        <Link to="/" className="shrink-0" aria-label={t.common.brand} onClick={() => setOpen(false)}>
+        <Link to={linkTo("/")} className="shrink-0")} aria-label={t.common.brand} onClick={() => setOpen(false)}>
           <img
             src={logo}
             alt="TerraSu Living — by Gözde K."
@@ -31,11 +33,11 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label={t.nav.menu}>
+        <nav className="hidden items-center gap-8 lg:flex")} aria-label={t.nav.menu}>
           {links.map((link) => (
             <Link
               key={link.to}
-              to={link.to}
+              to={linkTo(link.to)}
               className="text-sm tracking-wide text-foreground/75 transition-colors hover:text-primary [&.active]:text-primary"
             >
               {link.label}
@@ -46,7 +48,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <LanguageSwitcher lang={lang} setLang={setLang} />
           <Link
-            to="/contact"
+            to={linkTo("/contact"
             className="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:bg-primary/90 sm:inline-flex"
           >
             {t.nav.contact}
@@ -65,11 +67,11 @@ export function Header() {
 
       {open && (
         <div className="border-t border-border/60 bg-background lg:hidden">
-          <nav className="mx-auto flex max-w-6xl flex-col px-5 py-3 sm:px-8" aria-label={t.nav.menu}>
+          <nav className="mx-auto flex max-w-6xl flex-col px-5 py-3 sm:px-8")} aria-label={t.nav.menu}>
             {[...links, { to: "/contact", label: t.nav.contact }].map((link) => (
               <Link
                 key={link.to}
-                to={link.to}
+                to={linkTo(link.to)}
                 onClick={() => setOpen(false)}
                 className="border-b border-border/50 py-3 text-sm text-foreground/80 last:border-0 [&.active]:text-primary"
               >
@@ -80,7 +82,7 @@ export function Header() {
               {Object.entries(servicePaths).map(([slug, path]) => (
                 <Link
                   key={path}
-                  to={path}
+                  to={linkTo(path)}
                   onClick={() => setOpen(false)}
                   className="text-xs text-muted-foreground transition-colors hover:text-primary"
                 >

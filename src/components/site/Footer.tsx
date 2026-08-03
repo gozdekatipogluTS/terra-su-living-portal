@@ -4,6 +4,7 @@ import logo from "@/assets/terrasu-logo.png";
 import { LanguageSwitcher } from "@/components/site/Header";
 import { servicePaths, serviceSlugs } from "@/i18n/content";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import { linkTo } from "@/components/site/ui";
 
 export function Footer() {
   const { t, lang, setLang } = useLanguage();
@@ -31,26 +32,26 @@ export function Footer() {
         </div>
 
         <FooterColumn title={t.footer.quickLinks}>
-          <FooterLink to="/">{t.nav.home}</FooterLink>
-          <FooterLink to="/about">{t.nav.about}</FooterLink>
-          <FooterLink to="/services">{t.nav.services}</FooterLink>
-          <FooterLink to="/portfolio">{t.nav.portfolio}</FooterLink>
-          <FooterLink to="/contact">{t.nav.contact}</FooterLink>
+          <FooterLink to={linkTo("/">{t.nav.home}</FooterLink>
+          <FooterLink to={linkTo("/about">{t.nav.about}</FooterLink>
+          <FooterLink to={linkTo("/services">{t.nav.services}</FooterLink>
+          <FooterLink to={linkTo("/portfolio">{t.nav.portfolio}</FooterLink>
+          <FooterLink to={linkTo("/contact">{t.nav.contact}</FooterLink>
         </FooterColumn>
 
         <FooterColumn title={t.footer.servicesTitle}>
           {serviceSlugs.map((slug) => (
-            <FooterLink key={slug} to={servicePaths[slug]}>
+            <FooterLink key={slug} to={linkTo(servicePaths[slug])}>
               {t.service[slug].title}
             </FooterLink>
           ))}
         </FooterColumn>
 
         <FooterColumn title={t.footer.legalTitle}>
-          <FooterLink to="/privacy">{t.footer.privacy}</FooterLink>
-          <FooterLink to="/cookies">{t.footer.cookies}</FooterLink>
-          <FooterLink to="/terms">{t.footer.terms}</FooterLink>
-          <FooterLink to="/contact">{t.nav.contact}</FooterLink>
+          <FooterLink to={linkTo("/privacy">{t.footer.privacy}</FooterLink>
+          <FooterLink to={linkTo("/cookies">{t.footer.cookies}</FooterLink>
+          <FooterLink to={linkTo("/terms">{t.footer.terms}</FooterLink>
+          <FooterLink to={linkTo("/contact">{t.nav.contact}</FooterLink>
         </FooterColumn>
       </div>
 
@@ -80,7 +81,7 @@ function FooterColumn({ title, children }: { title: string; children: React.Reac
 function FooterLink({ to, children }: { to: string; children: React.ReactNode }) {
   return (
     <li>
-      <Link to={to} className="text-sm text-foreground/80 transition-colors hover:text-primary">
+      <Link to={linkTo(to)} className="text-sm text-foreground/80 transition-colors hover:text-primary">
         {children}
       </Link>
     </li>
