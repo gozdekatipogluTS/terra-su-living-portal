@@ -110,23 +110,16 @@ function Index() {
     <div className="min-h-screen bg-background">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
-          <a href="#ana-sayfa" className="flex items-center gap-3">
+          <a href="#ana-sayfa" className="flex items-center">
             <img
               src={logo}
-              alt="TerraSu Living logosu"
-              width={1024}
+              alt="TerraSu Living — by Gözde K."
+              width={915}
               height={1024}
-              className="h-11 w-11 object-contain"
+              className="h-14 w-auto object-contain sm:h-16"
             />
-            <span className="flex flex-col leading-none">
-              <span className="font-serif text-lg tracking-wide text-foreground">
-                TerraSu Living
-              </span>
-              <span className="mt-0.5 text-[0.62rem] tracking-[0.22em] text-muted-foreground uppercase">
-                by Gözde K.
-              </span>
-            </span>
           </a>
+
 
           <nav className="hidden items-center gap-7 lg:flex">
             {nav.map((item) => (
