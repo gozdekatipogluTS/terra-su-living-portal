@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import aboutImage from "@/assets/about-hero.jpg";
 import founderImage from "@/assets/founder-portrait.jpg";
 import logo from "@/assets/terrasu-logo.png";
-import { CtaLink, Eyebrow, PageHero, Section } from "@/components/site/ui";
+import { ImageHero } from "@/components/site/premium";
+import { CtaLink, Eyebrow, Section } from "@/components/site/ui";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
 const title = "About TerraSu Living | Created & Managed by Gözde K.";
@@ -27,7 +29,14 @@ function About() {
 
   return (
     <>
-      <PageHero eyebrow={t.about.eyebrow} title={t.about.title} lead={t.about.lead} />
+      <ImageHero
+        image={aboutImage}
+        alt="Serene Porto interior with olive branches and warm terracotta walls"
+        eyebrow={t.about.eyebrow}
+        title={t.about.title}
+        lead={t.about.lead}
+        priority
+      />
 
       <Section>
         <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr]">

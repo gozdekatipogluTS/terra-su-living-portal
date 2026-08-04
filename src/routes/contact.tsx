@@ -2,12 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Clock } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
-import { PageHero, Section } from "@/components/site/ui";
+import contactImage from "@/assets/contact-hero.jpg";
+import { ImageHero, usePremium } from "@/components/site/premium";
+import { Section } from "@/components/site/ui";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
 const title = "Contact Gözde K. | TerraSu Living Porto";
 const description =
-  "Get in touch with TerraSu Living in Porto, Portugal for consulting, property support, cleaning and Portugal experiences.";
+  "Request a personalised service plan from TerraSu Living in Porto, Portugal: relocation, property support, cleaning and boutique tours.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -16,6 +18,8 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://terrasuliving.com/contact" }],
   }),
@@ -27,16 +31,26 @@ const inputClass =
 
 function Contact() {
   const { t } = useLanguage();
+  const p = usePremium();
+  const f = p.contactForm;
   const [sent, setSent] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    const line = (label: string, key: string) => `${label}: ${data.get(key) || "-"}`;
     const body = [
-      `${t.contact.name}: ${data.get("name")}`,
-      `${t.contact.email}: ${data.get("email")}`,
-      `${t.contact.phone}: ${data.get("phone") || "-"}`,
-      `${t.contact.service}: ${data.get("service")}`,
+      line(f.fullName, "name"),
+      line(f.email, "email"),
+      line(f.phone, "phone"),
+      line(f.country, "country"),
+      line(f.language, "language"),
+      line(f.service, "service"),
+      line(f.people, "people"),
+      line(f.destination, "destination"),
+      line(f.startDate, "startDate"),
+      line(f.budget, "budget"),
+      line(f.supportLevel, "supportLevel"),
       "",
       String(data.get("message") ?? ""),
     ].join("\n");
@@ -49,24 +63,44 @@ function Contact() {
 
   return (
     <>
-      <PageHero eyebrow={t.contact.eyebrow} title={t.contact.title} lead={t.contact.lead} />
+      <ImageHero
+        image={contactImage}
+        alt="Calm Lisbon doorway with pale azulejo tiles in morning light"
+        eyebrow={t.contact.eyebrow}
+        title={f.ctaTitle}
+        lead={f.ctaText}
+        priority
+      />
 
       <Section>
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field label={t.contact.name}>
-                <input name="name" required autoComplete="name" className={inputClass} />
+              <Field label={f.fullName}>
+                <input name="name" required autoComplete="name" maxLength={100} className={inputClass} />
               </Field>
-              <Field label={t.contact.email}>
-                <input name="email" type="email" required autoComplete="email" className={inputClass} />
+              <Field label={f.email}>
+                <input name="email" type="email" required autoComplete="email" maxLength={255} className={inputClass} />
               </Field>
-            </div>
-            <div className="grid gap-5 sm:grid-cols-2">
-              <Field label={`${t.contact.phone} (${t.contact.phoneOptional})`}>
-                <input name="phone" type="tel" autoComplete="tel" className={inputClass} />
+              <Field label={f.phone}>
+                <input name="phone" type="tel" autoComplete="tel" maxLength={40} className={inputClass} />
               </Field>
-              <Field label={t.contact.service}>
+              <Field label={f.country}>
+                <input name="country" autoComplete="country-name" maxLength={80} className={inputClass} />
+              </Field>
+              <Field label={f.language}>
+                <select name="language" defaultValue="" className={inputClass}>
+                  <option value="" disabled>
+                    {f.select}
+                  </option>
+                  {f.languageOptions.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <Field label={f.service}>
                 <select name="service" required defaultValue="" className={inputClass}>
                   <option value="" disabled>
                     {t.contact.servicePlaceholder}
@@ -78,21 +112,50 @@ function Contact() {
                   ))}
                 </select>
               </Field>
+              <Field label={f.people}>
+                <input name="people" type="number" min={1} max={99} className={inputClass} />
+              </Field>
+              <Field label={f.destination}>
+                <input name="destination" maxLength={120} className={inputClass} />
+              </Field>
+              <Field label={f.startDate}>
+                <input name="startDate" type="month" className={inputClass} />
+              </Field>
+              <Field label={`${f.budget} (${f.budgetOptional})`}>
+                <input name="budget" maxLength={80} className={inputClass} />
+              </Field>
             </div>
-            <Field label={t.contact.message}>
-              <textarea name="message" required rows={6} className={inputClass} />
+            <Field label={f.supportLevel}>
+              <select name="supportLevel" required defaultValue="" className={inputClass}>
+                <option value="" disabled>
+                  {f.select}
+                </option>
+                {f.supportOptions.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
             </Field>
+            <Field label={f.message}>
+              <textarea name="message" required rows={6} maxLength={2000} className={inputClass} />
+            </Field>
+            <label className="flex items-start gap-3 text-sm text-muted-foreground">
+              <input type="checkbox" name="consent" required className="mt-1 h-4 w-4 accent-[var(--primary)]" />
+              <span className="leading-relaxed">{f.consent}</span>
+            </label>
             <button
               type="submit"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-medium text-primary-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-lift"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-lift"
             >
-              {t.contact.submit}
+              {f.submit}
             </button>
             {sent && (
               <p role="status" className="text-sm text-primary">
                 {t.contact.sent}
               </p>
             )}
+            <p className="text-xs leading-relaxed text-muted-foreground/90">{p.planCta.note}</p>
           </form>
 
           <aside className="space-y-6">
@@ -121,6 +184,9 @@ function Contact() {
                   <span className="text-foreground">{t.contact.locationValue}</span>
                 </ContactRow>
               </ul>
+              <p className="mt-6 border-t border-border pt-5 text-xs uppercase tracking-[0.28em] text-muted-foreground">
+                {p.founder.signature}
+              </p>
             </div>
             <div className="rounded-3xl border border-border bg-secondary/50 p-8">
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-card text-primary">
