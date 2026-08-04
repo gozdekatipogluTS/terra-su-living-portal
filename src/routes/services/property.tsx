@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import propertyImage from "@/assets/service-property.jpg";
 import { ServiceDetail } from "@/components/site/ServiceDetail";
 
 const title = "Property Support | TerraSu Living Portugal";
 const description =
-  "Property search and relocation assistance in Portugal: rental and purchase support, viewing coordination and local area guidance.";
+  "Personalised rental and purchase property search in Portugal: needs assessment, location research, viewing coordination and document organisation.";
 
 export const Route = createFileRoute("/services/property")({
   head: () => ({
@@ -13,8 +14,10 @@ export const Route = createFileRoute("/services/property")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://terrasuliving.com/services/property" }],
   }),
-  component: () => <ServiceDetail slug="property" />,
+  component: () => <ServiceDetail slug="property" image={propertyImage} />,
 });
