@@ -5,6 +5,7 @@ import heroImage from "@/assets/hero-portugal.jpg";
 import founderImage from "@/assets/founder-portrait.jpg";
 import logo from "@/assets/terrasu-logo.png";
 import { ServiceCards } from "@/components/site/ServiceCards";
+import { FounderMessage, PlanCta } from "@/components/site/premium";
 import { CtaLink, Eyebrow, Section } from "@/components/site/ui";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
@@ -83,7 +84,14 @@ function Home() {
         </div>
       </section>
 
+      {/* FOUNDER MESSAGE */}
+      <FounderMessage />
+
+      {/* PERSONALISED PLAN CTA */}
+      <PlanCta />
+
       {/* BRAND INTRO */}
+
       <Section className="text-center">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-serif text-3xl text-foreground sm:text-4xl">{t.home.introTitle}</h2>
