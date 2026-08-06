@@ -3,7 +3,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 import logo from "@/assets/terrasu-logo.png";
-import { linkTo } from "@/components/site/ui";
+import { hashProp, linkTo } from "@/components/site/ui";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { navigation, siteCopy } from "@/i18n/site";
 import { cn } from "@/lib/utils";
@@ -51,7 +51,7 @@ export function Header() {
                     <Link
                       key={child.label.en}
                       to={linkTo(child.to)}
-                      hash={child.hash}
+                      {...hashProp(child.hash)}
                       className="block rounded-xl px-4 py-2.5 text-sm text-foreground/80 transition-colors hover:bg-secondary hover:text-primary"
                     >
                       {child.label[lang]}
@@ -121,7 +121,7 @@ export function Header() {
                       <Link
                         key={child.label.en}
                         to={linkTo(child.to)}
-                        hash={child.hash}
+                        {...hashProp(child.hash)}
                         onClick={() => setOpen(false)}
                         className="border-l border-border py-2.5 pl-4 text-sm text-muted-foreground transition-colors hover:text-primary"
                       >

@@ -86,3 +86,6 @@ export function Disclaimer({ label, text }: { label: string; text: string }) {
     </div>
   );
 }
+
+/** Spreadable hash prop that satisfies exactOptionalPropertyTypes. */
+export const hashProp = (hash?: string) => (hash ? { hash } : {});

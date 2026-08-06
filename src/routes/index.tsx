@@ -5,7 +5,7 @@ import heroImage from "@/assets/hero-portugal.jpg";
 import founderImage from "@/assets/founder-portrait.jpg";
 import logo from "@/assets/terrasu-logo.png";
 import { FounderMessage, PlanCta } from "@/components/site/premium";
-import { CtaLink, Eyebrow, Section, linkTo } from "@/components/site/ui";
+import { CtaLink, Eyebrow, Section, hashProp, linkTo } from "@/components/site/ui";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import {
   INSTAGRAM_HANDLE,
@@ -122,7 +122,7 @@ function Home() {
             <Link
               key={service.title}
               to={linkTo(service.to)}
-              hash={service.hash}
+              {...hashProp(service.hash)}
               className="group flex flex-col rounded-3xl border border-border bg-card p-8 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
             >
               <h3 className="font-serif text-2xl leading-snug text-foreground">{service.title}</h3>
