@@ -6,6 +6,8 @@ import logo from "@/assets/terrasu-logo.png";
 import { ImageHero } from "@/components/site/premium";
 import { CtaLink, Eyebrow, Section } from "@/components/site/ui";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import { siteCopy } from "@/i18n/site";
+
 
 const title = "About TerraSu Living | Created & Managed by Gözde K.";
 const description =
