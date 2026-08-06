@@ -2,9 +2,10 @@ import { Link } from "@tanstack/react-router";
 
 import logo from "@/assets/terrasu-logo.png";
 import { LanguageSwitcher } from "@/components/site/Header";
-import { servicePaths, serviceSlugs } from "@/i18n/content";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import { navigation } from "@/i18n/site";
 import { linkTo } from "@/components/site/ui";
+
 
 export function Footer() {
   const { t, lang, setLang } = useLanguage();
