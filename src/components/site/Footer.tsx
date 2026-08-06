@@ -32,20 +32,29 @@ export function Footer() {
         </div>
 
         <FooterColumn title={t.footer.quickLinks}>
-          <FooterLink to="/">{t.nav.home}</FooterLink>
-          <FooterLink to="/about">{t.nav.about}</FooterLink>
-          <FooterLink to="/services">{t.nav.services}</FooterLink>
-          <FooterLink to="/portfolio">{t.nav.portfolio}</FooterLink>
-          <FooterLink to="/contact">{t.nav.contact}</FooterLink>
-        </FooterColumn>
-
-        <FooterColumn title={t.footer.servicesTitle}>
-          {serviceSlugs.map((slug) => (
-            <FooterLink key={slug} to={linkTo(servicePaths[slug])}>
-              {t.service[slug].title}
+          {navigation.slice(0, 2).map((group) => (
+            <FooterLink key={group.to} to={group.to}>
+              {group.label[lang]}
+            </FooterLink>
+          ))}
+          <FooterLink to="/complete-setup">
+            {lang === "en" ? "End-to-End Support" : "Baştan Sona Destek"}
+          </FooterLink>
+          {navigation.slice(8).map((group) => (
+            <FooterLink key={group.to} to={group.to}>
+              {group.label[lang]}
             </FooterLink>
           ))}
         </FooterColumn>
+
+        <FooterColumn title={t.footer.servicesTitle}>
+          {navigation.slice(2, 8).map((group) => (
+            <FooterLink key={group.to} to={group.to}>
+              {group.label[lang]}
+            </FooterLink>
+          ))}
+        </FooterColumn>
+
 
         <FooterColumn title={t.footer.legalTitle}>
           <FooterLink to="/privacy">{t.footer.privacy}</FooterLink>
