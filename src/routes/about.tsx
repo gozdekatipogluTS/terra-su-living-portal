@@ -25,7 +25,9 @@ export const Route = createFileRoute("/about")({
 });
 
 function About() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const copy = siteCopy[lang];
+
 
   return (
     <>
