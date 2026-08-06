@@ -30,17 +30,17 @@ export function Header() {
             height={1024}
             className="h-12 w-auto object-contain sm:h-14"
           />
-          <span className="hidden text-[0.65rem] uppercase leading-relaxed tracking-[0.18em] text-muted-foreground xl:block">
+          <span className="hidden text-[0.65rem] uppercase leading-relaxed tracking-[0.18em] text-muted-foreground 2xl:block">
             {copy.base}
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-5 xl:flex" aria-label={t.nav.menu}>
+        <nav className="hidden items-center gap-4 xl:flex" aria-label={t.nav.menu}>
           {navigation.slice(1, 9).map((group) => (
             <div key={group.to} className="group relative">
               <Link
                 to={linkTo(group.to)}
-                className="inline-flex items-center gap-1 py-2 text-[0.8rem] tracking-wide text-foreground/75 transition-colors hover:text-primary [&.active]:text-primary"
+                className="inline-flex items-center gap-1 whitespace-nowrap py-2 text-[0.78rem] tracking-wide text-foreground/75 transition-colors hover:text-primary [&.active]:text-primary"
               >
                 {group.label[lang]}
                 {group.children && <ChevronDown className="h-3.5 w-3.5" />}
