@@ -11,16 +11,30 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdministrativeRouteImport } from './routes/administrative'
+import { Route as BusinessRouteImport } from './routes/business'
+import { Route as CompleteSetupRouteImport } from './routes/complete-setup'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as EverydayLifeRouteImport } from './routes/everyday-life'
+import { Route as ExpatGuideRouteImport } from './routes/expat-guide'
+import { Route as HomeSetupRouteImport } from './routes/home-setup'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PropertyRouteImport } from './routes/property'
+import { Route as RelocationRouteImport } from './routes/relocation'
 import { Route as TermsRouteImport } from './routes/terms'
-import { Route as ServicesIndexRouteImport } from './routes/services/index'
-import { Route as ServicesCleaningRouteImport } from './routes/services/cleaning'
-import { Route as ServicesConsultingRouteImport } from './routes/services/consulting'
-import { Route as ServicesExperiencesRouteImport } from './routes/services/experiences'
-import { Route as ServicesPropertyRouteImport } from './routes/services/property'
+import { Route as ToursRouteImport } from './routes/tours'
+import { Route as TransfersRouteImport } from './routes/transfers'
+import { Route as AdministrativeBankRouteImport } from './routes/administrative.bank'
+import { Route as AdministrativeCmdRouteImport } from './routes/administrative.cmd'
+import { Route as AdministrativeHealthRouteImport } from './routes/administrative.health'
+import { Route as AdministrativeNifRouteImport } from './routes/administrative.nif'
+import { Route as AdministrativeNissRouteImport } from './routes/administrative.niss'
+import { Route as HomeSetupCleaningRouteImport } from './routes/home-setup.cleaning'
+import { Route as PropertyPurchaseRouteImport } from './routes/property.purchase'
+import { Route as PropertyRentalRouteImport } from './routes/property.rental'
+import { Route as RelocationVisasRouteImport } from './routes/relocation.visas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -30,6 +44,21 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdministrativeRoute = AdministrativeRouteImport.update({
+  id: '/administrative',
+  path: '/administrative',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessRoute = BusinessRouteImport.update({
+  id: '/business',
+  path: '/business',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompleteSetupRoute = CompleteSetupRouteImport.update({
+  id: '/complete-setup',
+  path: '/complete-setup',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -42,6 +71,21 @@ const CookiesRoute = CookiesRouteImport.update({
   path: '/cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EverydayLifeRoute = EverydayLifeRouteImport.update({
+  id: '/everyday-life',
+  path: '/everyday-life',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExpatGuideRoute = ExpatGuideRouteImport.update({
+  id: '/expat-guide',
+  path: '/expat-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeSetupRoute = HomeSetupRouteImport.update({
+  id: '/home-setup',
+  path: '/home-setup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PortfolioRoute = PortfolioRouteImport.update({
   id: '/portfolio',
   path: '/portfolio',
@@ -52,138 +96,267 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PropertyRoute = PropertyRouteImport.update({
+  id: '/property',
+  path: '/property',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RelocationRoute = RelocationRouteImport.update({
+  id: '/relocation',
+  path: '/relocation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesIndexRoute = ServicesIndexRouteImport.update({
-  id: '/services/',
-  path: '/services/',
+const ToursRoute = ToursRouteImport.update({
+  id: '/tours',
+  path: '/tours',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesCleaningRoute = ServicesCleaningRouteImport.update({
-  id: '/services/cleaning',
-  path: '/services/cleaning',
+const TransfersRoute = TransfersRouteImport.update({
+  id: '/transfers',
+  path: '/transfers',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesConsultingRoute = ServicesConsultingRouteImport.update({
-  id: '/services/consulting',
-  path: '/services/consulting',
-  getParentRoute: () => rootRouteImport,
+const AdministrativeBankRoute = AdministrativeBankRouteImport.update({
+  id: '/bank',
+  path: '/bank',
+  getParentRoute: () => AdministrativeRoute,
 } as any)
-const ServicesExperiencesRoute = ServicesExperiencesRouteImport.update({
-  id: '/services/experiences',
-  path: '/services/experiences',
-  getParentRoute: () => rootRouteImport,
+const AdministrativeCmdRoute = AdministrativeCmdRouteImport.update({
+  id: '/cmd',
+  path: '/cmd',
+  getParentRoute: () => AdministrativeRoute,
 } as any)
-const ServicesPropertyRoute = ServicesPropertyRouteImport.update({
-  id: '/services/property',
-  path: '/services/property',
-  getParentRoute: () => rootRouteImport,
+const AdministrativeHealthRoute = AdministrativeHealthRouteImport.update({
+  id: '/health',
+  path: '/health',
+  getParentRoute: () => AdministrativeRoute,
+} as any)
+const AdministrativeNifRoute = AdministrativeNifRouteImport.update({
+  id: '/nif',
+  path: '/nif',
+  getParentRoute: () => AdministrativeRoute,
+} as any)
+const AdministrativeNissRoute = AdministrativeNissRouteImport.update({
+  id: '/niss',
+  path: '/niss',
+  getParentRoute: () => AdministrativeRoute,
+} as any)
+const HomeSetupCleaningRoute = HomeSetupCleaningRouteImport.update({
+  id: '/cleaning',
+  path: '/cleaning',
+  getParentRoute: () => HomeSetupRoute,
+} as any)
+const PropertyPurchaseRoute = PropertyPurchaseRouteImport.update({
+  id: '/purchase',
+  path: '/purchase',
+  getParentRoute: () => PropertyRoute,
+} as any)
+const PropertyRentalRoute = PropertyRentalRouteImport.update({
+  id: '/rental',
+  path: '/rental',
+  getParentRoute: () => PropertyRoute,
+} as any)
+const RelocationVisasRoute = RelocationVisasRouteImport.update({
+  id: '/visas',
+  path: '/visas',
+  getParentRoute: () => RelocationRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/administrative': typeof AdministrativeRouteWithChildren
+  '/business': typeof BusinessRoute
+  '/complete-setup': typeof CompleteSetupRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
+  '/everyday-life': typeof EverydayLifeRoute
+  '/expat-guide': typeof ExpatGuideRoute
+  '/home-setup': typeof HomeSetupRouteWithChildren
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
+  '/property': typeof PropertyRouteWithChildren
+  '/relocation': typeof RelocationRouteWithChildren
   '/terms': typeof TermsRoute
-  '/services/cleaning': typeof ServicesCleaningRoute
-  '/services/consulting': typeof ServicesConsultingRoute
-  '/services/experiences': typeof ServicesExperiencesRoute
-  '/services/property': typeof ServicesPropertyRoute
-  '/services/': typeof ServicesIndexRoute
+  '/tours': typeof ToursRoute
+  '/transfers': typeof TransfersRoute
+  '/administrative/bank': typeof AdministrativeBankRoute
+  '/administrative/cmd': typeof AdministrativeCmdRoute
+  '/administrative/health': typeof AdministrativeHealthRoute
+  '/administrative/nif': typeof AdministrativeNifRoute
+  '/administrative/niss': typeof AdministrativeNissRoute
+  '/home-setup/cleaning': typeof HomeSetupCleaningRoute
+  '/property/purchase': typeof PropertyPurchaseRoute
+  '/property/rental': typeof PropertyRentalRoute
+  '/relocation/visas': typeof RelocationVisasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/administrative': typeof AdministrativeRouteWithChildren
+  '/business': typeof BusinessRoute
+  '/complete-setup': typeof CompleteSetupRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
+  '/everyday-life': typeof EverydayLifeRoute
+  '/expat-guide': typeof ExpatGuideRoute
+  '/home-setup': typeof HomeSetupRouteWithChildren
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
+  '/property': typeof PropertyRouteWithChildren
+  '/relocation': typeof RelocationRouteWithChildren
   '/terms': typeof TermsRoute
-  '/services/cleaning': typeof ServicesCleaningRoute
-  '/services/consulting': typeof ServicesConsultingRoute
-  '/services/experiences': typeof ServicesExperiencesRoute
-  '/services/property': typeof ServicesPropertyRoute
-  '/services': typeof ServicesIndexRoute
+  '/tours': typeof ToursRoute
+  '/transfers': typeof TransfersRoute
+  '/administrative/bank': typeof AdministrativeBankRoute
+  '/administrative/cmd': typeof AdministrativeCmdRoute
+  '/administrative/health': typeof AdministrativeHealthRoute
+  '/administrative/nif': typeof AdministrativeNifRoute
+  '/administrative/niss': typeof AdministrativeNissRoute
+  '/home-setup/cleaning': typeof HomeSetupCleaningRoute
+  '/property/purchase': typeof PropertyPurchaseRoute
+  '/property/rental': typeof PropertyRentalRoute
+  '/relocation/visas': typeof RelocationVisasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/administrative': typeof AdministrativeRouteWithChildren
+  '/business': typeof BusinessRoute
+  '/complete-setup': typeof CompleteSetupRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
+  '/everyday-life': typeof EverydayLifeRoute
+  '/expat-guide': typeof ExpatGuideRoute
+  '/home-setup': typeof HomeSetupRouteWithChildren
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
+  '/property': typeof PropertyRouteWithChildren
+  '/relocation': typeof RelocationRouteWithChildren
   '/terms': typeof TermsRoute
-  '/services/cleaning': typeof ServicesCleaningRoute
-  '/services/consulting': typeof ServicesConsultingRoute
-  '/services/experiences': typeof ServicesExperiencesRoute
-  '/services/property': typeof ServicesPropertyRoute
-  '/services/': typeof ServicesIndexRoute
+  '/tours': typeof ToursRoute
+  '/transfers': typeof TransfersRoute
+  '/administrative/bank': typeof AdministrativeBankRoute
+  '/administrative/cmd': typeof AdministrativeCmdRoute
+  '/administrative/health': typeof AdministrativeHealthRoute
+  '/administrative/nif': typeof AdministrativeNifRoute
+  '/administrative/niss': typeof AdministrativeNissRoute
+  '/home-setup/cleaning': typeof HomeSetupCleaningRoute
+  '/property/purchase': typeof PropertyPurchaseRoute
+  '/property/rental': typeof PropertyRentalRoute
+  '/relocation/visas': typeof RelocationVisasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/administrative'
+    | '/business'
+    | '/complete-setup'
     | '/contact'
     | '/cookies'
+    | '/everyday-life'
+    | '/expat-guide'
+    | '/home-setup'
     | '/portfolio'
     | '/privacy'
+    | '/property'
+    | '/relocation'
     | '/terms'
-    | '/services/cleaning'
-    | '/services/consulting'
-    | '/services/experiences'
-    | '/services/property'
-    | '/services/'
+    | '/tours'
+    | '/transfers'
+    | '/administrative/bank'
+    | '/administrative/cmd'
+    | '/administrative/health'
+    | '/administrative/nif'
+    | '/administrative/niss'
+    | '/home-setup/cleaning'
+    | '/property/purchase'
+    | '/property/rental'
+    | '/relocation/visas'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/administrative'
+    | '/business'
+    | '/complete-setup'
     | '/contact'
     | '/cookies'
+    | '/everyday-life'
+    | '/expat-guide'
+    | '/home-setup'
     | '/portfolio'
     | '/privacy'
+    | '/property'
+    | '/relocation'
     | '/terms'
-    | '/services/cleaning'
-    | '/services/consulting'
-    | '/services/experiences'
-    | '/services/property'
-    | '/services'
+    | '/tours'
+    | '/transfers'
+    | '/administrative/bank'
+    | '/administrative/cmd'
+    | '/administrative/health'
+    | '/administrative/nif'
+    | '/administrative/niss'
+    | '/home-setup/cleaning'
+    | '/property/purchase'
+    | '/property/rental'
+    | '/relocation/visas'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/administrative'
+    | '/business'
+    | '/complete-setup'
     | '/contact'
     | '/cookies'
+    | '/everyday-life'
+    | '/expat-guide'
+    | '/home-setup'
     | '/portfolio'
     | '/privacy'
+    | '/property'
+    | '/relocation'
     | '/terms'
-    | '/services/cleaning'
-    | '/services/consulting'
-    | '/services/experiences'
-    | '/services/property'
-    | '/services/'
+    | '/tours'
+    | '/transfers'
+    | '/administrative/bank'
+    | '/administrative/cmd'
+    | '/administrative/health'
+    | '/administrative/nif'
+    | '/administrative/niss'
+    | '/home-setup/cleaning'
+    | '/property/purchase'
+    | '/property/rental'
+    | '/relocation/visas'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdministrativeRoute: typeof AdministrativeRouteWithChildren
+  BusinessRoute: typeof BusinessRoute
+  CompleteSetupRoute: typeof CompleteSetupRoute
   ContactRoute: typeof ContactRoute
   CookiesRoute: typeof CookiesRoute
+  EverydayLifeRoute: typeof EverydayLifeRoute
+  ExpatGuideRoute: typeof ExpatGuideRoute
+  HomeSetupRoute: typeof HomeSetupRouteWithChildren
   PortfolioRoute: typeof PortfolioRoute
   PrivacyRoute: typeof PrivacyRoute
+  PropertyRoute: typeof PropertyRouteWithChildren
+  RelocationRoute: typeof RelocationRouteWithChildren
   TermsRoute: typeof TermsRoute
-  ServicesCleaningRoute: typeof ServicesCleaningRoute
-  ServicesConsultingRoute: typeof ServicesConsultingRoute
-  ServicesExperiencesRoute: typeof ServicesExperiencesRoute
-  ServicesPropertyRoute: typeof ServicesPropertyRoute
-  ServicesIndexRoute: typeof ServicesIndexRoute
+  ToursRoute: typeof ToursRoute
+  TransfersRoute: typeof TransfersRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -202,6 +375,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/administrative': {
+      id: '/administrative'
+      path: '/administrative'
+      fullPath: '/administrative'
+      preLoaderRoute: typeof AdministrativeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/business': {
+      id: '/business'
+      path: '/business'
+      fullPath: '/business'
+      preLoaderRoute: typeof BusinessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/complete-setup': {
+      id: '/complete-setup'
+      path: '/complete-setup'
+      fullPath: '/complete-setup'
+      preLoaderRoute: typeof CompleteSetupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -214,6 +408,27 @@ declare module '@tanstack/react-router' {
       path: '/cookies'
       fullPath: '/cookies'
       preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/everyday-life': {
+      id: '/everyday-life'
+      path: '/everyday-life'
+      fullPath: '/everyday-life'
+      preLoaderRoute: typeof EverydayLifeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/expat-guide': {
+      id: '/expat-guide'
+      path: '/expat-guide'
+      fullPath: '/expat-guide'
+      preLoaderRoute: typeof ExpatGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home-setup': {
+      id: '/home-setup'
+      path: '/home-setup'
+      fullPath: '/home-setup'
+      preLoaderRoute: typeof HomeSetupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio': {
@@ -230,6 +445,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/property': {
+      id: '/property'
+      path: '/property'
+      fullPath: '/property'
+      preLoaderRoute: typeof PropertyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/relocation': {
+      id: '/relocation'
+      path: '/relocation'
+      fullPath: '/relocation'
+      preLoaderRoute: typeof RelocationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -237,57 +466,162 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/': {
-      id: '/services/'
-      path: '/services'
-      fullPath: '/services/'
-      preLoaderRoute: typeof ServicesIndexRouteImport
+    '/tours': {
+      id: '/tours'
+      path: '/tours'
+      fullPath: '/tours'
+      preLoaderRoute: typeof ToursRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/cleaning': {
-      id: '/services/cleaning'
-      path: '/services/cleaning'
-      fullPath: '/services/cleaning'
-      preLoaderRoute: typeof ServicesCleaningRouteImport
+    '/transfers': {
+      id: '/transfers'
+      path: '/transfers'
+      fullPath: '/transfers'
+      preLoaderRoute: typeof TransfersRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/consulting': {
-      id: '/services/consulting'
-      path: '/services/consulting'
-      fullPath: '/services/consulting'
-      preLoaderRoute: typeof ServicesConsultingRouteImport
-      parentRoute: typeof rootRouteImport
+    '/administrative/bank': {
+      id: '/administrative/bank'
+      path: '/bank'
+      fullPath: '/administrative/bank'
+      preLoaderRoute: typeof AdministrativeBankRouteImport
+      parentRoute: typeof AdministrativeRoute
     }
-    '/services/experiences': {
-      id: '/services/experiences'
-      path: '/services/experiences'
-      fullPath: '/services/experiences'
-      preLoaderRoute: typeof ServicesExperiencesRouteImport
-      parentRoute: typeof rootRouteImport
+    '/administrative/cmd': {
+      id: '/administrative/cmd'
+      path: '/cmd'
+      fullPath: '/administrative/cmd'
+      preLoaderRoute: typeof AdministrativeCmdRouteImport
+      parentRoute: typeof AdministrativeRoute
     }
-    '/services/property': {
-      id: '/services/property'
-      path: '/services/property'
-      fullPath: '/services/property'
-      preLoaderRoute: typeof ServicesPropertyRouteImport
-      parentRoute: typeof rootRouteImport
+    '/administrative/health': {
+      id: '/administrative/health'
+      path: '/health'
+      fullPath: '/administrative/health'
+      preLoaderRoute: typeof AdministrativeHealthRouteImport
+      parentRoute: typeof AdministrativeRoute
+    }
+    '/administrative/nif': {
+      id: '/administrative/nif'
+      path: '/nif'
+      fullPath: '/administrative/nif'
+      preLoaderRoute: typeof AdministrativeNifRouteImport
+      parentRoute: typeof AdministrativeRoute
+    }
+    '/administrative/niss': {
+      id: '/administrative/niss'
+      path: '/niss'
+      fullPath: '/administrative/niss'
+      preLoaderRoute: typeof AdministrativeNissRouteImport
+      parentRoute: typeof AdministrativeRoute
+    }
+    '/home-setup/cleaning': {
+      id: '/home-setup/cleaning'
+      path: '/cleaning'
+      fullPath: '/home-setup/cleaning'
+      preLoaderRoute: typeof HomeSetupCleaningRouteImport
+      parentRoute: typeof HomeSetupRoute
+    }
+    '/property/purchase': {
+      id: '/property/purchase'
+      path: '/purchase'
+      fullPath: '/property/purchase'
+      preLoaderRoute: typeof PropertyPurchaseRouteImport
+      parentRoute: typeof PropertyRoute
+    }
+    '/property/rental': {
+      id: '/property/rental'
+      path: '/rental'
+      fullPath: '/property/rental'
+      preLoaderRoute: typeof PropertyRentalRouteImport
+      parentRoute: typeof PropertyRoute
+    }
+    '/relocation/visas': {
+      id: '/relocation/visas'
+      path: '/visas'
+      fullPath: '/relocation/visas'
+      preLoaderRoute: typeof RelocationVisasRouteImport
+      parentRoute: typeof RelocationRoute
     }
   }
 }
 
+interface AdministrativeRouteChildren {
+  AdministrativeBankRoute: typeof AdministrativeBankRoute
+  AdministrativeCmdRoute: typeof AdministrativeCmdRoute
+  AdministrativeHealthRoute: typeof AdministrativeHealthRoute
+  AdministrativeNifRoute: typeof AdministrativeNifRoute
+  AdministrativeNissRoute: typeof AdministrativeNissRoute
+}
+
+const AdministrativeRouteChildren: AdministrativeRouteChildren = {
+  AdministrativeBankRoute: AdministrativeBankRoute,
+  AdministrativeCmdRoute: AdministrativeCmdRoute,
+  AdministrativeHealthRoute: AdministrativeHealthRoute,
+  AdministrativeNifRoute: AdministrativeNifRoute,
+  AdministrativeNissRoute: AdministrativeNissRoute,
+}
+
+const AdministrativeRouteWithChildren = AdministrativeRoute._addFileChildren(
+  AdministrativeRouteChildren,
+)
+
+interface HomeSetupRouteChildren {
+  HomeSetupCleaningRoute: typeof HomeSetupCleaningRoute
+}
+
+const HomeSetupRouteChildren: HomeSetupRouteChildren = {
+  HomeSetupCleaningRoute: HomeSetupCleaningRoute,
+}
+
+const HomeSetupRouteWithChildren = HomeSetupRoute._addFileChildren(
+  HomeSetupRouteChildren,
+)
+
+interface PropertyRouteChildren {
+  PropertyPurchaseRoute: typeof PropertyPurchaseRoute
+  PropertyRentalRoute: typeof PropertyRentalRoute
+}
+
+const PropertyRouteChildren: PropertyRouteChildren = {
+  PropertyPurchaseRoute: PropertyPurchaseRoute,
+  PropertyRentalRoute: PropertyRentalRoute,
+}
+
+const PropertyRouteWithChildren = PropertyRoute._addFileChildren(
+  PropertyRouteChildren,
+)
+
+interface RelocationRouteChildren {
+  RelocationVisasRoute: typeof RelocationVisasRoute
+}
+
+const RelocationRouteChildren: RelocationRouteChildren = {
+  RelocationVisasRoute: RelocationVisasRoute,
+}
+
+const RelocationRouteWithChildren = RelocationRoute._addFileChildren(
+  RelocationRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdministrativeRoute: AdministrativeRouteWithChildren,
+  BusinessRoute: BusinessRoute,
+  CompleteSetupRoute: CompleteSetupRoute,
   ContactRoute: ContactRoute,
   CookiesRoute: CookiesRoute,
+  EverydayLifeRoute: EverydayLifeRoute,
+  ExpatGuideRoute: ExpatGuideRoute,
+  HomeSetupRoute: HomeSetupRouteWithChildren,
   PortfolioRoute: PortfolioRoute,
   PrivacyRoute: PrivacyRoute,
+  PropertyRoute: PropertyRouteWithChildren,
+  RelocationRoute: RelocationRouteWithChildren,
   TermsRoute: TermsRoute,
-  ServicesCleaningRoute: ServicesCleaningRoute,
-  ServicesConsultingRoute: ServicesConsultingRoute,
-  ServicesExperiencesRoute: ServicesExperiencesRoute,
-  ServicesPropertyRoute: ServicesPropertyRoute,
-  ServicesIndexRoute: ServicesIndexRoute,
+  ToursRoute: ToursRoute,
+  TransfersRoute: TransfersRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

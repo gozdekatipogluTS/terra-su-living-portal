@@ -4,9 +4,9 @@ import { InfoPage } from "@/components/site/InfoPage";
 import { images } from "@/lib/page-assets";
 import { pages } from "@/i18n/pages";
 
-const doc = pages.administrative.en;
+const doc = pages.homeSetup.en;
 
-export const Route = createFileRoute("/administrative")({
+export const Route = createFileRoute("/home-setup/")({
   head: () => ({
     meta: [
       { title: doc.metaTitle },
@@ -16,9 +16,9 @@ export const Route = createFileRoute("/administrative")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://terrasuliving.com/administrative" }],
+    links: [{ rel: "canonical", href: "https://terrasuliving.com/home-setup" }],
   }),
   component: () => (
-    <InfoPage pageKey="administrative" image={images.admin} imageAlt="Calm minimal public building interior with soft daylight" />
+    <InfoPage pageKey="homeSetup" image={images.homeSetup} imageAlt="House keys beside a small olive plant on a stone surface" />
   ),
 });

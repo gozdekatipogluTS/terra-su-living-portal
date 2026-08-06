@@ -6,7 +6,7 @@ import { pages } from "@/i18n/pages";
 
 const doc = pages.property.en;
 
-export const Route = createFileRoute("/property")({
+export const Route = createFileRoute("/property/")({
   head: () => ({
     meta: [
       { title: doc.metaTitle },
