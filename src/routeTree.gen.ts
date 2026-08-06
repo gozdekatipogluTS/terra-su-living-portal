@@ -113,29 +113,29 @@ const AdministrativeIndexRoute = AdministrativeIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdministrativeBankRoute = AdministrativeBankRouteImport.update({
-  id: '/administrative/bank',
-  path: '/administrative/bank',
-  getParentRoute: () => rootRouteImport,
+  id: '/bank',
+  path: '/bank',
+  getParentRoute: () => AdministrativeRoute,
 } as any)
 const AdministrativeCmdRoute = AdministrativeCmdRouteImport.update({
-  id: '/administrative/cmd',
-  path: '/administrative/cmd',
-  getParentRoute: () => rootRouteImport,
+  id: '/cmd',
+  path: '/cmd',
+  getParentRoute: () => AdministrativeRoute,
 } as any)
 const AdministrativeHealthRoute = AdministrativeHealthRouteImport.update({
-  id: '/administrative/health',
-  path: '/administrative/health',
-  getParentRoute: () => rootRouteImport,
+  id: '/health',
+  path: '/health',
+  getParentRoute: () => AdministrativeRoute,
 } as any)
 const AdministrativeNifRoute = AdministrativeNifRouteImport.update({
-  id: '/administrative/nif',
-  path: '/administrative/nif',
-  getParentRoute: () => rootRouteImport,
+  id: '/nif',
+  path: '/nif',
+  getParentRoute: () => AdministrativeRoute,
 } as any)
 const AdministrativeNissRoute = AdministrativeNissRouteImport.update({
-  id: '/administrative/niss',
-  path: '/administrative/niss',
-  getParentRoute: () => rootRouteImport,
+  id: '/niss',
+  path: '/niss',
+  getParentRoute: () => AdministrativeRoute,
 } as any)
 const HomeSetupIndexRoute = HomeSetupIndexRouteImport.update({
   id: '/home-setup/',
@@ -143,9 +143,9 @@ const HomeSetupIndexRoute = HomeSetupIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const HomeSetupCleaningRoute = HomeSetupCleaningRouteImport.update({
-  id: '/home-setup/cleaning',
-  path: '/home-setup/cleaning',
-  getParentRoute: () => rootRouteImport,
+  id: '/cleaning',
+  path: '/cleaning',
+  getParentRoute: () => HomeSetupRoute,
 } as any)
 const PropertyIndexRoute = PropertyIndexRouteImport.update({
   id: '/property/',
@@ -153,14 +153,14 @@ const PropertyIndexRoute = PropertyIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const PropertyPurchaseRoute = PropertyPurchaseRouteImport.update({
-  id: '/property/purchase',
-  path: '/property/purchase',
-  getParentRoute: () => rootRouteImport,
+  id: '/purchase',
+  path: '/purchase',
+  getParentRoute: () => PropertyRoute,
 } as any)
 const PropertyRentalRoute = PropertyRentalRouteImport.update({
-  id: '/property/rental',
-  path: '/property/rental',
-  getParentRoute: () => rootRouteImport,
+  id: '/rental',
+  path: '/rental',
+  getParentRoute: () => PropertyRoute,
 } as any)
 const RelocationIndexRoute = RelocationIndexRouteImport.update({
   id: '/relocation/',
@@ -168,9 +168,9 @@ const RelocationIndexRoute = RelocationIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const RelocationVisasRoute = RelocationVisasRouteImport.update({
-  id: '/relocation/visas',
-  path: '/relocation/visas',
-  getParentRoute: () => rootRouteImport,
+  id: '/visas',
+  path: '/visas',
+  getParentRoute: () => RelocationRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -366,15 +366,6 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   ToursRoute: typeof ToursRoute
   TransfersRoute: typeof TransfersRoute
-  AdministrativeBankRoute: typeof AdministrativeBankRoute
-  AdministrativeCmdRoute: typeof AdministrativeCmdRoute
-  AdministrativeHealthRoute: typeof AdministrativeHealthRoute
-  AdministrativeNifRoute: typeof AdministrativeNifRoute
-  AdministrativeNissRoute: typeof AdministrativeNissRoute
-  HomeSetupCleaningRoute: typeof HomeSetupCleaningRoute
-  PropertyPurchaseRoute: typeof PropertyPurchaseRoute
-  PropertyRentalRoute: typeof PropertyRentalRoute
-  RelocationVisasRoute: typeof RelocationVisasRoute
   AdministrativeIndexRoute: typeof AdministrativeIndexRoute
   HomeSetupIndexRoute: typeof HomeSetupIndexRoute
   PropertyIndexRoute: typeof PropertyIndexRoute
@@ -490,38 +481,38 @@ declare module '@tanstack/react-router' {
     }
     '/administrative/bank': {
       id: '/administrative/bank'
-      path: '/administrative/bank'
+      path: '/bank'
       fullPath: '/administrative/bank'
       preLoaderRoute: typeof AdministrativeBankRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdministrativeRoute
     }
     '/administrative/cmd': {
       id: '/administrative/cmd'
-      path: '/administrative/cmd'
+      path: '/cmd'
       fullPath: '/administrative/cmd'
       preLoaderRoute: typeof AdministrativeCmdRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdministrativeRoute
     }
     '/administrative/health': {
       id: '/administrative/health'
-      path: '/administrative/health'
+      path: '/health'
       fullPath: '/administrative/health'
       preLoaderRoute: typeof AdministrativeHealthRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdministrativeRoute
     }
     '/administrative/nif': {
       id: '/administrative/nif'
-      path: '/administrative/nif'
+      path: '/nif'
       fullPath: '/administrative/nif'
       preLoaderRoute: typeof AdministrativeNifRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdministrativeRoute
     }
     '/administrative/niss': {
       id: '/administrative/niss'
-      path: '/administrative/niss'
+      path: '/niss'
       fullPath: '/administrative/niss'
       preLoaderRoute: typeof AdministrativeNissRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdministrativeRoute
     }
     '/home-setup/': {
       id: '/home-setup/'
@@ -532,10 +523,10 @@ declare module '@tanstack/react-router' {
     }
     '/home-setup/cleaning': {
       id: '/home-setup/cleaning'
-      path: '/home-setup/cleaning'
+      path: '/cleaning'
       fullPath: '/home-setup/cleaning'
       preLoaderRoute: typeof HomeSetupCleaningRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof HomeSetupRoute
     }
     '/property/': {
       id: '/property/'
@@ -546,17 +537,17 @@ declare module '@tanstack/react-router' {
     }
     '/property/purchase': {
       id: '/property/purchase'
-      path: '/property/purchase'
+      path: '/purchase'
       fullPath: '/property/purchase'
       preLoaderRoute: typeof PropertyPurchaseRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof PropertyRoute
     }
     '/property/rental': {
       id: '/property/rental'
-      path: '/property/rental'
+      path: '/rental'
       fullPath: '/property/rental'
       preLoaderRoute: typeof PropertyRentalRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof PropertyRoute
     }
     '/relocation/': {
       id: '/relocation/'
@@ -567,10 +558,10 @@ declare module '@tanstack/react-router' {
     }
     '/relocation/visas': {
       id: '/relocation/visas'
-      path: '/relocation/visas'
+      path: '/visas'
       fullPath: '/relocation/visas'
       preLoaderRoute: typeof RelocationVisasRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof RelocationRoute
     }
   }
 }
@@ -590,15 +581,6 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   ToursRoute: ToursRoute,
   TransfersRoute: TransfersRoute,
-  AdministrativeBankRoute: AdministrativeBankRoute,
-  AdministrativeCmdRoute: AdministrativeCmdRoute,
-  AdministrativeHealthRoute: AdministrativeHealthRoute,
-  AdministrativeNifRoute: AdministrativeNifRoute,
-  AdministrativeNissRoute: AdministrativeNissRoute,
-  HomeSetupCleaningRoute: HomeSetupCleaningRoute,
-  PropertyPurchaseRoute: PropertyPurchaseRoute,
-  PropertyRentalRoute: PropertyRentalRoute,
-  RelocationVisasRoute: RelocationVisasRoute,
   AdministrativeIndexRoute: AdministrativeIndexRoute,
   HomeSetupIndexRoute: HomeSetupIndexRoute,
   PropertyIndexRoute: PropertyIndexRoute,
@@ -607,3 +589,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
