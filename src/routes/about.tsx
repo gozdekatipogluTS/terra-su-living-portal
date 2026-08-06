@@ -6,6 +6,8 @@ import logo from "@/assets/terrasu-logo.png";
 import { ImageHero } from "@/components/site/premium";
 import { CtaLink, Eyebrow, Section } from "@/components/site/ui";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import { siteCopy } from "@/i18n/site";
+
 
 const title = "About TerraSu Living | Created & Managed by Gözde K.";
 const description =
@@ -25,7 +27,9 @@ export const Route = createFileRoute("/about")({
 });
 
 function About() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const copy = siteCopy[lang];
+
 
   return (
     <>
@@ -69,9 +73,15 @@ function About() {
       <Section className="bg-secondary/30">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <Eyebrow>{t.home.founderEyebrow}</Eyebrow>
-            <h2 className="font-serif text-3xl text-foreground sm:text-4xl">{t.about.founderTitle}</h2>
-            <p className="mt-5 text-base leading-relaxed text-muted-foreground">{t.about.founderText}</p>
+            <Eyebrow>{copy.founderEyebrow}</Eyebrow>
+            <h2 className="font-serif text-3xl text-foreground sm:text-4xl">{copy.founderTitle}</h2>
+            <div className="mt-5 space-y-4">
+              {copy.founderText.map((paragraph) => (
+                <p key={paragraph} className="text-base leading-relaxed text-muted-foreground">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
             <p className="mt-6 font-serif text-lg italic text-primary">{t.common.signature}</p>
           </div>
           <img
