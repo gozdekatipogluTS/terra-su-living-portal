@@ -17,6 +17,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as EverydayLifeRouteImport } from './routes/everyday-life'
 import { Route as ExpatGuideRouteImport } from './routes/expat-guide'
+import { Route as NewsRouteImport } from './routes/news'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -74,6 +75,11 @@ const EverydayLifeRoute = EverydayLifeRouteImport.update({
 const ExpatGuideRoute = ExpatGuideRouteImport.update({
   id: '/expat-guide',
   path: '/expat-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioRoute = PortfolioRouteImport.update({
@@ -176,6 +182,7 @@ export interface FileRoutesByFullPath {
   '/cookies': typeof CookiesRoute
   '/everyday-life': typeof EverydayLifeRoute
   '/expat-guide': typeof ExpatGuideRoute
+  '/news': typeof NewsRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -204,6 +211,7 @@ export interface FileRoutesByTo {
   '/cookies': typeof CookiesRoute
   '/everyday-life': typeof EverydayLifeRoute
   '/expat-guide': typeof ExpatGuideRoute
+  '/news': typeof NewsRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -233,6 +241,7 @@ export interface FileRoutesById {
   '/cookies': typeof CookiesRoute
   '/everyday-life': typeof EverydayLifeRoute
   '/expat-guide': typeof ExpatGuideRoute
+  '/news': typeof NewsRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -263,6 +272,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/everyday-life'
     | '/expat-guide'
+    | '/news'
     | '/portfolio'
     | '/privacy'
     | '/terms'
@@ -291,6 +301,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/everyday-life'
     | '/expat-guide'
+    | '/news'
     | '/portfolio'
     | '/privacy'
     | '/terms'
@@ -319,6 +330,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/everyday-life'
     | '/expat-guide'
+    | '/news'
     | '/portfolio'
     | '/privacy'
     | '/terms'
@@ -348,6 +360,7 @@ export interface RootRouteChildren {
   CookiesRoute: typeof CookiesRoute
   EverydayLifeRoute: typeof EverydayLifeRoute
   ExpatGuideRoute: typeof ExpatGuideRoute
+  NewsRoute: typeof NewsRoute
   PortfolioRoute: typeof PortfolioRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
@@ -424,6 +437,13 @@ declare module '@tanstack/react-router' {
       path: '/expat-guide'
       fullPath: '/expat-guide'
       preLoaderRoute: typeof ExpatGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio': {
@@ -564,6 +584,7 @@ const rootRouteChildren: RootRouteChildren = {
   CookiesRoute: CookiesRoute,
   EverydayLifeRoute: EverydayLifeRoute,
   ExpatGuideRoute: ExpatGuideRoute,
+  NewsRoute: NewsRoute,
   PortfolioRoute: PortfolioRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
