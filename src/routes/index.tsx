@@ -57,7 +57,8 @@ const youtubeReady = YOUTUBE_URL.startsWith("http");
 function Home() {
   const { lang, t } = useLanguage();
   const copy = siteCopy[lang];
-  const highlights = portfolioEntries.slice(0, 4);
+  const b = brand[lang];
+
 
   return (
     <>
