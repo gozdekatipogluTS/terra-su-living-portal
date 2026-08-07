@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Mail, MapPin, Clock } from "lucide-react";
+import { Instagram, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
 import contactImage from "@/assets/contact-hero.jpg";
