@@ -278,6 +278,29 @@ function Home() {
         </div>
       </Section>
 
+      {/* PRICING POSITION */}
+      <Section>
+        <div className="mx-auto max-w-3xl rounded-[2rem] border border-border bg-card px-8 py-14 text-center shadow-soft sm:px-14">
+          <Eyebrow>{b.pricingEyebrow}</Eyebrow>
+          <h2 className="font-serif text-3xl text-foreground sm:text-4xl">{b.pricingTitle}</h2>
+          <span className="divider-leaf mx-auto my-7 block w-24" />
+          <div className="space-y-3">
+            {b.pricingText.map((line) => (
+              <p key={line} className="text-base leading-relaxed text-muted-foreground">
+                {line}
+              </p>
+            ))}
+          </div>
+          <div className="mt-9 flex flex-wrap justify-center gap-3">
+            <CtaLink to="/contact">{b.pricingPrimary}</CtaLink>
+            <CtaLink to="/contact" variant="outline">
+              {b.pricingSecondary}
+            </CtaLink>
+          </div>
+        </div>
+      </Section>
+
+
       {/* GUIDE PREVIEW */}
       <Section className="pb-0">
         <div className="grid items-center gap-10 lg:grid-cols-2">
