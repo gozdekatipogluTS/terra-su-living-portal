@@ -6,6 +6,8 @@ import founderImage from "@/assets/founder-portrait.jpg";
 import logo from "@/assets/terrasu-logo.png";
 import { FounderMessage, PlanCta } from "@/components/site/premium";
 import { CtaLink, Eyebrow, Section, hashProp, linkTo } from "@/components/site/ui";
+import { brand } from "@/i18n/brand";
+
 import { useLanguage } from "@/i18n/LanguageProvider";
 import {
   INSTAGRAM_HANDLE,
