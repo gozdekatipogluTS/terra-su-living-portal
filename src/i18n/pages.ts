@@ -133,7 +133,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
     en: {
       metaTitle: "Portugal Visa and Residence Routes | TerraSu Living",
       metaDescription:
-        "Practical orientation for the D2, D7 and D8 visas, investment based residence and family related routes, with document preparation and referrals.",
+        "Practical orientation for the D2, D7, D8 and D9 visas, Golden Visa investment residence and family related routes, with document preparation and referrals.",
       eyebrow: "Visa information",
       title: "Visa and Residence Routes",
       lead: "General information on the officially published routes, and the practical preparation TerraSu Living can carry out for each of them.",
@@ -170,6 +170,16 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
             "Common document categories include employment or service contracts, income evidence, accommodation, health insurance and criminal record",
             "Preparation covers contract and income document organisation and housing arrangements",
             "Employment law and cross border tax matters require qualified professionals",
+          ],
+        },
+        {
+          title: "D9, residence for investment activity",
+          items: [
+            "The visa category used for qualifying investment activity, commonly known together with the Golden Visa framework",
+            "Eligible activity categories are defined by law and have been revised in recent years",
+            "Common document categories include identity, criminal record, proof of the investment activity and tax registration",
+            "Preparation covers document organisation, scheduling and coordination with the professionals handling the file",
+            "The investment structure and application submission are handled by licensed lawyers",
           ],
         },
         {
@@ -214,7 +224,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
     tr: {
       metaTitle: "Portekiz Vize ve Oturum Seçenekleri | TerraSu Living",
       metaDescription:
-        "D2, D7 ve D8 vizeleri, yatırım temelli oturum ve aile birleşimi seçenekleri için pratik yönlendirme, evrak hazırlığı ve profesyonel yönlendirme.",
+        "D2, D7, D8 ve D9 vizeleri, Golden Visa yatırım oturumu ve aile birleşimi seçenekleri için pratik yönlendirme, evrak hazırlığı ve profesyonel yönlendirme.",
       eyebrow: "Vize bilgileri",
       title: "Vize ve Oturum Seçenekleri",
       lead: "Resmî olarak yayımlanan seçenekler hakkında genel bilgi ve TerraSu Living'in her biri için yapabileceği pratik hazırlık.",
@@ -251,6 +261,16 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
             "Yaygın evrak kategorileri: iş veya hizmet sözleşmeleri, gelir belgeleri, konaklama, sağlık sigortası ve adli sicil",
             "Hazırlık; sözleşme ve gelir belgelerinin düzenlenmesi ile konut planlamasını kapsar",
             "İş hukuku ve sınır ötesi vergi konuları yetkili profesyoneller gerektirir",
+          ],
+        },
+        {
+          title: "D9, yatırım faaliyeti için oturum",
+          items: [
+            "Nitelikli yatırım faaliyeti için kullanılan vize kategorisidir; genellikle Golden Visa çerçevesiyle birlikte anılır",
+            "Uygun faaliyet kategorileri kanunla belirlenir ve son yıllarda güncellenmiştir",
+            "Genel evrak başlıkları kimlik, adli sicil, yatırım faaliyetinin belgelenmesi ve vergi kaydını içerir",
+            "Hazırlık; evrak düzeni, randevu planlaması ve dosyayı yürüten profesyonellerle koordinasyonu kapsar",
+            "Yatırım yapısı ve başvurunun sunulması lisanslı avukatlar tarafından yürütülür",
           ],
         },
         {
@@ -1033,6 +1053,36 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
             "Utility setup guidance",
           ],
         },
+        {
+          title: "How the search is personalised",
+          text: "Nothing is shortlisted before we understand how you actually want to live. Budget, family size, commute, school run and the pace of the neighbourhood all narrow the map before the first listing is opened.",
+          items: [
+            "Budget and realistic monthly running costs",
+            "Lifestyle, routine and preferred pace of the area",
+            "Family size and space requirements",
+            "Location preferences and shortlisted districts",
+            "Work location and commuting time",
+            "Schools, nurseries and catchment considerations",
+            "Transport links, parking and walkability",
+            "Long-term rental",
+            "Short-term rental",
+            "Luxury rental",
+          ],
+        },
+        {
+          title: "After the contract is signed",
+          text: "The search does not end at the signature. The first fortnight in a new home is usually where the practical questions appear.",
+          items: [
+            "Electricity, water and gas activation",
+            "Internet and mobile provider comparison",
+            "Furniture and appliance recommendations",
+            "Move-in preparation and delivery scheduling",
+            "Household essentials for the first week",
+            "Neighbourhood guidance and local orientation",
+            "School and nursery recommendations",
+            "Lifestyle recommendations, from markets to clinics",
+          ],
+        },
       ],
       notices: [
         "TerraSu Living does not provide regulated real-estate brokerage or legal services. These services are carried out by appropriately licensed independent professionals.",
@@ -1068,6 +1118,36 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
             "Anahtar teslimi",
             "Taşınma koordinasyonu",
             "Abonelik kurulumu rehberliği",
+          ],
+        },
+        {
+          title: "Arama nasıl kişiselleştirilir",
+          text: "Nasıl yaşamak istediğinizi anlamadan hiçbir ilan listeye alınmaz. Bütçe, aile büyüklüğü, işe ulaşım, okul yolu ve mahallenin temposu daha ilk ilan açılmadan haritayı daraltır.",
+          items: [
+            "Bütçe ve gerçekçi aylık yaşam giderleri",
+            "Yaşam tarzı, günlük rutin ve tercih edilen bölge temposu",
+            "Aile büyüklüğü ve alan ihtiyacı",
+            "Lokasyon tercihleri ve öne çıkan semtler",
+            "İş yeri konumu ve ulaşım süresi",
+            "Okullar, kreşler ve bölge değerlendirmesi",
+            "Toplu taşıma, otopark ve yürünebilirlik",
+            "Uzun dönem kiralama",
+            "Kısa dönem kiralama",
+            "Lüks kiralama",
+          ],
+        },
+        {
+          title: "Sözleşme imzalandıktan sonra",
+          text: "Süreç imzayla bitmez. Yeni evdeki ilk iki hafta, pratik soruların ortaya çıktığı dönemdir.",
+          items: [
+            "Elektrik, su ve doğalgaz aboneliği",
+            "İnternet ve mobil operatör karşılaştırması",
+            "Mobilya ve beyaz eşya önerileri",
+            "Taşınma hazırlığı ve teslimat planlaması",
+            "İlk hafta için temel ev ihtiyaçları",
+            "Mahalle rehberliği ve yerel oryantasyon",
+            "Okul ve kreş önerileri",
+            "Pazarlardan kliniklere yaşam önerileri",
           ],
         },
       ],
@@ -1110,6 +1190,30 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
             "Cleaning and move-in preparation",
           ],
         },
+        {
+          title: "Search shaped by your goals",
+          text: "A holiday base, a family home and a yield-focused investment lead to three different shortlists. The brief is agreed before any viewing is arranged.",
+          items: [
+            "Investment goals and intended use of the property",
+            "Personal and family requirements",
+            "Area comparisons across districts and price bands",
+            "Renovation potential and realistic condition assessment",
+            "Rental-demand context where relevant",
+            "Long-term suitability and resale considerations",
+          ],
+        },
+        {
+          title: "Settling into the property",
+          text: "Once the deed is signed the practical work begins, and it is coordinated with the same continuity as the search.",
+          items: [
+            "Settlement planning and timeline",
+            "Furniture and interior recommendations",
+            "Trusted local professionals for works and maintenance",
+            "Utility transfer and activation",
+            "Move-in planning and delivery coordination",
+            "Neighbourhood and everyday-life orientation",
+          ],
+        },
       ],
       notices: [
         "TerraSu Living is not an estate agency. It does not provide regulated real-estate brokerage or legal services, which are carried out by appropriately licensed independent professionals.",
@@ -1144,6 +1248,30 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
             "İşlem aşaması koordinasyonu",
             "Gayrimenkul teslimi",
             "Temizlik ve taşınma hazırlığı",
+          ],
+        },
+        {
+          title: "Hedeflerinize göre şekillenen arama",
+          text: "Tatil evi, aile evi ve getiri odaklı yatırım birbirinden tamamen farklı listeler doğurur. Brief, hiçbir görüntüleme ayarlanmadan önce netleştirilir.",
+          items: [
+            "Yatırım hedefleri ve gayrimenkulün kullanım amacı",
+            "Kişisel ve ailevi ihtiyaçlar",
+            "Semtler ve fiyat aralıkları arasında bölge karşılaştırması",
+            "Tadilat potansiyeli ve gerçekçi durum değerlendirmesi",
+            "İlgili durumlarda kiralama talebi analizi",
+            "Uzun vadeli uygunluk ve yeniden satış değerlendirmesi",
+          ],
+        },
+        {
+          title: "Eve yerleşme",
+          text: "Tapu imzalandıktan sonra pratik iş başlar ve bu süreç aramayla aynı süreklilikte koordine edilir.",
+          items: [
+            "Yerleşim planı ve zaman çizelgesi",
+            "Mobilya ve iç mekân önerileri",
+            "Tadilat ve bakım için güvenilir yerel profesyoneller",
+            "Abonelik devri ve aktivasyonu",
+            "Taşınma planlaması ve teslimat koordinasyonu",
+            "Mahalle ve günlük yaşam oryantasyonu",
           ],
         },
       ],
@@ -1371,7 +1499,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
       metaDescription:
         "Practical research, concept development and local setup coordination for people considering a business or independent activity in Portugal.",
       eyebrow: "Business",
-      title: "Business Setup and Opportunity Research",
+      title: "Business Opportunities in Portugal",
       lead: "Practical research, concept development and local setup coordination for people considering a business or independent activity in Portugal.",
       intro: [
         "Every business concept is personally reviewed with Gözde K. The purpose is not to sell a ready-made idea, but to understand the client's experience, resources and expectations before researching realistic options.",
@@ -1563,7 +1691,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
       metaDescription:
         "Private programme design in Portugal and beyond: cultural, culinary, wellness, family and small corporate group programmes.",
       eyebrow: "Boutique tours",
-      title: "Tailor-Made Boutique Tours",
+      title: "Private Boutique Experiences",
       lead: "Programmes built around a specific group, its pace and its interests, rather than a fixed itinerary.",
       intro: [
         "Portugal is a principal area of expertise. Private programmes may also be created for Turkey, Portugal and other destinations according to group preferences and operational availability.",
@@ -1632,7 +1760,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
       metaDescription:
         "Portekiz'de ve ötesinde özel program tasarımı: kültür, gastronomi, wellness, aile ve küçük kurumsal grup programları.",
       eyebrow: "Butik turlar",
-      title: "Kişiye Özel Butik Turlar",
+      title: "Özel Butik Deneyimler",
       lead: "Sabit bir güzergâh yerine belirli bir grubun temposuna ve ilgi alanlarına göre kurulan programlar.",
       intro: [
         "Portekiz temel uzmanlık alanıdır. Grup tercihlerine ve operasyonel uygunluğa göre Türkiye, Portekiz ve diğer destinasyonlar için de özel programlar oluşturulabilir.",

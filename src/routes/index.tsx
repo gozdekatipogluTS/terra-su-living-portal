@@ -6,6 +6,8 @@ import founderImage from "@/assets/founder-portrait.jpg";
 import logo from "@/assets/terrasu-logo.png";
 import { FounderMessage, PlanCta } from "@/components/site/premium";
 import { CtaLink, Eyebrow, Section, hashProp, linkTo } from "@/components/site/ui";
+import { brand } from "@/i18n/brand";
+
 import { useLanguage } from "@/i18n/LanguageProvider";
 import {
   INSTAGRAM_HANDLE,
@@ -57,7 +59,10 @@ const youtubeReady = YOUTUBE_URL.startsWith("http");
 function Home() {
   const { lang, t } = useLanguage();
   const copy = siteCopy[lang];
+  const b = brand[lang];
   const highlights = portfolioEntries.slice(0, 4);
+
+
 
   return (
     <>
@@ -82,18 +87,19 @@ function Home() {
           />
           <p className="mt-6 text-xs uppercase tracking-[0.32em] text-foreground/70">{copy.base}</p>
           <h1 className="mt-6 font-serif text-4xl leading-[1.1] text-foreground sm:text-6xl">
-            {copy.heroTitle}
+            {b.heroTitle}
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground/80 sm:text-lg">
-            {copy.heroSub}
+            {b.heroSub}
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <CtaLink to="/contact">{copy.ctaPrimary}</CtaLink>
+            <CtaLink to="/contact">{b.ctaPrimary}</CtaLink>
             <CtaLink to="/complete-setup" variant="outline">
-              {copy.ctaSecondary}
+              {b.ctaSecondary}
             </CtaLink>
           </div>
         </div>
+
       </section>
 
       {/* CORE MESSAGE */}
@@ -137,6 +143,27 @@ function Home() {
           ))}
         </div>
       </Section>
+
+      {/* WHY TERRASU LIVING */}
+      <Section className="border-y border-border/60 bg-secondary/25">
+        <div className="mb-12 max-w-2xl">
+          <Eyebrow>{b.whyEyebrow}</Eyebrow>
+          <h2 className="font-serif text-3xl text-foreground sm:text-4xl">{b.whyTitle}</h2>
+          <p className="mt-4 leading-relaxed text-muted-foreground">{b.whyLead}</p>
+        </div>
+        <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+          {b.why.map((reason, index) => (
+            <div key={reason.title} className="border-t border-border pt-5">
+              <span className="text-xs tracking-[0.28em] text-primary">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-2 font-serif text-xl text-foreground">{reason.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{reason.text}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
 
       {/* FOUNDER MESSAGE */}
       <FounderMessage />
@@ -277,6 +304,29 @@ function Home() {
           </ul>
         </div>
       </Section>
+
+      {/* PRICING POSITION */}
+      <Section>
+        <div className="mx-auto max-w-3xl rounded-[2rem] border border-border bg-card px-8 py-14 text-center shadow-soft sm:px-14">
+          <Eyebrow>{b.pricingEyebrow}</Eyebrow>
+          <h2 className="font-serif text-3xl text-foreground sm:text-4xl">{b.pricingTitle}</h2>
+          <span className="divider-leaf mx-auto my-7 block w-24" />
+          <div className="space-y-3">
+            {b.pricingText.map((line) => (
+              <p key={line} className="text-base leading-relaxed text-muted-foreground">
+                {line}
+              </p>
+            ))}
+          </div>
+          <div className="mt-9 flex flex-wrap justify-center gap-3">
+            <CtaLink to="/contact">{b.pricingPrimary}</CtaLink>
+            <CtaLink to="/contact" variant="outline">
+              {b.pricingSecondary}
+            </CtaLink>
+          </div>
+        </div>
+      </Section>
+
 
       {/* GUIDE PREVIEW */}
       <Section className="pb-0">

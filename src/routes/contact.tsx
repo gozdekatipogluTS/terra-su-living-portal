@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Mail, MapPin, Clock } from "lucide-react";
+import { Instagram, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
 import contactImage from "@/assets/contact-hero.jpg";
@@ -188,6 +188,32 @@ function Contact() {
                 {p.founder.signature}
               </p>
             </div>
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-soft">
+              <p className="eyebrow mb-4">WhatsApp</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {t.contact.responseText}
+              </p>
+              <a
+                href="https://wa.me/351000000000"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-5 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-lift"
+              >
+                <MessageCircle className="h-4 w-4" />
+                {t.contact.emailLabel === "Email" ? "Message on WhatsApp" : "WhatsApp'tan yazın"}
+              </a>
+            </div>
+
+            <div className="overflow-hidden rounded-3xl border border-border shadow-soft">
+              <iframe
+                title="TerraSu Living, Porto, Portugal"
+                src="https://www.google.com/maps?q=Porto,%20Portugal&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-64 w-full border-0"
+              />
+            </div>
+
             <div className="rounded-3xl border border-border bg-secondary/50 p-8">
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-card text-primary">
                 <Clock className="h-4 w-4" />
@@ -197,6 +223,7 @@ function Contact() {
                 {t.contact.responseText}
               </p>
             </div>
+
           </aside>
         </div>
       </Section>
