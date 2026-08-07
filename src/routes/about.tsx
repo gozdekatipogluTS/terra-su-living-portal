@@ -11,9 +11,10 @@ import { siteCopy } from "@/i18n/site";
 
 
 
-const title = "About TerraSu Living | Created & Managed by Gözde K.";
+const title = "Meet Gözde | Founder of TerraSu Living, Porto";
 const description =
-  "The story, values and founder behind TerraSu Living — a Portugal-based lifestyle and support brand based in Porto.";
+  "The founder story behind TerraSu Living: why Terra means earth, Su means water, and why every Portugal relocation plan is written from scratch.";
+
 
 export const Route = createFileRoute("/about")({
   head: () => ({
