@@ -133,7 +133,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
     en: {
       metaTitle: "Portugal Visa and Residence Routes | TerraSu Living",
       metaDescription:
-        "Practical orientation for the D2, D7 and D8 visas, investment based residence and family related routes, with document preparation and referrals.",
+        "Practical orientation for the D2, D7, D8 and D9 visas, Golden Visa investment residence and family related routes, with document preparation and referrals.",
       eyebrow: "Visa information",
       title: "Visa and Residence Routes",
       lead: "General information on the officially published routes, and the practical preparation TerraSu Living can carry out for each of them.",
@@ -224,7 +224,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
     tr: {
       metaTitle: "Portekiz Vize ve Oturum Seçenekleri | TerraSu Living",
       metaDescription:
-        "D2, D7 ve D8 vizeleri, yatırım temelli oturum ve aile birleşimi seçenekleri için pratik yönlendirme, evrak hazırlığı ve profesyonel yönlendirme.",
+        "D2, D7, D8 ve D9 vizeleri, Golden Visa yatırım oturumu ve aile birleşimi seçenekleri için pratik yönlendirme, evrak hazırlığı ve profesyonel yönlendirme.",
       eyebrow: "Vize bilgileri",
       title: "Vize ve Oturum Seçenekleri",
       lead: "Resmî olarak yayımlanan seçenekler hakkında genel bilgi ve TerraSu Living'in her biri için yapabileceği pratik hazırlık.",
@@ -1691,7 +1691,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
       metaDescription:
         "Private programme design in Portugal and beyond: cultural, culinary, wellness, family and small corporate group programmes.",
       eyebrow: "Boutique tours",
-      title: "Tailor-Made Boutique Tours",
+      title: "Private Boutique Experiences",
       lead: "Programmes built around a specific group, its pace and its interests, rather than a fixed itinerary.",
       intro: [
         "Portugal is a principal area of expertise. Private programmes may also be created for Turkey, Portugal and other destinations according to group preferences and operational availability.",
@@ -1760,7 +1760,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
       metaDescription:
         "Portekiz'de ve ötesinde özel program tasarımı: kültür, gastronomi, wellness, aile ve küçük kurumsal grup programları.",
       eyebrow: "Butik turlar",
-      title: "Kişiye Özel Butik Turlar",
+      title: "Özel Butik Deneyimler",
       lead: "Sabit bir güzergâh yerine belirli bir grubun temposuna ve ilgi alanlarına göre kurulan programlar.",
       intro: [
         "Portekiz temel uzmanlık alanıdır. Grup tercihlerine ve operasyonel uygunluğa göre Türkiye, Portekiz ve diğer destinasyonlar için de özel programlar oluşturulabilir.",
