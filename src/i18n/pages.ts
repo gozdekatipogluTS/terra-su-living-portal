@@ -1499,7 +1499,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
       metaDescription:
         "Practical research, concept development and local setup coordination for people considering a business or independent activity in Portugal.",
       eyebrow: "Business",
-      title: "Business Setup and Opportunity Research",
+      title: "Business Opportunities in Portugal",
       lead: "Practical research, concept development and local setup coordination for people considering a business or independent activity in Portugal.",
       intro: [
         "Every business concept is personally reviewed with Gözde K. The purpose is not to sell a ready-made idea, but to understand the client's experience, resources and expectations before researching realistic options.",
