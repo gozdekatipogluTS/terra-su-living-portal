@@ -58,6 +58,8 @@ function Home() {
   const { lang, t } = useLanguage();
   const copy = siteCopy[lang];
   const b = brand[lang];
+  const highlights = portfolioEntries.slice(0, 4);
+
 
 
   return (
