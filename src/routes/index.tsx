@@ -87,16 +87,18 @@ function Home() {
           />
           <p className="mt-6 text-xs uppercase tracking-[0.32em] text-foreground/70">{copy.base}</p>
           <h1 className="mt-6 font-serif text-4xl leading-[1.1] text-foreground sm:text-6xl">
-            {copy.heroTitle}
+            {b.heroTitle}
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground/80 sm:text-lg">
-            {copy.heroSub}
+            {b.heroSub}
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <CtaLink to="/contact">{copy.ctaPrimary}</CtaLink>
+            <CtaLink to="/contact">{b.ctaPrimary}</CtaLink>
             <CtaLink to="/complete-setup" variant="outline">
-              {copy.ctaSecondary}
+              {b.ctaSecondary}
             </CtaLink>
+          </div>
+
           </div>
         </div>
       </section>
