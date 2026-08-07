@@ -138,6 +138,27 @@ function Home() {
         </div>
       </Section>
 
+      {/* WHY TERRASU LIVING */}
+      <Section className="border-y border-border/60 bg-secondary/25">
+        <div className="mb-12 max-w-2xl">
+          <Eyebrow>{b.whyEyebrow}</Eyebrow>
+          <h2 className="font-serif text-3xl text-foreground sm:text-4xl">{b.whyTitle}</h2>
+          <p className="mt-4 leading-relaxed text-muted-foreground">{b.whyLead}</p>
+        </div>
+        <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+          {b.why.map((reason, index) => (
+            <div key={reason.title} className="border-t border-border pt-5">
+              <span className="text-xs tracking-[0.28em] text-primary">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-2 font-serif text-xl text-foreground">{reason.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{reason.text}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+
       {/* FOUNDER MESSAGE */}
       <FounderMessage />
 
