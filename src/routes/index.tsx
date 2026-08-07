@@ -98,9 +98,8 @@ function Home() {
               {b.ctaSecondary}
             </CtaLink>
           </div>
-
-          </div>
         </div>
+
       </section>
 
       {/* CORE MESSAGE */}
