@@ -45,30 +45,54 @@ function About() {
       <Section>
         <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr]">
           <div>
-            <h2 className="font-serif text-3xl text-foreground">{t.about.storyTitle}</h2>
-            <div className="mt-6 space-y-5">
-              {t.about.story.map((paragraph) => (
+            <Eyebrow>{b.meetEyebrow}</Eyebrow>
+            <h2 className="font-serif text-3xl text-foreground sm:text-4xl">{b.meetTitle}</h2>
+            <p className="mt-4 text-lg leading-relaxed text-foreground/80">{b.meetLead}</p>
+            <span className="divider-leaf my-8 block w-24" />
+            <div className="space-y-5">
+              {b.meetStory.map((paragraph) => (
                 <p key={paragraph} className="text-base leading-relaxed text-muted-foreground">
                   {paragraph}
                 </p>
               ))}
             </div>
+            <p className="mt-8 font-serif text-lg italic text-primary">{t.common.signature}</p>
           </div>
-          <div className="rounded-3xl border border-border bg-card p-8 text-center shadow-soft">
-            <img
-              src={logo}
-              alt="TerraSu Living"
-              loading="lazy"
-              width={915}
-              height={1024}
-              className="mx-auto h-36 w-auto object-contain"
-            />
-            <span className="divider-leaf my-6 block" />
-            <p className="text-sm text-muted-foreground">{t.about.baseTitle}</p>
-            <p className="mt-1 font-serif text-xl text-foreground">{t.common.base}</p>
+
+          <div className="space-y-6">
+            <div className="rounded-3xl border border-border bg-card p-8 text-center shadow-soft">
+              <img
+                src={logo}
+                alt="TerraSu Living"
+                loading="lazy"
+                width={915}
+                height={1024}
+                className="mx-auto h-36 w-auto object-contain"
+              />
+              <span className="divider-leaf my-6 block" />
+              <p className="text-sm text-muted-foreground">{t.about.baseTitle}</p>
+              <p className="mt-1 font-serif text-xl text-foreground">{t.common.base}</p>
+            </div>
+            <div className="rounded-3xl border border-border bg-secondary/40 p-8">
+              <h3 className="font-serif text-xl leading-snug text-foreground">{b.meaningTitle}</h3>
+              <dl className="mt-6 space-y-5">
+                {b.meaning.map((entry) => (
+                  <div key={entry.term} className="border-l-2 border-primary/50 pl-4">
+                    <dt className="font-serif text-2xl text-foreground">{entry.term}</dt>
+                    <dd className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                      {entry.text}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="mt-6 border-t border-border pt-5 text-sm leading-relaxed text-foreground/80">
+                {b.meaningNote}
+              </p>
+            </div>
           </div>
         </div>
       </Section>
+
 
       <Section className="bg-secondary/30">
         <div className="grid items-center gap-12 lg:grid-cols-2">
