@@ -128,6 +128,7 @@ export type Content = {
     privacy: string;
     cookies: string;
     terms: string;
+    disclaimer: string;
     language: string;
     rights: string;
   };
@@ -135,6 +136,7 @@ export type Content = {
     privacy: { title: string; body: string[] };
     cookies: { title: string; body: string[] };
     terms: { title: string; body: string[] };
+    disclaimer: { title: string; body: string[] };
   };
 };
 
@@ -412,6 +414,7 @@ const en: Content = {
     privacy: "Privacy Policy",
     cookies: "Cookie Policy",
     terms: "Terms of Service",
+    disclaimer: "Disclaimer",
     language: "Language",
     rights: "All rights reserved.",
   },
@@ -438,6 +441,15 @@ const en: Content = {
         "TerraSu Living provides consulting, relocation support, property search assistance, cleaning services and experience planning and coordination.",
         "TerraSu Living does not provide legal representation or legal advice, is not a real estate agency, and is not a travel agency or tour operator. Regulated services are delivered by independent licensed providers.",
         "Service scope, timing and pricing are agreed individually before any work begins. Outcomes that depend on public authorities or third parties cannot be guaranteed.",
+      ],
+    },
+    disclaimer: {
+      title: "Disclaimer",
+      body: [
+        "The information published on this website is general in nature and is provided for orientation only. It does not constitute legal, tax, immigration, financial or real-estate advice.",
+        "Requirements, procedures and processing times set by Portuguese authorities, including AIMA, Finanças, Segurança Social and the consular network, can change without notice. Current requirements are confirmed from the official source when your plan is prepared.",
+        "TerraSu Living provides coordination and personal support. Regulated services, such as legal representation, real-estate brokerage, accountancy and licensed transport, are carried out by independent licensed professionals.",
+        "No outcome that depends on a public authority or a third party can be guaranteed.",
       ],
     },
   },
@@ -717,6 +729,7 @@ const tr: Content = {
     privacy: "Gizlilik Politikası",
     cookies: "Çerez Politikası",
     terms: "Kullanım Koşulları",
+    disclaimer: "Sorumluluk Reddi",
     language: "Dil",
     rights: "Tüm hakları saklıdır.",
   },
@@ -743,6 +756,15 @@ const tr: Content = {
         "TerraSu Living; danışmanlık, yerleşim desteği, ev arama desteği, temizlik hizmetleri ile deneyim planlama ve koordinasyonu sunar.",
         "TerraSu Living hukuki temsil veya hukuki danışmanlık sağlamaz, bir emlak acentesi değildir, seyahat acentesi veya tur operatörü değildir. Düzenlemeye tabi hizmetler bağımsız lisanslı sağlayıcılar tarafından verilir.",
         "Hizmet kapsamı, zamanlama ve fiyatlandırma çalışma başlamadan önce bireysel olarak kararlaştırılır. Kamu kurumlarına veya üçüncü taraflara bağlı sonuçlar garanti edilemez.",
+      ],
+    },
+    disclaimer: {
+      title: "Sorumluluk Reddi",
+      body: [
+        "Bu web sitesinde yayımlanan bilgiler genel niteliktedir ve yalnızca yönlendirme amacıyla sunulur. Hukuki, vergisel, göçmenlik, finansal veya emlak danışmanlığı niteliği taşımaz.",
+        "AIMA, Finanças, Segurança Social ve konsolosluk ağı dâhil olmak üzere Portekiz kurumlarının belirlediği koşullar, süreçler ve işlem süreleri önceden haber verilmeksizin değişebilir. Güncel koşullar, planınız hazırlanırken resmî kaynaktan teyit edilir.",
+        "TerraSu Living koordinasyon ve kişisel destek sunar. Hukuki temsil, emlak aracılığı, muhasebe ve lisanslı taşımacılık gibi düzenlemeye tabi hizmetler bağımsız lisanslı profesyoneller tarafından yürütülür.",
+        "Kamu kurumlarına veya üçüncü taraflara bağlı hiçbir sonuç garanti edilemez.",
       ],
     },
   },

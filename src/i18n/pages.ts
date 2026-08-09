@@ -8,8 +8,8 @@ const SNS = { label: "SNS", url: "https://www.sns.gov.pt/" };
 const CMD = { label: "Chave Móvel Digital", url: "https://www.autenticacao.gov.pt/cmd-pedido-chave" };
 const VISTOS = { label: "Vistos, Portal Diplomático", url: "https://vistos.mne.gov.pt/" };
 
-const CTA_EN = "Request Personalised Support";
-const CTA_TR = "Kişisel Destek Talep Edin";
+const CTA_EN = "Request My Personalised Plan";
+const CTA_TR = "Kişisel Planımı Talep Edin";
 
 export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
   /* ------------------------------------------------------------- */
@@ -143,6 +143,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
       ],
       sections: [
         {
+          id: "d2",
           title: "D2, entrepreneurs and independent professionals",
           items: [
             "May suit business owners, freelancers and independent service providers",
@@ -153,6 +154,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           ],
         },
         {
+          id: "d7",
           title: "D7, retirees and qualifying personal income",
           items: [
             "May suit retirees and people living from pensions, rental income or other recognised passive income",
@@ -163,6 +165,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           ],
         },
         {
+          id: "d8",
           title: "D8, remote workers and digital nomads",
           items: [
             "May suit employees of foreign companies and independent professionals with foreign clients",
@@ -173,6 +176,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           ],
         },
         {
+          id: "d9",
           title: "D9, residence for investment activity",
           items: [
             "The visa category used for qualifying investment activity, commonly known together with the Golden Visa framework",
@@ -183,6 +187,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           ],
         },
         {
+          id: "golden",
           title: "Golden Visa, Autorização de Residência para Atividade de Investimento, ARI",
           items: [
             "May suit applicants pursuing a qualifying investment activity as defined by the current legal framework",
@@ -234,6 +239,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
       ],
       sections: [
         {
+          id: "d2",
           title: "D2, girişimciler ve bağımsız profesyoneller",
           items: [
             "İşletme sahipleri, serbest çalışanlar ve bağımsız hizmet sağlayıcılar için uygun olabilir",
@@ -244,6 +250,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           ],
         },
         {
+          id: "d7",
           title: "D7, emekliler ve kişisel gelir sahipleri",
           items: [
             "Emekliler ve emeklilik, kira geliri veya tanınan diğer pasif gelirle yaşayanlar için uygun olabilir",
@@ -254,6 +261,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           ],
         },
         {
+          id: "d8",
           title: "D8, uzaktan çalışanlar ve dijital göçebeler",
           items: [
             "Yurt dışı şirket çalışanları ve yabancı müşterileri olan bağımsız profesyoneller için uygun olabilir",
@@ -264,6 +272,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           ],
         },
         {
+          id: "d9",
           title: "D9, yatırım faaliyeti için oturum",
           items: [
             "Nitelikli yatırım faaliyeti için kullanılan vize kategorisidir; genellikle Golden Visa çerçevesiyle birlikte anılır",
@@ -274,6 +283,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           ],
         },
         {
+          id: "golden",
           title: "Golden Visa, Autorização de Residência para Atividade de Investimento, ARI",
           items: [
             "Yürürlükteki mevzuata göre nitelikli yatırım faaliyeti yürütecek başvuranlar için uygun olabilir",
@@ -440,6 +450,21 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           ],
         },
         {
+          id: "aima",
+          title: "AIMA and document preparation support",
+          text: "Residence files are prepared before they are submitted, so appointments are not lost to a missing certificate.",
+          items: [
+            "Review of the document list that applies to your route",
+            "Collection plan for civil, criminal record and financial documents",
+            "Apostille, legalisation and certified translation coordination",
+            "AIMA appointment scheduling and rescheduling support",
+            "Preparation of the file in the order the appointment requires",
+            "Accompaniment to appointments where useful and available",
+            "Follow-up on notifications, requests for further documents and next steps",
+          ],
+          note: "AIMA decisions, appointment availability and eligibility remain with the authority. Legal representation is provided by independent licensed lawyers.",
+        },
+        {
           id: "activity",
           title: "Activity registration",
           text: "General preparation for people who will work independently in Portugal.",
@@ -493,6 +518,21 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
             "Chave Móvel Digital, CMD",
             "Abertura de atividade nas Finanças",
           ],
+        },
+        {
+          id: "aima",
+          title: "AIMA ve evrak hazırlığı desteği",
+          text: "Oturum dosyaları sunulmadan önce hazırlanır; böylece eksik bir belge yüzünden randevu kaybedilmez.",
+          items: [
+            "Seçtiğiniz yola uygun evrak listesinin gözden geçirilmesi",
+            "Nüfus, adli sicil ve mali belgeler için toplama planı",
+            "Apostil, tasdik ve yeminli tercüme koordinasyonu",
+            "AIMA randevusu alma ve değiştirme desteği",
+            "Dosyanın randevunun gerektirdiği düzende hazırlanması",
+            "Uygun ve mümkün olduğunda randevulara eşlik",
+            "Bildirimlerin, ek belge taleplerinin ve sonraki adımların takibi",
+          ],
+          note: "AIMA kararları, randevu uygunluğu ve yeterlilik değerlendirmesi kuruma aittir. Hukuki temsil bağımsız lisanslı avukatlar tarafından sağlanır.",
         },
         {
           id: "activity",
@@ -960,7 +1000,10 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
             "Deposit and payment condition clarification",
             "Key handover and property condition photographs",
             "Cleaning and preparation before the first night",
-            "Utility and internet setup guidance",
+            "Electricity, water, gas and internet setup guidance",
+            "Furniture, appliance and household equipment recommendations",
+            "Move-in scheduling and delivery coordination",
+            "Household essentials for the first week",
           ],
         },
       ],
@@ -1570,6 +1613,32 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           note: "These are general preparation topics. Registration choices are confirmed with an independent accountant.",
         },
         {
+          id: "self",
+          title: "Self-employment guidance",
+          text: "For people who will work independently in Portugal, whether as a freelancer, consultant or small service provider.",
+          items: [
+            "What trabalhador independente status involves in everyday practice",
+            "Activity opening at Finanças, general preparation and sequence",
+            "Invoicing through recibos verdes and the records to keep",
+            "Social security registration questions to raise with an accountant",
+            "Insurance, banking and payment-collection practicalities",
+          ],
+          note: "Tax rates, exemptions and contribution schedules are confirmed with an independent accountant.",
+        },
+        {
+          id: "coordination",
+          title: "Practical setup coordination",
+          text: "Once the direction is agreed, the practical steps are organised in the right order and followed until they are done.",
+          items: [
+            "Sequencing of registrations, appointments and deadlines",
+            "Premises search, viewings and landlord communication",
+            "Utilities, internet and basic equipment for the premises",
+            "Supplier, contractor and service-provider introductions",
+            "Document preparation and translation coordination",
+            "Progress follow-up and a single point of contact throughout",
+          ],
+        },
+        {
           id: "referrals",
           title: "Professional referrals and launch coordination",
           items: [
@@ -1664,6 +1733,32 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           note: "Bunlar genel hazırlık konularıdır. Kayıt tercihleri bağımsız bir muhasebeciyle teyit edilir.",
         },
         {
+          id: "self",
+          title: "Serbest çalışma rehberliği",
+          text: "Portekiz'de serbest çalışan, danışman veya küçük hizmet sağlayıcı olarak bağımsız çalışacak kişiler için.",
+          items: [
+            "Trabalhador independente statüsünün günlük pratikte anlamı",
+            "Finanças'ta faaliyet açılışı, genel hazırlık ve sıralama",
+            "Recibos verdes ile faturalandırma ve tutulması gereken kayıtlar",
+            "Sosyal güvenlik kaydı konusunda muhasebeciye sorulacak sorular",
+            "Sigorta, bankacılık ve tahsilat pratikleri",
+          ],
+          note: "Vergi oranları, istisnalar ve prim takvimi bağımsız bir muhasebeciyle teyit edilir.",
+        },
+        {
+          id: "coordination",
+          title: "Pratik kurulum koordinasyonu",
+          text: "Yön belirlendikten sonra pratik adımlar doğru sırayla düzenlenir ve tamamlanana kadar takip edilir.",
+          items: [
+            "Kayıtların, randevuların ve sürelerin sıralanması",
+            "İş yeri araştırması, görüntülemeler ve mal sahibiyle iletişim",
+            "İş yeri için abonelikler, internet ve temel ekipman",
+            "Tedarikçi, müteahhit ve hizmet sağlayıcı yönlendirmeleri",
+            "Evrak hazırlığı ve tercüme koordinasyonu",
+            "Süreç takibi ve baştan sona tek muhatap",
+          ],
+        },
+        {
           id: "referrals",
           title: "Profesyonel yönlendirme ve başlangıç koordinasyonu",
           items: [
@@ -1687,10 +1782,10 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
   /* ------------------------------------------------------------- */
   tours: {
     en: {
-      metaTitle: "Tailor-Made Boutique Tours | TerraSu Living",
+      metaTitle: "Private Boutique Experiences | TerraSu Living",
       metaDescription:
         "Private programme design in Portugal and beyond: cultural, culinary, wellness, family and small corporate group programmes.",
-      eyebrow: "Boutique tours",
+      eyebrow: "Private experiences",
       title: "Private Boutique Experiences",
       lead: "Programmes built around a specific group, its pace and its interests, rather than a fixed itinerary.",
       intro: [
@@ -1756,10 +1851,10 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
       cta: CTA_EN,
     },
     tr: {
-      metaTitle: "Kişiye Özel Butik Turlar | TerraSu Living",
+      metaTitle: "Özel Butik Deneyimler | TerraSu Living",
       metaDescription:
         "Portekiz'de ve ötesinde özel program tasarımı: kültür, gastronomi, wellness, aile ve küçük kurumsal grup programları.",
-      eyebrow: "Butik turlar",
+      eyebrow: "Özel deneyimler",
       title: "Özel Butik Deneyimler",
       lead: "Sabit bir güzergâh yerine belirli bir grubun temposuna ve ilgi alanlarına göre kurulan programlar.",
       intro: [

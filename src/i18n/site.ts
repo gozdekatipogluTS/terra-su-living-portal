@@ -74,7 +74,11 @@ export const navigation: NavGroup[] = [
     to: "/relocation",
     label: L("Relocation", "Yerleşim"),
     children: [
-      { to: "/relocation/visas", label: L("Visa Information", "Vize Bilgileri") },
+      { to: "/relocation/visas", hash: "d2", label: L("D2 Visa", "D2 Vizesi") },
+      { to: "/relocation/visas", hash: "d7", label: L("D7 Visa", "D7 Vizesi") },
+      { to: "/relocation/visas", hash: "d9", label: L("D9 Visa", "D9 Vizesi") },
+      { to: "/relocation/visas", hash: "golden", label: L("Golden Visa", "Golden Vize") },
+      { to: "/relocation/visas", label: L("All Visa Routes", "Tüm Vize Yolları") },
       { to: "/relocation", hash: "planning", label: L("Relocation Planning", "Yerleşim Planlaması") },
       { to: "/complete-setup", label: L("End-to-End Support", "Baştan Sona Destek") },
       { to: "/relocation", hash: "arrival", label: L("Arrival and Settlement", "Varış ve Yerleşme") },
@@ -86,56 +90,46 @@ export const navigation: NavGroup[] = [
     children: [
       { to: "/administrative/nif", label: L("NIF", "NIF") },
       { to: "/administrative/niss", label: L("NISS", "NISS") },
-      { to: "/administrative/health", label: L("Número Nacional de Utente", "Número Nacional de Utente") },
+      { to: "/administrative/health", label: L("Utente, Health Number", "Utente, Sağlık Numarası") },
       { to: "/administrative/bank", label: L("Portuguese Bank Account", "Portekiz Banka Hesabı") },
+      { to: "/administrative", hash: "aima", label: L("AIMA and Document Preparation", "AIMA ve Evrak Hazırlığı") },
       { to: "/administrative/cmd", label: L("Chave Móvel Digital", "Chave Móvel Digital") },
       { to: "/administrative", hash: "activity", label: L("Activity Registration", "Faaliyet Kaydı") },
-      { to: "/administrative", hash: "other", label: L("Other Administrative Support", "Diğer İdari Destek") },
     ],
   },
   {
     to: "/property",
     label: L("Property", "Emlak"),
     children: [
-      { to: "/property/rental", label: L("Rental Support", "Kiralama Desteği") },
-      { to: "/property/purchase", label: L("Property Purchase Support", "Satın Alma Desteği") },
+      { to: "/property/rental", label: L("Property Rental Assistance", "Kiralama Desteği") },
+      { to: "/property/purchase", label: L("Property Purchase Assistance", "Satın Alma Desteği") },
+      { to: "/property", hash: "movein", label: L("Move-In and Home Setup", "Taşınma ve Ev Kurulumu") },
+      { to: "/property/cleaning", label: L("Professional Cleaning", "Profesyonel Temizlik") },
       { to: "/property", hash: "area", label: L("Area Research", "Bölge Araştırması") },
       { to: "/property", hash: "viewings", label: L("Viewing Coordination", "Görüntüleme Koordinasyonu") },
-      { to: "/property", hash: "movein", label: L("Move-In Support", "Taşınma Desteği") },
-    ],
-  },
-  {
-    to: "/home-setup",
-    label: L("Home Setup", "Ev Kurulumu"),
-    children: [
-      { to: "/home-setup/cleaning", label: L("Professional Cleaning", "Profesyonel Temizlik") },
-      { to: "/home-setup", hash: "preparation", label: L("Property Preparation", "Ev Hazırlığı") },
-      { to: "/home-setup", hash: "handover", label: L("Key Handover", "Anahtar Teslimi") },
-      { to: "/home-setup", hash: "utilities", label: L("Utility Coordination", "Abonelik Koordinasyonu") },
-      { to: "/home-setup", hash: "guest", label: L("Guest Arrival Preparation", "Misafir Karşılama Hazırlığı") },
     ],
   },
   {
     to: "/business",
     label: L("Business Setup", "İş Kurulumu"),
     children: [
-      { to: "/business", hash: "idea", label: L("Business Idea Development", "İş Fikri Geliştirme") },
-      { to: "/business", hash: "setup", label: L("Business Setup Guidance", "İş Kurulum Rehberliği") },
-      { to: "/business", hash: "location", label: L("Location Research", "Lokasyon Araştırması") },
-      { to: "/business", hash: "market", label: L("Market and Opportunity Research", "Pazar ve Fırsat Araştırması") },
-      { to: "/business", hash: "activity", label: L("Activity Registration Guidance", "Faaliyet Kaydı Rehberliği") },
+      { to: "/business", hash: "self", label: L("Self-Employment Guidance", "Serbest Çalışma Rehberliği") },
+      { to: "/business", hash: "setup", label: L("Business Formation Support", "Şirket Kurulum Desteği") },
+      { to: "/business", hash: "market", label: L("Business Opportunity Research", "İş Fırsatı Araştırması") },
+      { to: "/business", hash: "location", label: L("Market and Location Research", "Pazar ve Lokasyon Araştırması") },
+      { to: "/business", hash: "coordination", label: L("Practical Setup Coordination", "Pratik Kurulum Koordinasyonu") },
       { to: "/business", hash: "referrals", label: L("Professional Referrals", "Profesyonel Yönlendirme") },
     ],
   },
   {
     to: "/tours",
-    label: L("Boutique Tours", "Butik Turlar"),
+    label: L("Private Boutique Experiences", "Özel Butik Deneyimler"),
     children: [
       { to: "/tours", hash: "portugal", label: L("Private Portugal Programmes", "Özel Portekiz Programları") },
-      { to: "/tours", hash: "turkey", label: L("Portugal and Turkey Programmes", "Portekiz ve Türkiye Programları") },
+      { to: "/tours", hash: "turkey", label: L("Portugal and Türkiye Journeys", "Portekiz ve Türkiye Yolculukları") },
       { to: "/tours", hash: "international", label: L("International Custom Programmes", "Uluslararası Özel Programlar") },
       { to: "/transfers", label: L("Private Transfers", "Özel Transferler") },
-      { to: "/tours", hash: "groups", label: L("Group Planning", "Grup Planlaması") },
+      { to: "/tours", hash: "groups", label: L("Small Private Groups", "Küçük Özel Gruplar") },
     ],
   },
   { to: "/portfolio", label: L("Portfolio", "Portföy") },
@@ -228,9 +222,9 @@ export const siteCopy: Record<Lang, SiteCopy> = {
         to: "/property",
       },
       {
-        title: "Home Setup, Cleaning and Key Handover",
+        title: "Move-In, Home Setup and Key Handover",
         text: "Cleaning before arrival, property preparation, key collection and a home that is ready on day one.",
-        to: "/home-setup",
+        to: "/property",
       },
       {
         title: "Airport and Private Transfer Coordination",
@@ -243,7 +237,7 @@ export const siteCopy: Record<Lang, SiteCopy> = {
         to: "/business",
       },
       {
-        title: "Tailor-Made Boutique Tours",
+        title: "Private Boutique Experiences",
         text: "Private programmes in Portugal, and multi destination planning for small groups on request.",
         to: "/tours",
       },
@@ -340,9 +334,9 @@ export const siteCopy: Record<Lang, SiteCopy> = {
         to: "/property",
       },
       {
-        title: "Ev Kurulumu, Temizlik ve Anahtar Teslimi",
+        title: "Taşınma, Ev Kurulumu ve Anahtar Teslimi",
         text: "Gelişten önce temizlik, ev hazırlığı, anahtar teslim alma ve ilk günden hazır bir ev.",
-        to: "/home-setup",
+        to: "/property",
       },
       {
         title: "Havalimanı ve Özel Transfer Koordinasyonu",
@@ -355,7 +349,7 @@ export const siteCopy: Record<Lang, SiteCopy> = {
         to: "/business",
       },
       {
-        title: "Kişiye Özel Butik Turlar",
+        title: "Özel Butik Deneyimler",
         text: "Portekiz'de özel programlar ve talebe göre küçük gruplar için çok destinasyonlu planlama.",
         to: "/tours",
       },
@@ -486,13 +480,13 @@ export const portfolioEntries: PortfolioEntry[] = [
   {
     key: "homesetup",
     category: L("Home", "Ev"),
-    title: L("Home Setup and Key Handover", "Ev Kurulumu ve Anahtar Teslimi"),
+    title: L("Move-In, Home Setup and Key Handover", "Taşınma, Ev Kurulumu ve Anahtar Teslimi"),
     text: L(
       "Key collection, condition photographs, first day essentials and a property that is ready on arrival.",
       "Anahtar teslim alma, durum fotoğrafları, ilk gün ihtiyaçları ve varışta hazır bir ev.",
     ),
     status: L("Service Area", "Hizmet Alanı"),
-    to: "/home-setup",
+    to: "/property",
   },
   {
     key: "cleaning",
@@ -503,7 +497,7 @@ export const portfolioEntries: PortfolioEntry[] = [
       "Konut, ofis, kısa dönem ve tadilat sonrası temizlik; varış veya teslim tarihine göre planlanır.",
     ),
     status: L("Service Area", "Hizmet Alanı"),
-    to: "/home-setup/cleaning",
+    to: "/property/cleaning",
   },
   {
     key: "transfer",
@@ -541,7 +535,7 @@ export const portfolioEntries: PortfolioEntry[] = [
   {
     key: "tours",
     category: L("Tours", "Turlar"),
-    title: L("Boutique Tours", "Butik Turlar"),
+    title: L("Private Boutique Experiences", "Özel Butik Deneyimler"),
     text: L(
       "Cultural, culinary and landscape programmes designed for a specific group rather than a fixed itinerary.",
       "Sabit bir güzergâh yerine belirli bir gruba göre tasarlanan kültür, gastronomi ve doğa programları.",
@@ -606,7 +600,7 @@ export const newsItems: NewsItem[] = [
     ),
   },
   {
-    category: L("Upcoming Boutique Tours", "Yaklaşan Butik Turlar"),
+    category: L("Upcoming Private Experiences", "Yaklaşan Özel Deneyimler"),
     title: L("Small group programmes in preparation", "Küçük grup programları hazırlanıyor"),
     text: L(
       "Private programmes for small groups in Porto, the Douro Valley and central Portugal are planned by request. Dates are set with each group.",

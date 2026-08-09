@@ -41,7 +41,7 @@ export function Footer() {
           <FooterLink to="/complete-setup">
             {lang === "en" ? "End-to-End Support" : "Baştan Sona Destek"}
           </FooterLink>
-          {navigation.slice(8).map((group) => (
+          {navigation.slice(7).map((group) => (
             <FooterLink key={group.to} to={group.to}>
               {group.label[lang]}
             </FooterLink>
@@ -49,7 +49,7 @@ export function Footer() {
         </FooterColumn>
 
         <FooterColumn title={t.footer.servicesTitle}>
-          {navigation.slice(2, 8).map((group) => (
+          {navigation.slice(2, 7).map((group) => (
             <FooterLink key={group.to} to={group.to}>
               {group.label[lang]}
             </FooterLink>
@@ -61,6 +61,7 @@ export function Footer() {
           <FooterLink to="/privacy">{t.footer.privacy}</FooterLink>
           <FooterLink to="/cookies">{t.footer.cookies}</FooterLink>
           <FooterLink to="/terms">{t.footer.terms}</FooterLink>
+          <FooterLink to="/disclaimer">{t.footer.disclaimer}</FooterLink>
           <FooterLink to="/contact">{t.nav.contact}</FooterLink>
         </FooterColumn>
       </div>

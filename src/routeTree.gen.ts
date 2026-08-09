@@ -15,6 +15,7 @@ import { Route as BusinessRouteImport } from './routes/business'
 import { Route as CompleteSetupRouteImport } from './routes/complete-setup'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as EverydayLifeRouteImport } from './routes/everyday-life'
 import { Route as ExpatGuideRouteImport } from './routes/expat-guide'
 import { Route as NewsRouteImport } from './routes/news'
@@ -29,9 +30,8 @@ import { Route as AdministrativeCmdRouteImport } from './routes/administrative.c
 import { Route as AdministrativeHealthRouteImport } from './routes/administrative.health'
 import { Route as AdministrativeNifRouteImport } from './routes/administrative.nif'
 import { Route as AdministrativeNissRouteImport } from './routes/administrative.niss'
-import { Route as HomeSetupIndexRouteImport } from './routes/home-setup.index'
-import { Route as HomeSetupCleaningRouteImport } from './routes/home-setup.cleaning'
 import { Route as PropertyIndexRouteImport } from './routes/property.index'
+import { Route as PropertyCleaningRouteImport } from './routes/property.cleaning'
 import { Route as PropertyPurchaseRouteImport } from './routes/property.purchase'
 import { Route as PropertyRentalRouteImport } from './routes/property.rental'
 import { Route as RelocationIndexRouteImport } from './routes/relocation.index'
@@ -65,6 +65,11 @@ const ContactRoute = ContactRouteImport.update({
 const CookiesRoute = CookiesRouteImport.update({
   id: '/cookies',
   path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EverydayLifeRoute = EverydayLifeRouteImport.update({
@@ -137,19 +142,14 @@ const AdministrativeNissRoute = AdministrativeNissRouteImport.update({
   path: '/administrative/niss',
   getParentRoute: () => rootRouteImport,
 } as any)
-const HomeSetupIndexRoute = HomeSetupIndexRouteImport.update({
-  id: '/home-setup/',
-  path: '/home-setup/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HomeSetupCleaningRoute = HomeSetupCleaningRouteImport.update({
-  id: '/home-setup/cleaning',
-  path: '/home-setup/cleaning',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PropertyIndexRoute = PropertyIndexRouteImport.update({
   id: '/property/',
   path: '/property/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PropertyCleaningRoute = PropertyCleaningRouteImport.update({
+  id: '/property/cleaning',
+  path: '/property/cleaning',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PropertyPurchaseRoute = PropertyPurchaseRouteImport.update({
@@ -180,6 +180,7 @@ export interface FileRoutesByFullPath {
   '/complete-setup': typeof CompleteSetupRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/everyday-life': typeof EverydayLifeRoute
   '/expat-guide': typeof ExpatGuideRoute
   '/news': typeof NewsRoute
@@ -193,12 +194,11 @@ export interface FileRoutesByFullPath {
   '/administrative/health': typeof AdministrativeHealthRoute
   '/administrative/nif': typeof AdministrativeNifRoute
   '/administrative/niss': typeof AdministrativeNissRoute
-  '/home-setup/cleaning': typeof HomeSetupCleaningRoute
+  '/property/cleaning': typeof PropertyCleaningRoute
   '/property/purchase': typeof PropertyPurchaseRoute
   '/property/rental': typeof PropertyRentalRoute
   '/relocation/visas': typeof RelocationVisasRoute
   '/administrative/': typeof AdministrativeIndexRoute
-  '/home-setup/': typeof HomeSetupIndexRoute
   '/property/': typeof PropertyIndexRoute
   '/relocation/': typeof RelocationIndexRoute
 }
@@ -209,6 +209,7 @@ export interface FileRoutesByTo {
   '/complete-setup': typeof CompleteSetupRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/everyday-life': typeof EverydayLifeRoute
   '/expat-guide': typeof ExpatGuideRoute
   '/news': typeof NewsRoute
@@ -222,12 +223,11 @@ export interface FileRoutesByTo {
   '/administrative/health': typeof AdministrativeHealthRoute
   '/administrative/nif': typeof AdministrativeNifRoute
   '/administrative/niss': typeof AdministrativeNissRoute
-  '/home-setup/cleaning': typeof HomeSetupCleaningRoute
+  '/property/cleaning': typeof PropertyCleaningRoute
   '/property/purchase': typeof PropertyPurchaseRoute
   '/property/rental': typeof PropertyRentalRoute
   '/relocation/visas': typeof RelocationVisasRoute
   '/administrative': typeof AdministrativeIndexRoute
-  '/home-setup': typeof HomeSetupIndexRoute
   '/property': typeof PropertyIndexRoute
   '/relocation': typeof RelocationIndexRoute
 }
@@ -239,6 +239,7 @@ export interface FileRoutesById {
   '/complete-setup': typeof CompleteSetupRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/everyday-life': typeof EverydayLifeRoute
   '/expat-guide': typeof ExpatGuideRoute
   '/news': typeof NewsRoute
@@ -252,12 +253,11 @@ export interface FileRoutesById {
   '/administrative/health': typeof AdministrativeHealthRoute
   '/administrative/nif': typeof AdministrativeNifRoute
   '/administrative/niss': typeof AdministrativeNissRoute
-  '/home-setup/cleaning': typeof HomeSetupCleaningRoute
+  '/property/cleaning': typeof PropertyCleaningRoute
   '/property/purchase': typeof PropertyPurchaseRoute
   '/property/rental': typeof PropertyRentalRoute
   '/relocation/visas': typeof RelocationVisasRoute
   '/administrative/': typeof AdministrativeIndexRoute
-  '/home-setup/': typeof HomeSetupIndexRoute
   '/property/': typeof PropertyIndexRoute
   '/relocation/': typeof RelocationIndexRoute
 }
@@ -270,6 +270,7 @@ export interface FileRouteTypes {
     | '/complete-setup'
     | '/contact'
     | '/cookies'
+    | '/disclaimer'
     | '/everyday-life'
     | '/expat-guide'
     | '/news'
@@ -283,12 +284,11 @@ export interface FileRouteTypes {
     | '/administrative/health'
     | '/administrative/nif'
     | '/administrative/niss'
-    | '/home-setup/cleaning'
+    | '/property/cleaning'
     | '/property/purchase'
     | '/property/rental'
     | '/relocation/visas'
     | '/administrative/'
-    | '/home-setup/'
     | '/property/'
     | '/relocation/'
   fileRoutesByTo: FileRoutesByTo
@@ -299,6 +299,7 @@ export interface FileRouteTypes {
     | '/complete-setup'
     | '/contact'
     | '/cookies'
+    | '/disclaimer'
     | '/everyday-life'
     | '/expat-guide'
     | '/news'
@@ -312,12 +313,11 @@ export interface FileRouteTypes {
     | '/administrative/health'
     | '/administrative/nif'
     | '/administrative/niss'
-    | '/home-setup/cleaning'
+    | '/property/cleaning'
     | '/property/purchase'
     | '/property/rental'
     | '/relocation/visas'
     | '/administrative'
-    | '/home-setup'
     | '/property'
     | '/relocation'
   id:
@@ -328,6 +328,7 @@ export interface FileRouteTypes {
     | '/complete-setup'
     | '/contact'
     | '/cookies'
+    | '/disclaimer'
     | '/everyday-life'
     | '/expat-guide'
     | '/news'
@@ -341,12 +342,11 @@ export interface FileRouteTypes {
     | '/administrative/health'
     | '/administrative/nif'
     | '/administrative/niss'
-    | '/home-setup/cleaning'
+    | '/property/cleaning'
     | '/property/purchase'
     | '/property/rental'
     | '/relocation/visas'
     | '/administrative/'
-    | '/home-setup/'
     | '/property/'
     | '/relocation/'
   fileRoutesById: FileRoutesById
@@ -358,6 +358,7 @@ export interface RootRouteChildren {
   CompleteSetupRoute: typeof CompleteSetupRoute
   ContactRoute: typeof ContactRoute
   CookiesRoute: typeof CookiesRoute
+  DisclaimerRoute: typeof DisclaimerRoute
   EverydayLifeRoute: typeof EverydayLifeRoute
   ExpatGuideRoute: typeof ExpatGuideRoute
   NewsRoute: typeof NewsRoute
@@ -371,12 +372,11 @@ export interface RootRouteChildren {
   AdministrativeHealthRoute: typeof AdministrativeHealthRoute
   AdministrativeNifRoute: typeof AdministrativeNifRoute
   AdministrativeNissRoute: typeof AdministrativeNissRoute
-  HomeSetupCleaningRoute: typeof HomeSetupCleaningRoute
+  PropertyCleaningRoute: typeof PropertyCleaningRoute
   PropertyPurchaseRoute: typeof PropertyPurchaseRoute
   PropertyRentalRoute: typeof PropertyRentalRoute
   RelocationVisasRoute: typeof RelocationVisasRoute
   AdministrativeIndexRoute: typeof AdministrativeIndexRoute
-  HomeSetupIndexRoute: typeof HomeSetupIndexRoute
   PropertyIndexRoute: typeof PropertyIndexRoute
   RelocationIndexRoute: typeof RelocationIndexRoute
 }
@@ -423,6 +423,13 @@ declare module '@tanstack/react-router' {
       path: '/cookies'
       fullPath: '/cookies'
       preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/everyday-life': {
@@ -523,25 +530,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdministrativeNissRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/home-setup/': {
-      id: '/home-setup/'
-      path: '/home-setup'
-      fullPath: '/home-setup/'
-      preLoaderRoute: typeof HomeSetupIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/home-setup/cleaning': {
-      id: '/home-setup/cleaning'
-      path: '/home-setup/cleaning'
-      fullPath: '/home-setup/cleaning'
-      preLoaderRoute: typeof HomeSetupCleaningRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/property/': {
       id: '/property/'
       path: '/property'
       fullPath: '/property/'
       preLoaderRoute: typeof PropertyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/property/cleaning': {
+      id: '/property/cleaning'
+      path: '/property/cleaning'
+      fullPath: '/property/cleaning'
+      preLoaderRoute: typeof PropertyCleaningRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/property/purchase': {
@@ -582,6 +582,7 @@ const rootRouteChildren: RootRouteChildren = {
   CompleteSetupRoute: CompleteSetupRoute,
   ContactRoute: ContactRoute,
   CookiesRoute: CookiesRoute,
+  DisclaimerRoute: DisclaimerRoute,
   EverydayLifeRoute: EverydayLifeRoute,
   ExpatGuideRoute: ExpatGuideRoute,
   NewsRoute: NewsRoute,
@@ -595,12 +596,11 @@ const rootRouteChildren: RootRouteChildren = {
   AdministrativeHealthRoute: AdministrativeHealthRoute,
   AdministrativeNifRoute: AdministrativeNifRoute,
   AdministrativeNissRoute: AdministrativeNissRoute,
-  HomeSetupCleaningRoute: HomeSetupCleaningRoute,
+  PropertyCleaningRoute: PropertyCleaningRoute,
   PropertyPurchaseRoute: PropertyPurchaseRoute,
   PropertyRentalRoute: PropertyRentalRoute,
   RelocationVisasRoute: RelocationVisasRoute,
   AdministrativeIndexRoute: AdministrativeIndexRoute,
-  HomeSetupIndexRoute: HomeSetupIndexRoute,
   PropertyIndexRoute: PropertyIndexRoute,
   RelocationIndexRoute: RelocationIndexRoute,
 }
