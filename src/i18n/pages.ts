@@ -1782,10 +1782,10 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
   /* ------------------------------------------------------------- */
   tours: {
     en: {
-      metaTitle: "Tailor-Made Boutique Tours | TerraSu Living",
+      metaTitle: "Private Boutique Experiences | TerraSu Living",
       metaDescription:
         "Private programme design in Portugal and beyond: cultural, culinary, wellness, family and small corporate group programmes.",
-      eyebrow: "Boutique tours",
+      eyebrow: "Private experiences",
       title: "Private Boutique Experiences",
       lead: "Programmes built around a specific group, its pace and its interests, rather than a fixed itinerary.",
       intro: [
@@ -1851,10 +1851,10 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
       cta: CTA_EN,
     },
     tr: {
-      metaTitle: "Kişiye Özel Butik Turlar | TerraSu Living",
+      metaTitle: "Özel Butik Deneyimler | TerraSu Living",
       metaDescription:
         "Portekiz'de ve ötesinde özel program tasarımı: kültür, gastronomi, wellness, aile ve küçük kurumsal grup programları.",
-      eyebrow: "Butik turlar",
+      eyebrow: "Özel deneyimler",
       title: "Özel Butik Deneyimler",
       lead: "Sabit bir güzergâh yerine belirli bir grubun temposuna ve ilgi alanlarına göre kurulan programlar.",
       intro: [
