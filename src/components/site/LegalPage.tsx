@@ -1,7 +1,7 @@
 import { PageHero, Section } from "@/components/site/ui";
 import { useLanguage } from "@/i18n/LanguageProvider";
 
-export function LegalPage({ doc }: { doc: "privacy" | "cookies" | "terms" }) {
+export function LegalPage({ doc }: { doc: "privacy" | "cookies" | "terms" | "disclaimer" }) {
   const { t } = useLanguage();
   const page = t.legal[doc];
 
