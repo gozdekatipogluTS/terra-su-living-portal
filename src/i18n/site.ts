@@ -237,7 +237,7 @@ export const siteCopy: Record<Lang, SiteCopy> = {
         to: "/business",
       },
       {
-        title: "Tailor-Made Boutique Tours",
+        title: "Private Boutique Experiences",
         text: "Private programmes in Portugal, and multi destination planning for small groups on request.",
         to: "/tours",
       },
@@ -349,7 +349,7 @@ export const siteCopy: Record<Lang, SiteCopy> = {
         to: "/business",
       },
       {
-        title: "Kişiye Özel Butik Turlar",
+        title: "Özel Butik Deneyimler",
         text: "Portekiz'de özel programlar ve talebe göre küçük gruplar için çok destinasyonlu planlama.",
         to: "/tours",
       },
@@ -535,7 +535,7 @@ export const portfolioEntries: PortfolioEntry[] = [
   {
     key: "tours",
     category: L("Tours", "Turlar"),
-    title: L("Boutique Tours", "Butik Turlar"),
+    title: L("Private Boutique Experiences", "Özel Butik Deneyimler"),
     text: L(
       "Cultural, culinary and landscape programmes designed for a specific group rather than a fixed itinerary.",
       "Sabit bir güzergâh yerine belirli bir gruba göre tasarlanan kültür, gastronomi ve doğa programları.",
@@ -600,7 +600,7 @@ export const newsItems: NewsItem[] = [
     ),
   },
   {
-    category: L("Upcoming Boutique Tours", "Yaklaşan Butik Turlar"),
+    category: L("Upcoming Private Experiences", "Yaklaşan Özel Deneyimler"),
     title: L("Small group programmes in preparation", "Küçük grup programları hazırlanıyor"),
     text: L(
       "Private programmes for small groups in Porto, the Douro Valley and central Portugal are planned by request. Dates are set with each group.",

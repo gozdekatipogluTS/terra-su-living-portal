@@ -134,7 +134,7 @@ const en: PremiumContent = {
       cta: "Request a Cleaning Assessment and Quote",
     },
     experiences: {
-      title: "Tailor-Made Boutique Tours",
+      title: "Private Boutique Experiences",
       paragraphs: [
         "No two groups travel in the same way.",
         "We design private and small-group journeys around your interests, preferred pace, dates, destination choices and special requests.",
@@ -477,19 +477,19 @@ const en: PremiumContent = {
       {
         title: "Private Group Design",
         text: "Small private groups with tailored pacing, interests and quiet, well-chosen places.",
-        category: "Boutique Tours",
+        category: "Private Boutique Experiences",
         status: "Planning",
       },
       {
         title: "Portugal Experience Planning",
         text: "Porto, Northern Portugal and Douro Valley itineraries built around the season and your rhythm.",
-        category: "Boutique Tours",
+        category: "Private Boutique Experiences",
         status: "Planning",
       },
       {
         title: "Turkey–Portugal Programme Development",
         text: "Multi-destination boutique programmes connecting Turkey and Portugal for private groups.",
-        category: "Boutique Tours",
+        category: "Private Boutique Experiences",
         status: "Concept",
       },
     ],
@@ -581,7 +581,7 @@ const tr: PremiumContent = {
       cta: "Temizlik Değerlendirmesi ve Fiyat Teklifi Talep Edin",
     },
     experiences: {
-      title: "Kişiye Özel Butik Turlar",
+      title: "Özel Butik Deneyimler",
       paragraphs: [
         "Hiçbir grup aynı şekilde seyahat etmez.",
         "Özel ve küçük grup seyahatlerini; ilgi alanlarınıza, tercih ettiğiniz tempoya, tarihlerinize, destinasyon seçimlerinize ve özel taleplerinize göre tasarlıyoruz.",
@@ -912,19 +912,19 @@ const tr: PremiumContent = {
       {
         title: "Özel Grup Tasarımı",
         text: "Tempo, ilgi alanları ve özenle seçilmiş sakin mekânlarla kurgulanan küçük özel gruplar.",
-        category: "Butik Turlar",
+        category: "Özel Butik Deneyimler",
         status: "Planlama",
       },
       {
         title: "Portekiz Deneyimi Planlaması",
         text: "Mevsime ve temponuza göre kurgulanan Porto, Kuzey Portekiz ve Douro Vadisi rotaları.",
-        category: "Butik Turlar",
+        category: "Özel Butik Deneyimler",
         status: "Planlama",
       },
       {
         title: "Türkiye–Portekiz Program Geliştirme",
         text: "Özel gruplar için Türkiye ve Portekiz'i birleştiren çoklu destinasyon butik programları.",
-        category: "Butik Turlar",
+        category: "Özel Butik Deneyimler",
         status: "Konsept",
       },
     ],
