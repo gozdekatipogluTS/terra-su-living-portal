@@ -8,8 +8,8 @@ const SNS = { label: "SNS", url: "https://www.sns.gov.pt/" };
 const CMD = { label: "Chave Móvel Digital", url: "https://www.autenticacao.gov.pt/cmd-pedido-chave" };
 const VISTOS = { label: "Vistos, Portal Diplomático", url: "https://vistos.mne.gov.pt/" };
 
-const CTA_EN = "Request Personalised Support";
-const CTA_TR = "Kişisel Destek Talep Edin";
+const CTA_EN = "Request My Personalised Plan";
+const CTA_TR = "Kişisel Planımı Talep Edin";
 
 export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
   /* ------------------------------------------------------------- */
@@ -143,6 +143,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
       ],
       sections: [
         {
+          id: "d2",
           title: "D2, entrepreneurs and independent professionals",
           items: [
             "May suit business owners, freelancers and independent service providers",
@@ -153,6 +154,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           ],
         },
         {
+          id: "d7",
           title: "D7, retirees and qualifying personal income",
           items: [
             "May suit retirees and people living from pensions, rental income or other recognised passive income",
@@ -163,6 +165,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           ],
         },
         {
+          id: "d8",
           title: "D8, remote workers and digital nomads",
           items: [
             "May suit employees of foreign companies and independent professionals with foreign clients",
@@ -173,6 +176,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           ],
         },
         {
+          id: "d9",
           title: "D9, residence for investment activity",
           items: [
             "The visa category used for qualifying investment activity, commonly known together with the Golden Visa framework",
@@ -183,6 +187,7 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           ],
         },
         {
+          id: "golden",
           title: "Golden Visa, Autorização de Residência para Atividade de Investimento, ARI",
           items: [
             "May suit applicants pursuing a qualifying investment activity as defined by the current legal framework",
