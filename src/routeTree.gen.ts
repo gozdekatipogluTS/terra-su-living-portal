@@ -15,6 +15,7 @@ import { Route as BusinessRouteImport } from './routes/business'
 import { Route as CompleteSetupRouteImport } from './routes/complete-setup'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as EverydayLifeRouteImport } from './routes/everyday-life'
 import { Route as ExpatGuideRouteImport } from './routes/expat-guide'
 import { Route as NewsRouteImport } from './routes/news'
@@ -64,6 +65,11 @@ const ContactRoute = ContactRouteImport.update({
 const CookiesRoute = CookiesRouteImport.update({
   id: '/cookies',
   path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EverydayLifeRoute = EverydayLifeRouteImport.update({
@@ -174,6 +180,7 @@ export interface FileRoutesByFullPath {
   '/complete-setup': typeof CompleteSetupRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/everyday-life': typeof EverydayLifeRoute
   '/expat-guide': typeof ExpatGuideRoute
   '/news': typeof NewsRoute
@@ -202,6 +209,7 @@ export interface FileRoutesByTo {
   '/complete-setup': typeof CompleteSetupRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/everyday-life': typeof EverydayLifeRoute
   '/expat-guide': typeof ExpatGuideRoute
   '/news': typeof NewsRoute
@@ -231,6 +239,7 @@ export interface FileRoutesById {
   '/complete-setup': typeof CompleteSetupRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/everyday-life': typeof EverydayLifeRoute
   '/expat-guide': typeof ExpatGuideRoute
   '/news': typeof NewsRoute
@@ -261,6 +270,7 @@ export interface FileRouteTypes {
     | '/complete-setup'
     | '/contact'
     | '/cookies'
+    | '/disclaimer'
     | '/everyday-life'
     | '/expat-guide'
     | '/news'
@@ -289,6 +299,7 @@ export interface FileRouteTypes {
     | '/complete-setup'
     | '/contact'
     | '/cookies'
+    | '/disclaimer'
     | '/everyday-life'
     | '/expat-guide'
     | '/news'
@@ -317,6 +328,7 @@ export interface FileRouteTypes {
     | '/complete-setup'
     | '/contact'
     | '/cookies'
+    | '/disclaimer'
     | '/everyday-life'
     | '/expat-guide'
     | '/news'
@@ -346,6 +358,7 @@ export interface RootRouteChildren {
   CompleteSetupRoute: typeof CompleteSetupRoute
   ContactRoute: typeof ContactRoute
   CookiesRoute: typeof CookiesRoute
+  DisclaimerRoute: typeof DisclaimerRoute
   EverydayLifeRoute: typeof EverydayLifeRoute
   ExpatGuideRoute: typeof ExpatGuideRoute
   NewsRoute: typeof NewsRoute
@@ -410,6 +423,13 @@ declare module '@tanstack/react-router' {
       path: '/cookies'
       fullPath: '/cookies'
       preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/everyday-life': {
@@ -562,6 +582,7 @@ const rootRouteChildren: RootRouteChildren = {
   CompleteSetupRoute: CompleteSetupRoute,
   ContactRoute: ContactRoute,
   CookiesRoute: CookiesRoute,
+  DisclaimerRoute: DisclaimerRoute,
   EverydayLifeRoute: EverydayLifeRoute,
   ExpatGuideRoute: ExpatGuideRoute,
   NewsRoute: NewsRoute,
