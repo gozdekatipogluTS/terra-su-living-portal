@@ -33,7 +33,7 @@ export const brand: Record<Lang, BrandCopy> = {
     heroTitle: "Your Personal Journey to Portugal Starts Here",
     heroSub:
       "Personalised relocation consultancy, visa planning, administrative assistance, property services, business guidance and boutique travel experiences across Portugal.",
-    ctaPrimary: "Request Personal Consultation",
+    ctaPrimary: "Request My Personalised Plan",
     ctaSecondary: "Explore Services",
 
     meetEyebrow: "The founder",
@@ -77,7 +77,7 @@ export const brand: Record<Lang, BrandCopy> = {
       "Every client has unique needs.",
       "For personalised service options and a customised quotation, please contact TerraSu Living directly.",
     ],
-    pricingPrimary: "Request Personal Consultation",
+    pricingPrimary: "Request My Personalised Plan",
     pricingSecondary: "Contact Us",
   },
 
@@ -85,7 +85,7 @@ export const brand: Record<Lang, BrandCopy> = {
     heroTitle: "Portekiz'e Kişisel Yolculuğunuz Burada Başlıyor",
     heroSub:
       "Portekiz genelinde kişiye özel yerleşim danışmanlığı, vize planlaması, idari destek, emlak hizmetleri, iş kurulum rehberliği ve butik seyahat deneyimleri.",
-    ctaPrimary: "Kişisel Danışmanlık Talep Edin",
+    ctaPrimary: "Kişisel Planımı Talep Edin",
     ctaSecondary: "Hizmetleri Keşfedin",
 
     meetEyebrow: "Kurucu",
@@ -129,7 +129,7 @@ export const brand: Record<Lang, BrandCopy> = {
       "Her müşterinin ihtiyacı farklıdır.",
       "Kişiye özel hizmet seçenekleri ve size özel bir teklif için lütfen doğrudan TerraSu Living ile iletişime geçin.",
     ],
-    pricingPrimary: "Kişisel Danışmanlık Talep Edin",
+    pricingPrimary: "Kişisel Planımı Talep Edin",
     pricingSecondary: "İletişime Geçin",
   },
 };

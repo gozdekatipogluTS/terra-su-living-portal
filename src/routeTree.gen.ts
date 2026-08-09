@@ -29,9 +29,8 @@ import { Route as AdministrativeCmdRouteImport } from './routes/administrative.c
 import { Route as AdministrativeHealthRouteImport } from './routes/administrative.health'
 import { Route as AdministrativeNifRouteImport } from './routes/administrative.nif'
 import { Route as AdministrativeNissRouteImport } from './routes/administrative.niss'
-import { Route as HomeSetupIndexRouteImport } from './routes/home-setup.index'
-import { Route as HomeSetupCleaningRouteImport } from './routes/home-setup.cleaning'
 import { Route as PropertyIndexRouteImport } from './routes/property.index'
+import { Route as PropertyCleaningRouteImport } from './routes/property.cleaning'
 import { Route as PropertyPurchaseRouteImport } from './routes/property.purchase'
 import { Route as PropertyRentalRouteImport } from './routes/property.rental'
 import { Route as RelocationIndexRouteImport } from './routes/relocation.index'
@@ -137,19 +136,14 @@ const AdministrativeNissRoute = AdministrativeNissRouteImport.update({
   path: '/administrative/niss',
   getParentRoute: () => rootRouteImport,
 } as any)
-const HomeSetupIndexRoute = HomeSetupIndexRouteImport.update({
-  id: '/home-setup/',
-  path: '/home-setup/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HomeSetupCleaningRoute = HomeSetupCleaningRouteImport.update({
-  id: '/home-setup/cleaning',
-  path: '/home-setup/cleaning',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PropertyIndexRoute = PropertyIndexRouteImport.update({
   id: '/property/',
   path: '/property/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PropertyCleaningRoute = PropertyCleaningRouteImport.update({
+  id: '/property/cleaning',
+  path: '/property/cleaning',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PropertyPurchaseRoute = PropertyPurchaseRouteImport.update({
@@ -193,12 +187,11 @@ export interface FileRoutesByFullPath {
   '/administrative/health': typeof AdministrativeHealthRoute
   '/administrative/nif': typeof AdministrativeNifRoute
   '/administrative/niss': typeof AdministrativeNissRoute
-  '/home-setup/cleaning': typeof HomeSetupCleaningRoute
+  '/property/cleaning': typeof PropertyCleaningRoute
   '/property/purchase': typeof PropertyPurchaseRoute
   '/property/rental': typeof PropertyRentalRoute
   '/relocation/visas': typeof RelocationVisasRoute
   '/administrative/': typeof AdministrativeIndexRoute
-  '/home-setup/': typeof HomeSetupIndexRoute
   '/property/': typeof PropertyIndexRoute
   '/relocation/': typeof RelocationIndexRoute
 }
@@ -222,12 +215,11 @@ export interface FileRoutesByTo {
   '/administrative/health': typeof AdministrativeHealthRoute
   '/administrative/nif': typeof AdministrativeNifRoute
   '/administrative/niss': typeof AdministrativeNissRoute
-  '/home-setup/cleaning': typeof HomeSetupCleaningRoute
+  '/property/cleaning': typeof PropertyCleaningRoute
   '/property/purchase': typeof PropertyPurchaseRoute
   '/property/rental': typeof PropertyRentalRoute
   '/relocation/visas': typeof RelocationVisasRoute
   '/administrative': typeof AdministrativeIndexRoute
-  '/home-setup': typeof HomeSetupIndexRoute
   '/property': typeof PropertyIndexRoute
   '/relocation': typeof RelocationIndexRoute
 }
@@ -252,12 +244,11 @@ export interface FileRoutesById {
   '/administrative/health': typeof AdministrativeHealthRoute
   '/administrative/nif': typeof AdministrativeNifRoute
   '/administrative/niss': typeof AdministrativeNissRoute
-  '/home-setup/cleaning': typeof HomeSetupCleaningRoute
+  '/property/cleaning': typeof PropertyCleaningRoute
   '/property/purchase': typeof PropertyPurchaseRoute
   '/property/rental': typeof PropertyRentalRoute
   '/relocation/visas': typeof RelocationVisasRoute
   '/administrative/': typeof AdministrativeIndexRoute
-  '/home-setup/': typeof HomeSetupIndexRoute
   '/property/': typeof PropertyIndexRoute
   '/relocation/': typeof RelocationIndexRoute
 }
@@ -283,12 +274,11 @@ export interface FileRouteTypes {
     | '/administrative/health'
     | '/administrative/nif'
     | '/administrative/niss'
-    | '/home-setup/cleaning'
+    | '/property/cleaning'
     | '/property/purchase'
     | '/property/rental'
     | '/relocation/visas'
     | '/administrative/'
-    | '/home-setup/'
     | '/property/'
     | '/relocation/'
   fileRoutesByTo: FileRoutesByTo
@@ -312,12 +302,11 @@ export interface FileRouteTypes {
     | '/administrative/health'
     | '/administrative/nif'
     | '/administrative/niss'
-    | '/home-setup/cleaning'
+    | '/property/cleaning'
     | '/property/purchase'
     | '/property/rental'
     | '/relocation/visas'
     | '/administrative'
-    | '/home-setup'
     | '/property'
     | '/relocation'
   id:
@@ -341,12 +330,11 @@ export interface FileRouteTypes {
     | '/administrative/health'
     | '/administrative/nif'
     | '/administrative/niss'
-    | '/home-setup/cleaning'
+    | '/property/cleaning'
     | '/property/purchase'
     | '/property/rental'
     | '/relocation/visas'
     | '/administrative/'
-    | '/home-setup/'
     | '/property/'
     | '/relocation/'
   fileRoutesById: FileRoutesById
@@ -371,12 +359,11 @@ export interface RootRouteChildren {
   AdministrativeHealthRoute: typeof AdministrativeHealthRoute
   AdministrativeNifRoute: typeof AdministrativeNifRoute
   AdministrativeNissRoute: typeof AdministrativeNissRoute
-  HomeSetupCleaningRoute: typeof HomeSetupCleaningRoute
+  PropertyCleaningRoute: typeof PropertyCleaningRoute
   PropertyPurchaseRoute: typeof PropertyPurchaseRoute
   PropertyRentalRoute: typeof PropertyRentalRoute
   RelocationVisasRoute: typeof RelocationVisasRoute
   AdministrativeIndexRoute: typeof AdministrativeIndexRoute
-  HomeSetupIndexRoute: typeof HomeSetupIndexRoute
   PropertyIndexRoute: typeof PropertyIndexRoute
   RelocationIndexRoute: typeof RelocationIndexRoute
 }
@@ -523,25 +510,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdministrativeNissRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/home-setup/': {
-      id: '/home-setup/'
-      path: '/home-setup'
-      fullPath: '/home-setup/'
-      preLoaderRoute: typeof HomeSetupIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/home-setup/cleaning': {
-      id: '/home-setup/cleaning'
-      path: '/home-setup/cleaning'
-      fullPath: '/home-setup/cleaning'
-      preLoaderRoute: typeof HomeSetupCleaningRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/property/': {
       id: '/property/'
       path: '/property'
       fullPath: '/property/'
       preLoaderRoute: typeof PropertyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/property/cleaning': {
+      id: '/property/cleaning'
+      path: '/property/cleaning'
+      fullPath: '/property/cleaning'
+      preLoaderRoute: typeof PropertyCleaningRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/property/purchase': {
@@ -595,25 +575,14 @@ const rootRouteChildren: RootRouteChildren = {
   AdministrativeHealthRoute: AdministrativeHealthRoute,
   AdministrativeNifRoute: AdministrativeNifRoute,
   AdministrativeNissRoute: AdministrativeNissRoute,
-  HomeSetupCleaningRoute: HomeSetupCleaningRoute,
+  PropertyCleaningRoute: PropertyCleaningRoute,
   PropertyPurchaseRoute: PropertyPurchaseRoute,
   PropertyRentalRoute: PropertyRentalRoute,
   RelocationVisasRoute: RelocationVisasRoute,
   AdministrativeIndexRoute: AdministrativeIndexRoute,
-  HomeSetupIndexRoute: HomeSetupIndexRoute,
   PropertyIndexRoute: PropertyIndexRoute,
   RelocationIndexRoute: RelocationIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
