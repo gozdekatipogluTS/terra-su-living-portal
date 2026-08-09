@@ -1636,32 +1636,6 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
           ],
         },
         {
-          id: "self",
-          title: "Serbest çalışma rehberliği",
-          text: "Portekiz'de serbest çalışan, danışman veya küçük hizmet sağlayıcı olarak bağımsız çalışacak kişiler için.",
-          items: [
-            "Trabalhador independente statüsünün günlük pratikte anlamı",
-            "Finanças'ta faaliyet açılışı, genel hazırlık ve sıralama",
-            "Recibos verdes ile faturalandırma ve tutulması gereken kayıtlar",
-            "Sosyal güvenlik kaydı konusunda muhasebeciye sorulacak sorular",
-            "Sigorta, bankacılık ve tahsilat pratikleri",
-          ],
-          note: "Vergi oranları, istisnalar ve prim takvimi bağımsız bir muhasebeciyle teyit edilir.",
-        },
-        {
-          id: "coordination",
-          title: "Pratik kurulum koordinasyonu",
-          text: "Yön belirlendikten sonra pratik adımlar doğru sırayla düzenlenir ve tamamlanana kadar takip edilir.",
-          items: [
-            "Kayıtların, randevuların ve sürelerin sıralanması",
-            "İş yeri araştırması, görüntülemeler ve mal sahibiyle iletişim",
-            "İş yeri için abonelikler, internet ve temel ekipman",
-            "Tedarikçi, müteahhit ve hizmet sağlayıcı yönlendirmeleri",
-            "Evrak hazırlığı ve tercüme koordinasyonu",
-            "Süreç takibi ve baştan sona tek muhatap",
-          ],
-        },
-        {
           id: "referrals",
           title: "Professional referrals and launch coordination",
           items: [
@@ -1754,6 +1728,32 @@ export const pages: Record<PageKey, Record<Lang, PageDoc>> = {
             "İşletme banka hesabı hazırlığı",
           ],
           note: "Bunlar genel hazırlık konularıdır. Kayıt tercihleri bağımsız bir muhasebeciyle teyit edilir.",
+        },
+        {
+          id: "self",
+          title: "Serbest çalışma rehberliği",
+          text: "Portekiz'de serbest çalışan, danışman veya küçük hizmet sağlayıcı olarak bağımsız çalışacak kişiler için.",
+          items: [
+            "Trabalhador independente statüsünün günlük pratikte anlamı",
+            "Finanças'ta faaliyet açılışı, genel hazırlık ve sıralama",
+            "Recibos verdes ile faturalandırma ve tutulması gereken kayıtlar",
+            "Sosyal güvenlik kaydı konusunda muhasebeciye sorulacak sorular",
+            "Sigorta, bankacılık ve tahsilat pratikleri",
+          ],
+          note: "Vergi oranları, istisnalar ve prim takvimi bağımsız bir muhasebeciyle teyit edilir.",
+        },
+        {
+          id: "coordination",
+          title: "Pratik kurulum koordinasyonu",
+          text: "Yön belirlendikten sonra pratik adımlar doğru sırayla düzenlenir ve tamamlanana kadar takip edilir.",
+          items: [
+            "Kayıtların, randevuların ve sürelerin sıralanması",
+            "İş yeri araştırması, görüntülemeler ve mal sahibiyle iletişim",
+            "İş yeri için abonelikler, internet ve temel ekipman",
+            "Tedarikçi, müteahhit ve hizmet sağlayıcı yönlendirmeleri",
+            "Evrak hazırlığı ve tercüme koordinasyonu",
+            "Süreç takibi ve baştan sona tek muhatap",
+          ],
         },
         {
           id: "referrals",
