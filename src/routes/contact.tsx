@@ -31,7 +31,7 @@ const inputClass =
   "w-full rounded-2xl border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary";
 
 function Contact() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const p = usePremium();
   const f = p.contactForm;
   const [sent, setSent] = useState(false);
