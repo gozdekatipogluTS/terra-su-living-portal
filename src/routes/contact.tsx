@@ -66,11 +66,6 @@ function Contact() {
   }
 }
 
-    window.location.href = `mailto:info@terrasuliving.com?subject=${encodeURIComponent(
-      `TerraSu Living — ${data.get("service")}`,
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
-  }
 
   return (
     <>
