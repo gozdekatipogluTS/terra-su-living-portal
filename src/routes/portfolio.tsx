@@ -1,15 +1,12 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
-
+import { createFileRoute } from "@tanstack/react-router";
 import { ImageHero, PlanCta } from "@/components/site/premium";
-import { Section, linkTo } from "@/components/site/ui";
+import { Section } from "@/components/site/ui";
 import { useLanguage } from "@/i18n/LanguageProvider";
-import { portfolioEntries, siteCopy } from "@/i18n/site";
 import { images } from "@/lib/page-assets";
 
 const title = "Portfolio: Selected Service Areas | TerraSu Living";
 const description =
-  "Selected areas of support: relocation planning, administrative setup, rental and purchase coordination, home setup, cleaning, transfers, business research and boutique tours.";
+  "Personal client experiences from TerraSu Living's relocation, home search and settlement support in Portugal.";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -26,87 +23,97 @@ export const Route = createFileRoute("/portfolio")({
   component: Portfolio,
 });
 
-const entryImages: Record<string, string> = {
-  relocation: images.relocation,
-  admin: images.admin,
-  nifniss: images.nifniss,
-  rental: images.rental,
-  purchase: images.purchase,
-  homesetup: images.homeSetup,
-  cleaning: images.cleaning,
-  transfer: images.transfer,
-  business: images.business,
-  groups: images.groups,
-  tours: images.tours,
-  expat: images.everyday,
-};
-
 function Portfolio() {
   const { lang } = useLanguage();
-  const copy = siteCopy[lang];
+  const testimonials =
+    lang === "en"
+      ? [
+          {
+            initials: "S.K.",
+            text: "From our very first conversation with Gözde, what stood out most was her honesty. She explained everything clearly, including what could and could not be done. We never felt like just another client. Knowing we had someone we could genuinely trust beside us made all the difference.",
+          },
+          {
+            initials: "A.D.",
+            text: "We had no idea how challenging renting a home in Portugal could be. Gözde guided us through the property search and viewings, spoke with the landlord and followed the rental process with great care. In the end, we found not simply a property, but a home that genuinely suited us.",
+          },
+          {
+            initials: "M.T.",
+            text: "Gözde was with us from the very beginning of our visa journey until our arrival in Portugal. She followed our documents, questions and next steps carefully throughout the process. Most importantly, we never felt alone.",
+          },
+          {
+            initials: "E.B.",
+            text: "What impressed us most about working with Gözde was the combination of professionalism and genuine warmth. When you are starting a life in a new country, having someone who truly listens and looks for solutions gives you an incredible sense of confidence.",
+          },
+          {
+            initials: "N.P.",
+            text: "Moving to Portugal was a major and stressful decision for us. Once Gözde planned the process with us step by step, everything became much more manageable. Her support with the formalities and settling in helped us begin our new life here with much greater confidence.",
+          },
+          {
+            initials: "C.Y.",
+            text: "For us, the biggest difference was that Gözde’s support went beyond simply explaining what needed to be done — she was genuinely involved throughout the journey. She answered our questions patiently, listened to our needs and made every step feel personal. It was an honest, warm and reassuring experience.",
+          },
+        ]
+      : [
+          {
+            initials: "S.K.",
+            text: "İlk görüşmemizden itibaren Gözde Hanım’da en çok hissettiğimiz şey dürüstlüktü. Yapılabilecekleri de yapılamayacakları da açıkça anlattı. Süreç boyunca kendimizi hiçbir zaman sadece bir müşteri gibi hissetmedik. Güvenebileceğimiz birinin yanımızda olduğunu bilmek bizim için çok değerliydi.",
+          },
+          {
+            initials: "A.D.",
+            text: "Portekiz’de ev kiralama sürecinin bu kadar zorlayıcı olabileceğini bilmiyorduk. Gözde Hanım ev araştırmasından görüşmelere, ev sahibiyle iletişimden sözleşme sürecine kadar her aşamayı büyük bir özenle yönetti. Sonunda sadece bir ev değil, gerçekten bize uygun bir yaşam alanı bulduk.",
+          },
+          {
+            initials: "M.T.",
+            text: "Gözde Hanım vize sürecimizin en başından Portekiz’e gelişimize kadar her aşamada yanımızdaydı. Evraklarımızı, süreçteki sorularımızı ve sonrasında atmamız gereken adımları tek tek takip etti. En önemlisi, hiçbir aşamada yalnız olduğumuzu hissetmedik.",
+          },
+          {
+            initials: "E.B.",
+            text: "Gözde Hanım’ın profesyonelliğinin yanında son derece samimi ve ulaşılabilir olması bizi çok etkiledi. Yeni bir ülkede ne yapacağınızı bilmediğiniz anlarda karşınızda gerçekten sizi dinleyen ve çözüm üretmeye çalışan birinin olması büyük bir güven veriyor.",
+          },
+          {
+            initials: "N.P.",
+            text: "Portekiz’e taşınmak bizim için büyük ve stresli bir karardı. Gözde Hanım süreci bizimle adım adım planladığında her şey çok daha yönetilebilir hale geldi. Özellikle resmi işlemler ve yerleşim konusunda verdiği destek, burada yeni hayatımıza çok daha güvenli başlamamızı sağladı.",
+          },
+          {
+            initials: "C.Y.",
+            text: "Bence Gözde Hanım’ın en önemli farkı, sadece yapılması gereken işlemleri anlatması değil; sürecin gerçekten içinde olması. Sorularımıza sabırla cevap verdi, ihtiyaçlarımızı dikkatle dinledi ve her aşamada yanımızda olduğunu hissettirdi. Dürüst, samimi ve güven veren yaklaşımı sayesinde kendimizi hiç yalnız hissetmedik.",
+          },
+        ];
 
   return (
     <>
       <ImageHero
         image={images.portfolio}
         alt="Editorial flat-lay of Portugal lifestyle details: azulejo tile, house key and olive branch"
-        eyebrow={lang === "en" ? "Portfolio" : "Portföy"}
-        title={
-          lang === "en" ? "Selected Journeys and Service Areas" : "Seçili Süreçler ve Hizmet Alanları"
-        }
+        eyebrow={lang === "en" ? "Client experiences" : "Danışan deneyimleri"}
+        title={lang === "en" ? "Stories We’ve Been Part Of" : "Birlikte Başlayan Hikâyeler"}
         lead={
           lang === "en"
-            ? "Each area below shows how a plan is prepared and coordinated. Client details are never published."
-            : "Aşağıdaki her alan, bir planın nasıl hazırlandığını ve koordine edildiğini gösterir. Müşteri bilgileri hiçbir zaman yayımlanmaz."
+            ? "Every move, every family and every new beginning has its own story."
+            : "Her taşınmanın, her ailenin ve her yeni başlangıcın hikâyesi farklı."
         }
         priority
       />
 
       <Section>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {portfolioEntries.map((entry) => (
+          {testimonials.map((entry) => (
             <article
-              key={entry.key}
-              className="flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+              key={entry.initials}
+              className="flex flex-col rounded-3xl border border-border bg-card p-8 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
             >
-              <div className="relative h-44 overflow-hidden">
-                <img
-                  src={entryImages[entry.key] ?? images.portfolio}
-                  alt=""
-                  aria-hidden="true"
-                  loading="lazy"
-                  width={1920}
-                  height={1088}
-                  className="h-full w-full object-cover"
-                />
-                <span className="absolute right-4 top-4 rounded-full bg-background/85 px-3 py-1 text-[0.65rem] uppercase tracking-[0.18em] text-primary backdrop-blur">
-                  {entry.status[lang]}
-                </span>
-              </div>
-              <div className="flex flex-1 flex-col p-7">
-                <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                  {entry.category[lang]}
-                </p>
-                <h2 className="mt-3 font-serif text-2xl leading-snug text-foreground">
-                  {entry.title[lang]}
-                </h2>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {entry.text[lang]}
-                </p>
-                {entry.to && (
-                  <Link
-                    to={linkTo(entry.to)}
-                    className="mt-6 inline-flex items-center gap-2 text-sm text-primary transition-all hover:gap-3"
-                  >
-                    {copy.readMore}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                )}
-              </div>
+              <p className="font-serif text-2xl text-primary">{entry.initials}</p>
+              <p className="mt-8 flex-1 text-base leading-relaxed text-foreground/80">
+                “{entry.text}”
+              </p>
             </article>
           ))}
         </div>
-        <p className="mt-10 max-w-2xl text-sm italic text-muted-foreground">{copy.combineNote}</p>
+        <p className="mt-10 max-w-2xl text-sm italic text-muted-foreground">
+          {lang === "en"
+            ? "Client names are displayed as initials to protect their privacy."
+            : "Müşteri gizliliğini korumak amacıyla isimler yalnızca baş harfleriyle gösterilmektedir."}
+        </p>
       </Section>
 
       <PlanCta />

@@ -1,13 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Mail, MapPin, Clock } from "lucide-react";
+import { Clock, Instagram, Mail, MapPin, Youtube } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
 import contactImage from "@/assets/contact-hero.jpg";
 import { ImageHero, usePremium } from "@/components/site/premium";
 import { Section } from "@/components/site/ui";
 import { useLanguage } from "@/i18n/LanguageProvider";
+import { YOUTUBE_URL } from "@/i18n/site";
 
-const title = "Contact Gözde K. | TerraSu Living Porto";
+const title = "Start a Conversation | TerraSu Living Porto";
 const description =
   "Request a personalised service plan from TerraSu Living in Porto, Portugal: relocation, property support, cleaning and boutique tours.";
 
@@ -77,16 +78,45 @@ function Contact() {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid gap-5 sm:grid-cols-2">
               <Field label={f.fullName}>
-                <input name="name" required autoComplete="name" maxLength={100} className={inputClass} />
+                <input
+                  name="name"
+                  required
+                  autoComplete="name"
+                  maxLength={100}
+                  className={inputClass}
+                />
               </Field>
               <Field label={f.email}>
-                <input name="email" type="email" required autoComplete="email" maxLength={255} className={inputClass} />
+                <input
+                  name="email"
+                  type="email"
+                  required
+                  autoComplete="email"
+                  maxLength={255}
+                  className={inputClass}
+                />
               </Field>
               <Field label={f.phone}>
-                <input name="phone" type="tel" autoComplete="tel" maxLength={40} className={inputClass} />
+                <input
+                  name="phone"
+                  type="tel"
+                  required
+                  autoComplete="tel"
+                  inputMode="tel"
+                  pattern="^\\+?[0-9 ()-]{7,}$"
+                  title={t.contact.phoneValidation}
+                  placeholder="+351 000 000 000"
+                  maxLength={40}
+                  className={inputClass}
+                />
               </Field>
               <Field label={f.country}>
-                <input name="country" autoComplete="country-name" maxLength={80} className={inputClass} />
+                <input
+                  name="country"
+                  autoComplete="country-name"
+                  maxLength={80}
+                  className={inputClass}
+                />
               </Field>
               <Field label={f.language}>
                 <select name="language" defaultValue="" className={inputClass}>
@@ -141,7 +171,12 @@ function Contact() {
               <textarea name="message" required rows={6} maxLength={2000} className={inputClass} />
             </Field>
             <label className="flex items-start gap-3 text-sm text-muted-foreground">
-              <input type="checkbox" name="consent" required className="mt-1 h-4 w-4 accent-[var(--primary)]" />
+              <input
+                type="checkbox"
+                name="consent"
+                required
+                className="mt-1 h-4 w-4 accent-[var(--primary)]"
+              />
               <span className="leading-relaxed">{f.consent}</span>
             </label>
             <button
@@ -183,6 +218,16 @@ function Contact() {
                 <ContactRow icon={<MapPin className="h-4 w-4" />} label={t.contact.location}>
                   <span className="text-foreground">{t.contact.locationValue}</span>
                 </ContactRow>
+                <ContactRow icon={<Youtube className="h-4 w-4" />} label="YouTube">
+                  <a
+                    href={YOUTUBE_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-foreground transition-colors hover:text-primary"
+                  >
+                    {lang === "tr" ? "YouTube’da Gözde K." : "Gözde K. on YouTube"}
+                  </a>
+                </ContactRow>
               </ul>
               <p className="mt-6 border-t border-border pt-5 text-xs uppercase tracking-[0.28em] text-muted-foreground">
                 {p.founder.signature}
@@ -197,7 +242,6 @@ function Contact() {
                 {t.contact.responseText}
               </p>
             </div>
-
           </aside>
         </div>
       </Section>
@@ -229,7 +273,9 @@ function ContactRow({
     <li className="flex items-start gap-3">
       <span className="mt-0.5 text-primary">{icon}</span>
       <span>
-        <span className="block text-xs uppercase tracking-[0.18em] text-muted-foreground">{label}</span>
+        <span className="block text-xs uppercase tracking-[0.18em] text-muted-foreground">
+          {label}
+        </span>
         {children}
       </span>
     </li>

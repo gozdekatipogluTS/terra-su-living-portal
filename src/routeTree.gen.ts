@@ -18,9 +18,9 @@ import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as EverydayLifeRouteImport } from './routes/everyday-life'
 import { Route as ExpatGuideRouteImport } from './routes/expat-guide'
-import { Route as NewsRouteImport } from './routes/news'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ToursRouteImport } from './routes/tours'
 import { Route as TransfersRouteImport } from './routes/transfers'
@@ -82,11 +82,6 @@ const ExpatGuideRoute = ExpatGuideRouteImport.update({
   path: '/expat-guide',
   getParentRoute: () => rootRouteImport,
 } as any)
-const NewsRoute = NewsRouteImport.update({
-  id: '/news',
-  path: '/news',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PortfolioRoute = PortfolioRouteImport.update({
   id: '/portfolio',
   path: '/portfolio',
@@ -95,6 +90,11 @@ const PortfolioRoute = PortfolioRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -183,9 +183,9 @@ export interface FileRoutesByFullPath {
   '/disclaimer': typeof DisclaimerRoute
   '/everyday-life': typeof EverydayLifeRoute
   '/expat-guide': typeof ExpatGuideRoute
-  '/news': typeof NewsRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
+  '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
   '/tours': typeof ToursRoute
   '/transfers': typeof TransfersRoute
@@ -212,9 +212,9 @@ export interface FileRoutesByTo {
   '/disclaimer': typeof DisclaimerRoute
   '/everyday-life': typeof EverydayLifeRoute
   '/expat-guide': typeof ExpatGuideRoute
-  '/news': typeof NewsRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
+  '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
   '/tours': typeof ToursRoute
   '/transfers': typeof TransfersRoute
@@ -242,9 +242,9 @@ export interface FileRoutesById {
   '/disclaimer': typeof DisclaimerRoute
   '/everyday-life': typeof EverydayLifeRoute
   '/expat-guide': typeof ExpatGuideRoute
-  '/news': typeof NewsRoute
   '/portfolio': typeof PortfolioRoute
   '/privacy': typeof PrivacyRoute
+  '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
   '/tours': typeof ToursRoute
   '/transfers': typeof TransfersRoute
@@ -273,9 +273,9 @@ export interface FileRouteTypes {
     | '/disclaimer'
     | '/everyday-life'
     | '/expat-guide'
-    | '/news'
     | '/portfolio'
     | '/privacy'
+    | '/services'
     | '/terms'
     | '/tours'
     | '/transfers'
@@ -302,9 +302,9 @@ export interface FileRouteTypes {
     | '/disclaimer'
     | '/everyday-life'
     | '/expat-guide'
-    | '/news'
     | '/portfolio'
     | '/privacy'
+    | '/services'
     | '/terms'
     | '/tours'
     | '/transfers'
@@ -331,9 +331,9 @@ export interface FileRouteTypes {
     | '/disclaimer'
     | '/everyday-life'
     | '/expat-guide'
-    | '/news'
     | '/portfolio'
     | '/privacy'
+    | '/services'
     | '/terms'
     | '/tours'
     | '/transfers'
@@ -361,9 +361,9 @@ export interface RootRouteChildren {
   DisclaimerRoute: typeof DisclaimerRoute
   EverydayLifeRoute: typeof EverydayLifeRoute
   ExpatGuideRoute: typeof ExpatGuideRoute
-  NewsRoute: typeof NewsRoute
   PortfolioRoute: typeof PortfolioRoute
   PrivacyRoute: typeof PrivacyRoute
+  ServicesRoute: typeof ServicesRoute
   TermsRoute: typeof TermsRoute
   ToursRoute: typeof ToursRoute
   TransfersRoute: typeof TransfersRoute
@@ -446,13 +446,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExpatGuideRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/news': {
-      id: '/news'
-      path: '/news'
-      fullPath: '/news'
-      preLoaderRoute: typeof NewsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/portfolio': {
       id: '/portfolio'
       path: '/portfolio'
@@ -465,6 +458,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -585,9 +585,9 @@ const rootRouteChildren: RootRouteChildren = {
   DisclaimerRoute: DisclaimerRoute,
   EverydayLifeRoute: EverydayLifeRoute,
   ExpatGuideRoute: ExpatGuideRoute,
-  NewsRoute: NewsRoute,
   PortfolioRoute: PortfolioRoute,
   PrivacyRoute: PrivacyRoute,
+  ServicesRoute: ServicesRoute,
   TermsRoute: TermsRoute,
   ToursRoute: ToursRoute,
   TransfersRoute: TransfersRoute,
@@ -607,3 +607,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

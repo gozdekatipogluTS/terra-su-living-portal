@@ -4,8 +4,7 @@ import type { Lang } from "./content";
 /* Editable placeholders                                               */
 /* ------------------------------------------------------------------ */
 
-/** Replace with the official channel address once supplied. */
-export const YOUTUBE_URL = "ADD OFFICIAL YOUTUBE CHANNEL URL";
+export const YOUTUBE_URL = "https://youtube.com/@gozdek3101?si=O9XDg-nEW9cbHxlb";
 export const INSTAGRAM_URL = "https://www.instagram.com/ggozde_k/";
 export const INSTAGRAM_HANDLE = "@ggozde_k";
 export const EMAIL = "info@terrasuliving.com";
@@ -69,7 +68,7 @@ const L = (en: string, tr: string): Record<Lang, string> => ({ en, tr });
 
 export const navigation: NavGroup[] = [
   { to: "/", label: L("Home", "Ana Sayfa") },
-  { to: "/about", label: L("About Gözde K.", "Gözde K. Hakkında") },
+  { to: "/about", label: L("About Gözde", "Gözde ile Tanışın") },
   {
     to: "/relocation",
     label: L("Relocation", "Yerleşim"),
@@ -79,9 +78,17 @@ export const navigation: NavGroup[] = [
       { to: "/relocation/visas", hash: "d9", label: L("D9 Visa", "D9 Vizesi") },
       { to: "/relocation/visas", hash: "golden", label: L("Golden Visa", "Golden Vize") },
       { to: "/relocation/visas", label: L("All Visa Routes", "Tüm Vize Yolları") },
-      { to: "/relocation", hash: "planning", label: L("Relocation Planning", "Yerleşim Planlaması") },
+      {
+        to: "/relocation",
+        hash: "planning",
+        label: L("Relocation Planning", "Yerleşim Planlaması"),
+      },
       { to: "/complete-setup", label: L("End-to-End Support", "Baştan Sona Destek") },
-      { to: "/relocation", hash: "arrival", label: L("Arrival and Settlement", "Varış ve Yerleşme") },
+      {
+        to: "/relocation",
+        hash: "arrival",
+        label: L("Arrival and Settlement", "Varış ve Yerleşme"),
+      },
     ],
   },
   {
@@ -90,11 +97,22 @@ export const navigation: NavGroup[] = [
     children: [
       { to: "/administrative/nif", label: L("NIF", "NIF") },
       { to: "/administrative/niss", label: L("NISS", "NISS") },
-      { to: "/administrative/health", label: L("Utente, Health Number", "Utente, Sağlık Numarası") },
+      {
+        to: "/administrative/health",
+        label: L("Utente, Health Number", "Utente, Sağlık Numarası"),
+      },
       { to: "/administrative/bank", label: L("Portuguese Bank Account", "Portekiz Banka Hesabı") },
-      { to: "/administrative", hash: "aima", label: L("AIMA and Document Preparation", "AIMA ve Evrak Hazırlığı") },
+      {
+        to: "/administrative",
+        hash: "aima",
+        label: L("AIMA and Document Preparation", "AIMA ve Evrak Hazırlığı"),
+      },
       { to: "/administrative/cmd", label: L("Chave Móvel Digital", "Chave Móvel Digital") },
-      { to: "/administrative", hash: "activity", label: L("Activity Registration", "Faaliyet Kaydı") },
+      {
+        to: "/administrative",
+        hash: "activity",
+        label: L("Activity Registration", "Faaliyet Kaydı"),
+      },
     ],
   },
   {
@@ -103,38 +121,80 @@ export const navigation: NavGroup[] = [
     children: [
       { to: "/property/rental", label: L("Property Rental Assistance", "Kiralama Desteği") },
       { to: "/property/purchase", label: L("Property Purchase Assistance", "Satın Alma Desteği") },
-      { to: "/property", hash: "movein", label: L("Move-In and Home Setup", "Taşınma ve Ev Kurulumu") },
+      {
+        to: "/property",
+        hash: "movein",
+        label: L("Move-In and Home Setup", "Taşınma ve Ev Kurulumu"),
+      },
       { to: "/property/cleaning", label: L("Professional Cleaning", "Profesyonel Temizlik") },
       { to: "/property", hash: "area", label: L("Area Research", "Bölge Araştırması") },
-      { to: "/property", hash: "viewings", label: L("Viewing Coordination", "Görüntüleme Koordinasyonu") },
+      {
+        to: "/property",
+        hash: "viewings",
+        label: L("Viewing Coordination", "Görüntüleme Koordinasyonu"),
+      },
     ],
   },
   {
     to: "/business",
     label: L("Business Setup", "İş Kurulumu"),
     children: [
-      { to: "/business", hash: "self", label: L("Self-Employment Guidance", "Serbest Çalışma Rehberliği") },
-      { to: "/business", hash: "setup", label: L("Business Formation Support", "Şirket Kurulum Desteği") },
-      { to: "/business", hash: "market", label: L("Business Opportunity Research", "İş Fırsatı Araştırması") },
-      { to: "/business", hash: "location", label: L("Market and Location Research", "Pazar ve Lokasyon Araştırması") },
-      { to: "/business", hash: "coordination", label: L("Practical Setup Coordination", "Pratik Kurulum Koordinasyonu") },
-      { to: "/business", hash: "referrals", label: L("Professional Referrals", "Profesyonel Yönlendirme") },
+      {
+        to: "/business",
+        hash: "self",
+        label: L("Self-Employment Guidance", "Serbest Çalışma Rehberliği"),
+      },
+      {
+        to: "/business",
+        hash: "setup",
+        label: L("Business Formation Support", "Şirket Kurulum Desteği"),
+      },
+      {
+        to: "/business",
+        hash: "market",
+        label: L("Business Opportunity Research", "İş Fırsatı Araştırması"),
+      },
+      {
+        to: "/business",
+        hash: "location",
+        label: L("Market and Location Research", "Pazar ve Lokasyon Araştırması"),
+      },
+      {
+        to: "/business",
+        hash: "coordination",
+        label: L("Practical Setup Coordination", "Pratik Kurulum Koordinasyonu"),
+      },
+      {
+        to: "/business",
+        hash: "referrals",
+        label: L("Professional Referrals", "Profesyonel Yönlendirme"),
+      },
     ],
   },
   {
     to: "/tours",
     label: L("Private Boutique Experiences", "Özel Butik Deneyimler"),
     children: [
-      { to: "/tours", hash: "portugal", label: L("Private Portugal Programmes", "Özel Portekiz Programları") },
-      { to: "/tours", hash: "turkey", label: L("Portugal and Türkiye Journeys", "Portekiz ve Türkiye Yolculukları") },
-      { to: "/tours", hash: "international", label: L("International Custom Programmes", "Uluslararası Özel Programlar") },
+      {
+        to: "/tours",
+        hash: "portugal",
+        label: L("Private Portugal Programmes", "Özel Portekiz Programları"),
+      },
+      {
+        to: "/tours",
+        hash: "turkey",
+        label: L("Portugal and Türkiye Journeys", "Portekiz ve Türkiye Yolculukları"),
+      },
+      {
+        to: "/tours",
+        hash: "international",
+        label: L("International Custom Programmes", "Uluslararası Özel Programlar"),
+      },
       { to: "/transfers", label: L("Private Transfers", "Özel Transferler") },
       { to: "/tours", hash: "groups", label: L("Small Private Groups", "Küçük Özel Gruplar") },
     ],
   },
   { to: "/portfolio", label: L("Portfolio", "Portföy") },
-  { to: "/news", label: L("News", "Haberler") },
-  { to: "/expat-guide", label: L("Expat Guide", "Expat Rehberi") },
   { to: "/contact", label: L("Contact", "İletişim") },
 ];
 
@@ -197,70 +257,60 @@ export const siteCopy: Record<Lang, SiteCopy> = {
     ctaSecondary: "Explore All Services",
     ctaInstagram: "Instagram DM",
     servicesEyebrow: "What we do",
-    servicesTitle: "Nine areas of practical support",
+    servicesTitle: "Personal Support for Your New Life in Portugal",
     servicesLead:
-      "Choose a single service or combine several into one plan. Every plan is prepared and followed personally by Gözde K.",
+      "From paperwork to finding a home, from your first arrival to everyday life — every journey is different. At TerraSu Living, support begins with your individual needs, not a standard package.",
     services: [
       {
-        title: "Visa and Relocation Support",
-        text: "Route orientation for D2, D7, D8 and investment based residence, with document preparation and planning.",
+        title: "Visa & Relocation Guidance",
+        text: "I turn the move to Portugal from an uncertain process into a clear, personal roadmap, from visa preparation to the first steps of settling in.",
         to: "/relocation",
       },
       {
-        title: "NIF, NISS and Health Registration",
-        text: "Preparation and follow up for the Portuguese tax number, social security number and health user number.",
+        title: "NIF, NISS, Health Registration & Banking",
+        text: "I organise the essential formalities of your new life in one process, including preparation, guidance and follow-up for NIF, NISS, health registration and banking.",
         to: "/administrative",
       },
       {
-        title: "Portuguese Bank Account Support",
-        text: "Document review, bank selection guidance, appointment preparation and communication with the branch.",
-        to: "/administrative/bank",
-      },
-      {
-        title: "Rental and Property Assistance",
-        text: "Area research, listing review, viewing coordination and rental file preparation for renting or buying.",
+        title: "Home Search, Rental & Turnkey Relocation",
+        text: "I help you find the right place to live through area and listing research, viewing coordination, rental preparation, move-in planning, home setup and key handover.",
         to: "/property",
       },
       {
-        title: "Move-In, Home Setup and Key Handover",
-        text: "Cleaning before arrival, property preparation, key collection and a home that is ready on day one.",
-        to: "/property",
-      },
-      {
-        title: "Airport and Private Transfer Coordination",
-        text: "Suitable licensed transport providers identified and coordinated for arrivals, families and groups.",
-        to: "/transfers",
-      },
-      {
-        title: "Business Setup and Opportunity Research",
-        text: "Concept review, local research and a practical roadmap for independent activity or a small business.",
+        title: "Business & Practical Setup",
+        text: "I make the practical steps of establishing work or daily life in Portugal clearer and more manageable, with support shaped around your situation.",
         to: "/business",
       },
       {
+        title: "Airport & Private Transfer Coordination",
+        text: "A more comfortable first arrival through carefully selected, licensed transport providers coordinated for individuals, families and private groups.",
+        to: "/transfers",
+      },
+      {
         title: "Private Boutique Experiences",
-        text: "Private programmes in Portugal, and multi destination planning for small groups on request.",
+        text: "Portugal experienced personally, through private routes shaped around gastronomy, wine, culture and local life for small groups and private guests.",
         to: "/tours",
       },
       {
-        title: "Everyday Life and Settlement Support",
-        text: "Utilities, internet, transport, health centre orientation and the small practical details after arrival.",
+        title: "Everyday Life & Settlement Support",
+        text: "Personal support with the small local details that make a real difference, helping Portugal feel more familiar and more like home.",
         to: "/everyday-life",
       },
     ],
     founderEyebrow: "Founder",
-    founderTitle: "Personally Guided by Gözde K.",
+    founderTitle: "Personally Guided by Gözde Katipoğlu",
     founderText: [
-      "I am Gözde K., founder of TerraSu Living.",
+      "I am Gözde Katipoğlu, founder of TerraSu Living.",
       "I live in Portugal and personally experienced the process of relocating, finding a home, completing administrative procedures and establishing everyday life in a new country.",
       "That experience became the foundation of TerraSu Living.",
       "I work directly with each client and personally oversee the planning, communication and coordination included in their service.",
       "My role is to make the process clearer, more organised and more manageable while connecting clients with appropriately qualified professionals whenever regulated expertise is required.",
       "I am based in Porto, but TerraSu Living supports clients across Portugal according to the service, location and project requirements.",
     ],
-    founderPortraitNote: "Founder portrait area. Add the original photograph of Gözde K. here.",
+    founderPortraitNote: "Portrait of Gözde Katipoğlu, founder of TerraSu Living.",
     socialTitle: "Real Life and Practical Information from Portugal",
     socialText:
-      "Follow Gözde K. for practical observations, real relocation experiences, property-search insights, everyday life in Portugal, new services and upcoming boutique programmes.",
+      "Follow Gözde for practical observations, real relocation experiences, property-search insights and everyday life in Portugal.",
     socialReels: "View Latest Reels",
     socialDm: "Send Instagram DM",
     socialYoutube: "Watch on YouTube",
@@ -308,83 +358,69 @@ export const siteCopy: Record<Lang, SiteCopy> = {
     ctaPrimary: "Kişisel Destek Talep Edin",
     ctaSecondary: "Tüm Hizmetleri İnceleyin",
     ctaInstagram: "Instagram DM",
-    servicesEyebrow: "Hizmet alanları",
-    servicesTitle: "Dokuz pratik destek alanı",
+    servicesEyebrow: "Kişisel destek",
+    servicesTitle: "Portekiz’de Yeni Hayatınız İçin Kişisel Destek",
     servicesLead:
-      "Tek bir hizmet seçebilir veya birkaçını tek planda birleştirebilirsiniz. Her plan Gözde K. tarafından bizzat hazırlanır ve takip edilir.",
+      "Evraklardan eve, ilk adımdan günlük yaşama… Her süreç aynı değildir. Bu nedenle TerraSu Living’de hizmetler hazır paketlerden değil, sizin ihtiyaçlarınızdan başlar.",
     services: [
       {
-        title: "Vize ve Yerleşim Desteği",
-        text: "D2, D7, D8 ve yatırım temelli oturum seçenekleri için yönlendirme, evrak hazırlığı ve planlama.",
+        title: "Vize & Yerleşim Danışmanlığı",
+        text: "Portekiz’e taşınma sürecinizi belirsizlikten çıkarıp planlı, anlaşılır ve kişisel bir yol haritasına dönüştürüyorum. Vize sürecinden yerleşimin ilk adımlarına kadar ihtiyacınıza özel rehberlik.",
         to: "/relocation",
       },
       {
-        title: "NIF, NISS ve Sağlık Kaydı",
-        text: "Portekiz vergi numarası, sosyal güvenlik numarası ve sağlık kullanıcı numarası için hazırlık ve takip.",
+        title: "NIF, NISS, Sağlık Kaydı & Bankacılık",
+        text: "Portekiz’de yeni hayatınızın temel resmi işlemlerini tek bir süreçte organize ediyorum. NIF, NISS, sağlık kullanıcı kaydı ve banka hesabı sürecinde hazırlık, yönlendirme ve takip desteği.",
         to: "/administrative",
       },
       {
-        title: "Portekiz Banka Hesabı Desteği",
-        text: "Evrak kontrolü, banka seçimi rehberliği, randevu hazırlığı ve şube ile iletişim desteği.",
-        to: "/administrative/bank",
-      },
-      {
-        title: "Kiralama ve Gayrimenkul Desteği",
-        text: "Bölge araştırması, ilan değerlendirmesi, görüntüleme koordinasyonu ve kiralama dosyası hazırlığı.",
+        title: "Ev Bulma, Kiralama & Anahtar Teslim Yerleşim",
+        text: "Sadece bir ev aramıyorum; Portekiz’de yaşayacağınız doğru alanı bulmanıza yardımcı oluyorum. Bölge ve ev araştırması, ilan değerlendirmesi, kiralama süreci, taşınma hazırlığı, ev kurulumu ve anahtar teslim yerleşim desteğini tek noktada koordine ediyorum.",
         to: "/property",
       },
       {
-        title: "Taşınma, Ev Kurulumu ve Anahtar Teslimi",
-        text: "Gelişten önce temizlik, ev hazırlığı, anahtar teslim alma ve ilk günden hazır bir ev.",
-        to: "/property",
-      },
-      {
-        title: "Havalimanı ve Özel Transfer Koordinasyonu",
-        text: "Varışlar, aileler ve gruplar için uygun lisanslı taşıma sağlayıcılarının bulunması ve koordinasyonu.",
-        to: "/transfers",
-      },
-      {
-        title: "İş Kurulumu ve Fırsat Araştırması",
-        text: "Fikir değerlendirmesi, yerel araştırma ve bağımsız faaliyet veya küçük işletme için pratik yol haritası.",
+        title: "İş Kurulumu & Pratik Destek",
+        text: "Portekiz’de iş veya günlük yaşam düzeninizi kurarken ihtiyaç duyacağınız pratik süreçleri daha anlaşılır ve yönetilebilir hale getiriyorum. İhtiyacınıza göre kişiselleştirilmiş, yerel ve çözüm odaklı destek.",
         to: "/business",
       },
       {
+        title: "Havalimanı & Özel Transfer Koordinasyonu",
+        text: "Portekiz’e ilk adımınızdan itibaren rahat bir başlangıç. Bireyler, aileler ve özel gruplar için güvenilir transfer ve ulaşım koordinasyonu.",
+        to: "/transfers",
+      },
+      {
         title: "Özel Butik Deneyimler",
-        text: "Portekiz'de özel programlar ve talebe göre küçük gruplar için çok destinasyonlu planlama.",
+        text: "Portekiz’i standart bir turist gibi değil, size özel hazırlanmış bir deneyimle keşfedin. Küçük gruplar ve özel misafirler için gastronomi, şarap, kültür ve yerel yaşam odaklı seçkin rotalar.",
         to: "/tours",
       },
       {
-        title: "Günlük Yaşam ve Yerleşme Desteği",
-        text: "Abonelikler, internet, ulaşım, sağlık merkezi yönlendirmesi ve varış sonrası pratik detaylar.",
+        title: "Günlük Yaşam & Yerleşim Desteği",
+        text: "Yeni bir ülkede küçük detaylar büyük fark yaratır. Günlük yaşamdan yerel ihtiyaçlara kadar Portekiz’de kendinizi daha hızlı evinizde hissetmenizi sağlayacak kişisel destek.",
         to: "/everyday-life",
       },
     ],
     founderEyebrow: "Kurucu",
-    founderTitle: "Gözde K. Tarafından Birebir Yönetilen Hizmet",
+    founderTitle: "Gözde Katipoğlu ile Birebir Yönetilen Hizmet",
     founderText: [
-      "Ben Gözde K., TerraSu Living'in kurucusuyum.",
+      "Ben Gözde Katipoğlu, TerraSu Living'in kurucusuyum.",
       "Portekiz'e taşınma, ev bulma, idari işlemleri tamamlama ve yeni bir ülkede günlük yaşam kurma sürecini bizzat deneyimledim.",
       "Bu deneyim TerraSu Living'in temelini oluşturdu.",
       "Her müşterimle doğrudan çalışıyor, hizmet planındaki hazırlık, iletişim ve koordinasyon süreçlerini bizzat takip ediyorum.",
       "Amacım süreci daha açık, düzenli ve yönetilebilir hâle getirmek; yetki gerektiren işlemlerde müşterileri uygun ve lisanslı profesyonellerle buluşturmaktır.",
       "Porto'da yaşıyorum. TerraSu Living ise hizmetin türüne, konuma ve proje ihtiyaçlarına göre Portekiz genelinde destek sunar.",
     ],
-    founderPortraitNote: "Kurucu portre alanı. Gözde K.'nın orijinal fotoğrafı buraya eklenecek.",
+    founderPortraitNote: "TerraSu Living kurucusu Gözde Katipoğlu'nun portresi.",
     socialTitle: "Portekiz'den Gerçek Yaşam ve Pratik Bilgiler",
     socialText:
-      "Portekiz'de gerçek yaşam, taşınma deneyimleri, ev arama süreçleri, günlük hayat, yeni hizmetler ve yaklaşan butik programlar için Gözde K.'yı takip edin.",
+      "Portekiz'de gerçek yaşam, taşınma deneyimleri, ev arama süreçleri ve günlük hayat için Gözde'yi takip edin.",
     socialReels: "Son Reels İçeriklerini İzleyin",
     socialDm: "Instagram DM Gönderin",
     socialYoutube: "YouTube'da İzleyin",
     socialYoutubePending: "Kanal adresi eklenecek",
-    packagesEyebrow: "Destek formatları",
-    packagesTitle: "Talep kategorileri",
     packagesLead:
-      "Hizmet kapsamı ve fiyat; konuma, kişi sayısına, zaman planına, sürecin karmaşıklığına ve destek düzeyine göre belirlenir.",
+      "Evraklardan eve, ilk adımdan günlük yaşama… Her süreç aynı değildir. Bu nedenle TerraSu Living’de hizmetler hazır paketlerden değil, sizin ihtiyaçlarınızdan başlar.",
     packages: [
       "Temel Kurulum",
-      "İdari Hazırlık",
-      "Ev Arama ve Varış",
       "Kapsamlı Yerleşim Desteği",
       "Eve Hazır Paketi",
       "İş Kurulumu Araştırması",
@@ -393,23 +429,21 @@ export const siteCopy: Record<Lang, SiteCopy> = {
     ],
     packagesNote: "Size özel hizmet kapsamı ve fiyat teklifi için iletişime geçin.",
     packagesCta: "Teklif talep edin",
-    legalTitle: "Hukuki konum",
+    legalTitle: "Hukuki çerçeve",
     legal: [
-      "TerraSu Living pratik bilgi, hazırlık, araştırma ve koordinasyon desteği sunar. İlgili lisans veya kayıt resmen alınarak ayrıca belirtilmediği sürece hukuki, muhasebe, finans, yatırım danışmanlığı, emlak aracılığı, taşımacılık veya düzenlemeye tabi turizm hizmeti sunmaz.",
-      "Yetki gerektiren hizmetler, ilgili lisansa sahip bağımsız profesyoneller tarafından sağlanır.",
-      "TerraSu Living; konsoloslukların, AIMA'nın, bankaların, kamu makamlarının, ev sahiplerinin, satıcıların veya diğer üçüncü tarafların kararlarını garanti etmez.",
+      "TerraSu Living pratik bilgi, hazırlık, araştırma ve koordinasyon desteği sunar. Lisans veya kayıt gerektiren hukuki, mali, yatırım, emlak aracılığı, ulaşım veya turizm hizmetlerini sunmaz.",
+      "Düzenlemeye tabi hizmetler uygun lisansa sahip bağımsız profesyoneller tarafından verilir.",
+      "TerraSu Living konsolosluklar, AIMA, bankalar, kamu kurumları, ev sahipleri veya üçüncü tarafların kararlarını garanti etmez.",
     ],
     lastReviewedLabel: "Son gözden geçirme",
     officialSource: "Resmî kaynak",
     readMore: "Daha fazla",
     enquire: "Kişisel Destek Talep Edin",
     combineNote:
-      "Hizmetler ayrı ayrı seçilebilir veya kapsamlı bir yerleşim paketi içinde birleştirilebilir.",
+      "Destekleri ayrı ayrı seçebilir veya kapsamlı bir yerleşim planında birleştirebilirsiniz.",
   },
 };
 
-/* ------------------------------------------------------------------ */
-/* Portfolio                                                           */
 /* ------------------------------------------------------------------ */
 
 export type PortfolioEntry = {
@@ -424,7 +458,7 @@ export type PortfolioEntry = {
 export const portfolioEntries: PortfolioEntry[] = [
   {
     key: "relocation",
-    category: L("Relocation", "Yerleşim"),
+    category: L("Consulting", "Danışmanlık"),
     title: L("Relocation Planning", "Yerleşim Planlaması"),
     text: L(
       "A written plan covering route options, document stages, timing and the order in which each step is prepared.",
@@ -553,66 +587,5 @@ export const portfolioEntries: PortfolioEntry[] = [
     ),
     status: L("Service Area", "Hizmet Alanı"),
     to: "/everyday-life",
-  },
-];
-
-/* ------------------------------------------------------------------ */
-/* News                                                                */
-/* ------------------------------------------------------------------ */
-
-export type NewsItem = {
-  category: Record<Lang, string>;
-  title: Record<Lang, string>;
-  text: Record<Lang, string>;
-};
-
-export const newsItems: NewsItem[] = [
-  {
-    category: L("Visa and Residence Updates", "Vize ve Oturum Güncellemeleri"),
-    title: L("Residence route information kept under review", "Oturum seçenekleri düzenli olarak gözden geçiriliyor"),
-    text: L(
-      "Requirements for D2, D7, D8 and investment based residence are checked against official Portuguese sources before any plan is prepared. Rules and figures can change during the year.",
-      "D2, D7, D8 ve yatırım temelli oturum koşulları, her plan hazırlanmadan önce resmî Portekiz kaynaklarıyla karşılaştırılır. Kurallar ve tutarlar yıl içinde değişebilir.",
-    ),
-  },
-  {
-    category: L("Administrative Service Updates", "İdari Hizmet Güncellemeleri"),
-    title: L("Appointment practice varies by office", "Randevu uygulaması kuruma göre değişir"),
-    text: L(
-      "Availability and accepted document formats differ between local offices. Each checklist is confirmed for the specific office before the appointment.",
-      "Randevu durumu ve kabul edilen evrak formatları kurumlara göre farklılık gösterir. Her liste, randevu öncesinde ilgili kurum için teyit edilir.",
-    ),
-  },
-  {
-    category: L("Property Information", "Emlak Bilgisi"),
-    title: L("Rental files decide most applications", "Kiralama dosyası çoğu başvuruyu belirler"),
-    text: L(
-      "In competitive areas the completeness of the rental file often matters more than the offered rent. Income documents are prepared in advance.",
-      "Rekabetin yüksek olduğu bölgelerde dosyanın eksiksiz olması, teklif edilen kiradan daha belirleyici olabilir. Gelir belgeleri önceden hazırlanır.",
-    ),
-  },
-  {
-    category: L("Business Setup Information", "İş Kurulumu Bilgisi"),
-    title: L("Activity registration follows the concept", "Faaliyet kaydı konsepte göre şekillenir"),
-    text: L(
-      "The chosen activity code and working model affect the registration steps. These are reviewed with an independent accountant before registration.",
-      "Seçilen faaliyet kodu ve çalışma modeli kayıt adımlarını etkiler. Bu konular kayıt öncesinde bağımsız bir muhasebeciyle değerlendirilir.",
-    ),
-  },
-  {
-    category: L("Upcoming Private Experiences", "Yaklaşan Özel Deneyimler"),
-    title: L("Small group programmes in preparation", "Küçük grup programları hazırlanıyor"),
-    text: L(
-      "Private programmes for small groups in Porto, the Douro Valley and central Portugal are planned by request. Dates are set with each group.",
-      "Porto, Douro Vadisi ve orta Portekiz'de küçük gruplara özel programlar talebe göre planlanır. Tarihler her grupla birlikte belirlenir.",
-    ),
-  },
-  {
-    category: L("New Service Announcements", "Yeni Hizmet Duyuruları"),
-    title: L("Transfer and vehicle coordination", "Transfer ve araç koordinasyonu"),
-    text: L(
-      "Coordination with licensed transport providers is now offered as a separate service for arrivals, viewings and group travel.",
-      "Lisanslı taşıma sağlayıcılarıyla koordinasyon; karşılama, ev görüntüleme ve grup seyahatleri için ayrı bir hizmet olarak sunulmaktadır.",
-    ),
   },
 ];

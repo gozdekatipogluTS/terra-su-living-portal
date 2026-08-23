@@ -152,7 +152,7 @@ const en: Content = {
   },
   common: {
     brand: "TerraSu Living",
-    founder: "Gözde K.",
+    founder: "Gözde Katipoğlu",
     signature: "by Gözde K.",
     base: "Porto, Portugal",
     learnMore: "Learn more",
@@ -197,7 +197,7 @@ const en: Content = {
       },
     ],
     founderEyebrow: "Founder",
-    founderTitle: "Meet Gözde K.",
+    founderTitle: "Meet Gözde",
     founderText:
       "TerraSu Living was created by Gözde K. to offer a more personal, trustworthy and refined support experience for people building a life in Portugal. With a warm communication style and a practical approach, Gözde K. helps clients feel more confident, prepared and supported through every step of the process.",
     portfolioEyebrow: "Selected support areas",
@@ -219,7 +219,7 @@ const en: Content = {
       "The name brings together terra — the land that welcomes you — and su, the Turkish word for water: two elements that shape both Portugal and the way we work. Grounded, calm and adaptable.",
       "Today TerraSu Living supports individuals, families and small businesses across consulting, property search, professional cleaning and curated Portugal experiences, with the same personal attention from the first message to long after settling in.",
     ],
-    founderTitle: "Meet Gözde K.",
+    founderTitle: "Meet Gözde",
     founderText:
       "Gözde K. built TerraSu Living around the kind of support she looked for herself: warm, honest and practical. She works closely with each client, translating processes into plain language and staying reachable throughout — so no one has to navigate a new country alone.",
     valuesTitle: "Brand values",
@@ -284,18 +284,38 @@ const en: Content = {
     property: {
       title: "Property Support",
       subtitle: "Property Search and Relocation Assistance.",
-      preview:
-        "Rental and purchase search support, viewing coordination and local area guidance.",
+      preview: "Rental and purchase search support, viewing coordination and local area guidance.",
       intro:
         "Finding a home in a new country takes local reading of listings, neighbourhoods and communication. We stand beside you through the search, not in place of licensed professionals.",
       items: [
-        { name: "Rental property search support", text: "Shortlisting suitable listings based on your budget, area and needs." },
-        { name: "Property purchase support", text: "Practical assistance and orientation throughout your purchase journey." },
-        { name: "Listing and area evaluation", text: "An honest read of what a listing and its location really offer." },
-        { name: "Viewing coordination", text: "Scheduling and organising viewings so your time is used well." },
-        { name: "Communication support with landlords or licensed agencies", text: "Language and communication support in every exchange." },
-        { name: "Document preparation support", text: "Help gathering and organising the documents commonly requested." },
-        { name: "Local area guidance", text: "Neighbourhood insight: transport, daily life, schools and services." },
+        {
+          name: "Rental property search support",
+          text: "Shortlisting suitable listings based on your budget, area and needs.",
+        },
+        {
+          name: "Property purchase support",
+          text: "Practical assistance and orientation throughout your purchase journey.",
+        },
+        {
+          name: "Listing and area evaluation",
+          text: "An honest read of what a listing and its location really offer.",
+        },
+        {
+          name: "Viewing coordination",
+          text: "Scheduling and organising viewings so your time is used well.",
+        },
+        {
+          name: "Communication support with landlords or licensed agencies",
+          text: "Language and communication support in every exchange.",
+        },
+        {
+          name: "Document preparation support",
+          text: "Help gathering and organising the documents commonly requested.",
+        },
+        {
+          name: "Local area guidance",
+          text: "Neighbourhood insight: transport, daily life, schools and services.",
+        },
       ],
       disclaimer:
         "TerraSu Living is not a real estate agency and does not provide regulated real estate brokerage or legal services. When necessary, clients are referred to licensed professionals.",
@@ -311,10 +331,22 @@ const en: Content = {
       intro:
         "A well-prepared home makes everything else easier. Our cleaning service is reliable, detailed and respectful of your space.",
       items: [
-        { name: "Residential Cleaning", text: "Regular or one-off cleaning for apartments and houses." },
-        { name: "Business Cleaning", text: "Offices and small commercial spaces kept consistently presentable." },
-        { name: "Airbnb and Alojamento Local Cleaning", text: "Turnover cleaning and preparation between guest stays." },
-        { name: "Move-In / Move-Out Cleaning", text: "A thorough reset before you arrive or after you leave." },
+        {
+          name: "Residential Cleaning",
+          text: "Regular or one-off cleaning for apartments and houses.",
+        },
+        {
+          name: "Business Cleaning",
+          text: "Offices and small commercial spaces kept consistently presentable.",
+        },
+        {
+          name: "Airbnb and Alojamento Local Cleaning",
+          text: "Turnover cleaning and preparation between guest stays.",
+        },
+        {
+          name: "Move-In / Move-Out Cleaning",
+          text: "A thorough reset before you arrive or after you leave.",
+        },
         { name: "Deep Cleaning", text: "Detailed, top-to-bottom cleaning for a complete refresh." },
       ],
       metaTitle: "Cleaning Services | TerraSu Living Porto",
@@ -329,12 +361,30 @@ const en: Content = {
       intro:
         "Beyond the obvious routes: thoughtful planning and coordination so your time in Portugal feels personal, calm and memorable.",
       items: [
-        { name: "Porto and Northern Portugal recommendations", text: "Curated places to see, taste and slow down in." },
-        { name: "Douro Valley planning", text: "Day plans shaped around the season, the light and your pace." },
-        { name: "Local experience suggestions", text: "Authentic experiences chosen with care, not from a catalogue." },
-        { name: "Small group coordination", text: "Planning support for families and small private groups." },
-        { name: "Restaurant and culture recommendations", text: "Tables and cultural stops worth your evening." },
-        { name: "Coordination with licensed transfer, guide and activity providers", text: "Bookings arranged with trusted, independent licensed providers." },
+        {
+          name: "Porto and Northern Portugal recommendations",
+          text: "Curated places to see, taste and slow down in.",
+        },
+        {
+          name: "Douro Valley planning",
+          text: "Day plans shaped around the season, the light and your pace.",
+        },
+        {
+          name: "Local experience suggestions",
+          text: "Authentic experiences chosen with care, not from a catalogue.",
+        },
+        {
+          name: "Small group coordination",
+          text: "Planning support for families and small private groups.",
+        },
+        {
+          name: "Restaurant and culture recommendations",
+          text: "Tables and cultural stops worth your evening.",
+        },
+        {
+          name: "Coordination with licensed transfer, guide and activity providers",
+          text: "Bookings arranged with trusted, independent licensed providers.",
+        },
       ],
       disclaimer:
         "TerraSu Living provides planning and coordination support. Transportation, tours, accommodation, guiding and regulated tourism services are provided directly by independent licensed providers.",
@@ -355,22 +405,38 @@ const en: Content = {
       {
         title: "Relocation & setup support",
         text: "Arriving in Portugal with a clear order of steps instead of a long list of unknowns.",
-        points: ["First-month priority plan", "NIF, NISS and bank appointments", "Everyday practical orientation"],
+        points: [
+          "First-month priority plan",
+          "NIF, NISS and bank appointments",
+          "Everyday practical orientation",
+        ],
       },
       {
         title: "Property search journey",
         text: "From shortlist to signed contract, with local reading of listings and neighbourhoods.",
-        points: ["Area and listing evaluation", "Viewing coordination", "Communication with landlords or licensed agencies"],
+        points: [
+          "Area and listing evaluation",
+          "Viewing coordination",
+          "Communication with landlords or licensed agencies",
+        ],
       },
       {
         title: "Home and rental preparation",
         text: "Homes and short-stay properties prepared to a consistent, welcoming standard.",
-        points: ["Move-in and move-out cleaning", "Turnover preparation", "Deep cleaning before handover"],
+        points: [
+          "Move-in and move-out cleaning",
+          "Turnover preparation",
+          "Deep cleaning before handover",
+        ],
       },
       {
         title: "Curated Portugal lifestyle planning",
         text: "Time in Portugal planned around your pace, interests and the season.",
-        points: ["Porto and Douro Valley day plans", "Restaurant and culture selections", "Coordination with licensed providers"],
+        points: [
+          "Porto and Douro Valley day plans",
+          "Restaurant and culture selections",
+          "Coordination with licensed providers",
+        ],
       },
     ],
   },
@@ -467,7 +533,7 @@ const tr: Content = {
   },
   common: {
     brand: "TerraSu Living",
-    founder: "Gözde K.",
+    founder: "Gözde Katipoğlu",
     signature: "by Gözde K.",
     base: "Porto, Portekiz",
     learnMore: "Detaylı bilgi",
@@ -512,7 +578,7 @@ const tr: Content = {
       },
     ],
     founderEyebrow: "Kurucu",
-    founderTitle: "Gözde K. ile Tanışın",
+    founderTitle: "Gözde ile Tanışın",
     founderText:
       "TerraSu Living, Portekiz'de bir hayat kuran insanlara daha kişisel, güvenilir ve incelikli bir destek deneyimi sunmak için Gözde K. tarafından kuruldu. Sıcak iletişim tarzı ve pratik yaklaşımıyla Gözde K., müşterilerinin sürecin her adımında kendini daha güvende, hazırlıklı ve desteklenmiş hissetmesini sağlıyor.",
     portfolioEyebrow: "Seçilmiş destek alanları",
@@ -534,7 +600,7 @@ const tr: Content = {
       "İsim, sizi karşılayan toprağı ifade eden terra ile Türkçedeki su kelimesini bir araya getiriyor: hem Portekiz'i hem de çalışma biçimimizi tanımlayan iki unsur. Sağlam, sakin ve uyum sağlayan.",
       "Bugün TerraSu Living; danışmanlık, ev arama, profesyonel temizlik ve özenle planlanan Portekiz deneyimleri alanlarında bireylere, ailelere ve küçük işletmelere ilk mesajdan yerleşme sonrasına kadar aynı kişisel ilgiyle destek veriyor.",
     ],
-    founderTitle: "Gözde K. ile Tanışın",
+    founderTitle: "Gözde ile Tanışın",
     founderText:
       "Gözde K., TerraSu Living'i kendi aradığı destek anlayışı üzerine kurdu: sıcak, dürüst ve pratik. Her müşteriyle yakından çalışıyor, süreçleri sade bir dile çeviriyor ve baştan sona ulaşılabilir kalıyor — böylece kimse yeni bir ülkede yalnız kalmıyor.",
     valuesTitle: "Marka değerlerimiz",
@@ -604,13 +670,34 @@ const tr: Content = {
       intro:
         "Yeni bir ülkede ev bulmak; ilanları, semtleri ve iletişimi yerel gözle okumayı gerektirir. Süreçte yanınızdayız — lisanslı profesyonellerin yerine değil, onlarla birlikte.",
       items: [
-        { name: "Kiralık ev arama desteği", text: "Bütçenize, bölgenize ve ihtiyaçlarınıza uygun ilanların seçilmesi." },
-        { name: "Ev satın alma desteği", text: "Satın alma yolculuğunuz boyunca pratik destek ve yönlendirme." },
-        { name: "İlan ve bölge değerlendirmesi", text: "Bir ilanın ve konumunun gerçekte ne sunduğuna dair dürüst değerlendirme." },
-        { name: "Görüntüleme koordinasyonu", text: "Zamanınızı verimli kullanmanız için randevuların planlanması." },
-        { name: "Ev sahipleri veya lisanslı acentelerle iletişim desteği", text: "Her görüşmede dil ve iletişim desteği." },
-        { name: "Belge hazırlık desteği", text: "Sıkça istenen belgelerin toplanması ve düzenlenmesinde yardım." },
-        { name: "Yerel bölge rehberliği", text: "Semt bilgisi: ulaşım, günlük yaşam, okullar ve hizmetler." },
+        {
+          name: "Kiralık ev arama desteği",
+          text: "Bütçenize, bölgenize ve ihtiyaçlarınıza uygun ilanların seçilmesi.",
+        },
+        {
+          name: "Ev satın alma desteği",
+          text: "Satın alma yolculuğunuz boyunca pratik destek ve yönlendirme.",
+        },
+        {
+          name: "İlan ve bölge değerlendirmesi",
+          text: "Bir ilanın ve konumunun gerçekte ne sunduğuna dair dürüst değerlendirme.",
+        },
+        {
+          name: "Görüntüleme koordinasyonu",
+          text: "Zamanınızı verimli kullanmanız için randevuların planlanması.",
+        },
+        {
+          name: "Ev sahipleri veya lisanslı acentelerle iletişim desteği",
+          text: "Her görüşmede dil ve iletişim desteği.",
+        },
+        {
+          name: "Belge hazırlık desteği",
+          text: "Sıkça istenen belgelerin toplanması ve düzenlenmesinde yardım.",
+        },
+        {
+          name: "Yerel bölge rehberliği",
+          text: "Semt bilgisi: ulaşım, günlük yaşam, okullar ve hizmetler.",
+        },
       ],
       disclaimer:
         "TerraSu Living bir emlak acentesi değildir; düzenlemeye tabi emlak aracılık hizmeti veya hukuki hizmet sunmaz. Gerektiğinde müşteriler lisanslı profesyonellere yönlendirilir.",
@@ -626,10 +713,19 @@ const tr: Content = {
       intro:
         "İyi hazırlanmış bir ev her şeyi kolaylaştırır. Temizlik hizmetimiz güvenilir, detaycı ve yaşam alanınıza saygılıdır.",
       items: [
-        { name: "Konut Temizliği", text: "Daireler ve evler için düzenli ya da tek seferlik temizlik." },
+        {
+          name: "Konut Temizliği",
+          text: "Daireler ve evler için düzenli ya da tek seferlik temizlik.",
+        },
         { name: "İşyeri Temizliği", text: "Ofisler ve küçük ticari alanlar için düzenli bakım." },
-        { name: "Airbnb ve Alojamento Local Temizliği", text: "Misafir dönüşlerinde temizlik ve hazırlık." },
-        { name: "Taşınma Öncesi / Sonrası Temizlik", text: "Girmeden önce ya da çıktıktan sonra kapsamlı temizlik." },
+        {
+          name: "Airbnb ve Alojamento Local Temizliği",
+          text: "Misafir dönüşlerinde temizlik ve hazırlık.",
+        },
+        {
+          name: "Taşınma Öncesi / Sonrası Temizlik",
+          text: "Girmeden önce ya da çıktıktan sonra kapsamlı temizlik.",
+        },
         { name: "Derin Temizlik", text: "Baştan sona, detaylı ve yenileyici temizlik." },
       ],
       metaTitle: "Temizlik Hizmetleri | TerraSu Living Porto",
@@ -644,12 +740,30 @@ const tr: Content = {
       intro:
         "Alışılmış rotaların ötesinde: Portekiz'deki zamanınızın kişisel, sakin ve akılda kalıcı olması için özenli planlama ve koordinasyon.",
       items: [
-        { name: "Porto ve Kuzey Portekiz önerileri", text: "Görülecek, tadılacak ve yavaşlanacak seçilmiş yerler." },
-        { name: "Douro Vadisi planlaması", text: "Mevsime, ışığa ve temponuza göre şekillenen gün planları." },
-        { name: "Yerel deneyim önerileri", text: "Katalogdan değil, özenle seçilmiş otantik deneyimler." },
-        { name: "Küçük grup koordinasyonu", text: "Aileler ve küçük özel gruplar için planlama desteği." },
-        { name: "Restoran ve kültür önerileri", text: "Akşamınıza değecek masalar ve kültürel duraklar." },
-        { name: "Lisanslı transfer, rehber ve aktivite sağlayıcılarıyla koordinasyon", text: "Güvenilir bağımsız lisanslı sağlayıcılarla düzenlenen rezervasyonlar." },
+        {
+          name: "Porto ve Kuzey Portekiz önerileri",
+          text: "Görülecek, tadılacak ve yavaşlanacak seçilmiş yerler.",
+        },
+        {
+          name: "Douro Vadisi planlaması",
+          text: "Mevsime, ışığa ve temponuza göre şekillenen gün planları.",
+        },
+        {
+          name: "Yerel deneyim önerileri",
+          text: "Katalogdan değil, özenle seçilmiş otantik deneyimler.",
+        },
+        {
+          name: "Küçük grup koordinasyonu",
+          text: "Aileler ve küçük özel gruplar için planlama desteği.",
+        },
+        {
+          name: "Restoran ve kültür önerileri",
+          text: "Akşamınıza değecek masalar ve kültürel duraklar.",
+        },
+        {
+          name: "Lisanslı transfer, rehber ve aktivite sağlayıcılarıyla koordinasyon",
+          text: "Güvenilir bağımsız lisanslı sağlayıcılarla düzenlenen rezervasyonlar.",
+        },
       ],
       disclaimer:
         "TerraSu Living planlama ve koordinasyon desteği sunar. Ulaşım, tur, konaklama, rehberlik ve düzenlemeye tabi turizm hizmetleri doğrudan bağımsız lisanslı sağlayıcılar tarafından verilir.",
@@ -670,22 +784,38 @@ const tr: Content = {
       {
         title: "Yerleşim ve kurulum desteği",
         text: "Portekiz'e uzun bir bilinmeyenler listesiyle değil, net bir adım sırasıyla varmak.",
-        points: ["İlk ay öncelik planı", "NIF, NISS ve banka randevuları", "Günlük pratik oryantasyon"],
+        points: [
+          "İlk ay öncelik planı",
+          "NIF, NISS ve banka randevuları",
+          "Günlük pratik oryantasyon",
+        ],
       },
       {
         title: "Ev arama yolculuğu",
         text: "Seçilmiş ilanlardan imzalı sözleşmeye, semtleri yerel gözle okuyarak.",
-        points: ["Bölge ve ilan değerlendirmesi", "Görüntüleme koordinasyonu", "Ev sahipleri veya lisanslı acentelerle iletişim"],
+        points: [
+          "Bölge ve ilan değerlendirmesi",
+          "Görüntüleme koordinasyonu",
+          "Ev sahipleri veya lisanslı acentelerle iletişim",
+        ],
       },
       {
         title: "Ev ve kiralama hazırlığı",
         text: "Evlerin ve kısa dönem kiralamaların istikrarlı, davetkâr bir standartta hazırlanması.",
-        points: ["Taşınma öncesi ve sonrası temizlik", "Misafir dönüşü hazırlığı", "Teslim öncesi derin temizlik"],
+        points: [
+          "Taşınma öncesi ve sonrası temizlik",
+          "Misafir dönüşü hazırlığı",
+          "Teslim öncesi derin temizlik",
+        ],
       },
       {
         title: "Özel Portekiz yaşam planlaması",
         text: "Portekiz'deki zamanın temponuza, ilgi alanlarınıza ve mevsime göre planlanması.",
-        points: ["Porto ve Douro Vadisi gün planları", "Restoran ve kültür seçkileri", "Lisanslı sağlayıcılarla koordinasyon"],
+        points: [
+          "Porto ve Douro Vadisi gün planları",
+          "Restoran ve kültür seçkileri",
+          "Lisanslı sağlayıcılarla koordinasyon",
+        ],
       },
     ],
   },
@@ -722,7 +852,8 @@ const tr: Content = {
     responseText: "Mesajlar genellikle bir iş günü içinde Türkçe veya İngilizce yanıtlanır.",
   },
   footer: {
-    tagline: "Portekiz merkezli bir yaşam ve destek markası; Gözde K. tarafından kuruldu ve yönetiliyor.",
+    tagline:
+      "Portekiz merkezli bir yaşam ve destek markası; Gözde K. tarafından kuruldu ve yönetiliyor.",
     quickLinks: "Menü",
     servicesTitle: "Hizmetler",
     legalTitle: "Yasal",

@@ -93,13 +93,22 @@
   --sand: oklch(0.928 0.024 82);
   --cream: oklch(0.968 0.012 85);
 
-  --shadow-soft: 0 1px 2px oklch(0.42 0.052 122 / 0.04), 0 12px 32px -18px oklch(0.42 0.052 122 / 0.28);
-  --shadow-lift: 0 2px 4px oklch(0.42 0.052 122 / 0.05), 0 28px 56px -28px oklch(0.42 0.052 122 / 0.35);
+  --shadow-soft:
+    0 1px 2px oklch(0.42 0.052 122 / 0.04), 0 12px 32px -18px oklch(0.42 0.052 122 / 0.28);
+  --shadow-lift:
+    0 2px 4px oklch(0.42 0.052 122 / 0.05), 0 28px 56px -28px oklch(0.42 0.052 122 / 0.35);
 }
 
 @layer base {
   * {
     border-color: var(--color-border);
+  }
+
+  p.leading-relaxed,
+  p.text-base,
+  p.text-lg,
+  p.text-muted-foreground:not(.text-xs) {
+    text-align: justify;
   }
 
   body {
@@ -143,3 +152,44 @@
   );
 }
 
+.portugal-flag {
+  position: relative;
+  display: inline-flex;
+  width: 2.2rem;
+  height: 1.45rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 0.15rem;
+  background: linear-gradient(to right, #046a38 0 40%, #da291c 40% 100%);
+  box-shadow: var(--shadow-soft);
+}
+
+.portugal-flag-seal {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  width: 0.62rem;
+  height: 0.62rem;
+  border: 2px solid #f4c542;
+  border-radius: 999px;
+  background: #d7a62a;
+  transform: translate(-50%, -50%);
+}
+
+.menu-overlay {
+  z-index: 99999 !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.menu-drawer {
+  z-index: 100000 !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}

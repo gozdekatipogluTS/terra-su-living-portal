@@ -49,7 +49,12 @@ export type PremiumContent = {
     lastReviewed: string;
     routes: VisaRoute[];
     checklist: { title: string; lead: string; items: string[]; notice: string };
-    timeline: { eyebrow: string; title: string; steps: { title: string; text: string }[]; note: string };
+    timeline: {
+      eyebrow: string;
+      title: string;
+      steps: { title: string; text: string }[];
+      note: string;
+    };
     legalDisclaimer: string;
   };
   property: { sections: { title: string; items: string[] }[] };
@@ -85,7 +90,7 @@ const en: PremiumContent = {
     eyebrow: "Founder message",
     title: "A Personal Approach to Your Journey in Portugal",
     paragraphs: [
-      "I am Gözde K., founder of TerraSu Living.",
+      "I am Gözde Katipoğlu, founder of TerraSu Living.",
       "I created TerraSu Living to provide a more personal, transparent and carefully managed experience for people building a new life, searching for a home, organising their documents or planning a private journey in Portugal.",
       "Your needs, priorities and expectations are unique. That is why every service is planned individually.",
       "From relocation and administrative preparation to property searches, professional cleaning and tailor-made boutique journeys, we will manage the process together with clear communication, thoughtful planning and trusted professional coordination.",
@@ -359,10 +364,19 @@ const en: PremiumContent = {
       eyebrow: "End-to-end support",
       title: "From First Planning to Life in Portugal",
       steps: [
-        { title: "Initial Consultation", text: "Understanding the client's situation, needs and priorities." },
-        { title: "Personalised Roadmap", text: "Defining the service scope and preparation stages." },
+        {
+          title: "Initial Consultation",
+          text: "Understanding the client's situation, needs and priorities.",
+        },
+        {
+          title: "Personalised Roadmap",
+          text: "Defining the service scope and preparation stages.",
+        },
         { title: "Document Checklist", text: "Creating a personalised preparation list." },
-        { title: "Document Organisation", text: "Supporting the organisation and review of practical documents." },
+        {
+          title: "Document Organisation",
+          text: "Supporting the organisation and review of practical documents.",
+        },
         {
           title: "NIF, Banking and Administrative Preparation",
           text: "Coordinating practical setup support.",
@@ -376,7 +390,10 @@ const en: PremiumContent = {
           text: "Helping the client prepare for submission and appointments.",
         },
         { title: "Arrival Planning", text: "Creating a practical arrival and first-days plan." },
-        { title: "Local Setup", text: "Supporting utilities, daily-life orientation and local organisation." },
+        {
+          title: "Local Setup",
+          text: "Supporting utilities, daily-life orientation and local organisation.",
+        },
         {
           title: "Ongoing Settlement Support",
           text: "Providing continued practical assistance after arrival where included.",
@@ -532,7 +549,7 @@ const tr: PremiumContent = {
     eyebrow: "Kurucudan mesaj",
     title: "Portekiz Yolculuğunuza Kişisel Bir Yaklaşım",
     paragraphs: [
-      "Ben Gözde K., TerraSu Living'in kurucusuyum.",
+      "Ben Gözde Katipoğlu, TerraSu Living'in kurucusuyum.",
       "TerraSu Living'i; Portekiz'de yeni bir hayat kuran, ev arayan, belgelerini hazırlayan veya kendine özel bir seyahat planlamak isteyen kişilere daha kişisel, şeffaf ve özenle yönetilen bir hizmet sunmak için kurdum.",
       "İhtiyaçlarınız, öncelikleriniz ve beklentileriniz size özeldir. Bu nedenle her hizmet planı kişiye özel hazırlanır.",
       "Yerleşim ve idari hazırlık süreçlerinden ev arama desteğine, profesyonel temizlikten kişiye özel butik turlara kadar tüm süreci açık iletişim, dikkatli planlama ve güvenilir profesyonel koordinasyonla birlikte yürüteceğiz.",
@@ -806,16 +823,40 @@ const tr: PremiumContent = {
       eyebrow: "Uçtan uca destek",
       title: "İlk Planlamadan Portekiz'deki Yaşama",
       steps: [
-        { title: "İlk Görüşme", text: "Müşterinin durumunu, ihtiyaçlarını ve önceliklerini anlamak." },
-        { title: "Kişiye Özel Yol Haritası", text: "Hizmet kapsamının ve hazırlık aşamalarının belirlenmesi." },
+        {
+          title: "İlk Görüşme",
+          text: "Müşterinin durumunu, ihtiyaçlarını ve önceliklerini anlamak.",
+        },
+        {
+          title: "Kişiye Özel Yol Haritası",
+          text: "Hizmet kapsamının ve hazırlık aşamalarının belirlenmesi.",
+        },
         { title: "Belge Kontrol Listesi", text: "Kişiye özel bir hazırlık listesi oluşturulması." },
-        { title: "Belge Düzenleme", text: "Pratik belgelerin düzenlenmesi ve gözden geçirilmesine destek." },
-        { title: "NIF, Bankacılık ve İdari Hazırlık", text: "Pratik kurulum desteğinin koordinasyonu." },
-        { title: "Konaklama ve Ev Arama", text: "Talep edildiğinde kiralama veya satın alma arama desteği." },
-        { title: "Başvuru Hazırlık Desteği", text: "Başvuru ve randevulara hazırlık konusunda destek." },
+        {
+          title: "Belge Düzenleme",
+          text: "Pratik belgelerin düzenlenmesi ve gözden geçirilmesine destek.",
+        },
+        {
+          title: "NIF, Bankacılık ve İdari Hazırlık",
+          text: "Pratik kurulum desteğinin koordinasyonu.",
+        },
+        {
+          title: "Konaklama ve Ev Arama",
+          text: "Talep edildiğinde kiralama veya satın alma arama desteği.",
+        },
+        {
+          title: "Başvuru Hazırlık Desteği",
+          text: "Başvuru ve randevulara hazırlık konusunda destek.",
+        },
         { title: "Geliş Planlaması", text: "Pratik bir geliş ve ilk günler planı oluşturulması." },
-        { title: "Yerel Kurulum", text: "Faturalar, günlük yaşam oryantasyonu ve yerel düzenlemelere destek." },
-        { title: "Yerleşim Sonrası Destek", text: "Kapsam dahilinde, gelişten sonra da süren pratik destek." },
+        {
+          title: "Yerel Kurulum",
+          text: "Faturalar, günlük yaşam oryantasyonu ve yerel düzenlemelere destek.",
+        },
+        {
+          title: "Yerleşim Sonrası Destek",
+          text: "Kapsam dahilinde, gelişten sonra da süren pratik destek.",
+        },
       ],
       note: "Hazırlık, taşınma ve yerleşim sürecinin tamamında uçtan uca pratik destek.",
     },
@@ -882,50 +923,26 @@ const tr: PremiumContent = {
     ],
   },
   portfolio: {
-    title: "Seçili Süreçler ve Hizmet Alanları",
-    lead: "Müşteri yorumları yerine hizmet kapsamı olarak sunulan seçili çalışma alanları.",
+    title: "Danışan Deneyimleri",
+    lead: "Müşteri gizliliğini korumak amacıyla isimler baş harfleriyle gösterilmektedir.",
     entries: [
       {
-        title: "Yerleşim Süreci Planlaması",
-        text: "İlk planlama görüşmesinden gelişe kadar net adım sıralamasıyla kişiye özel yol haritası.",
-        category: "Danışmanlık",
-        status: "Koordinasyon",
+        title: "N. P.",
+        text: "İlk görüşmemizden itibaren sürecin mekanik değil, kişisel olarak yürütüldüğünü hissettim. Ayrıntıları bilen birinin yanımızda olması Portekiz'e geçişimizi çok kolaylaştırdı.",
+        category: "Danışan deneyimi",
+        status: "",
       },
       {
-        title: "İdari Kurulum",
-        text: "NIF, bankacılık ve günlük idari hazırlıkların tek ve sakin bir sıraya oturtulması.",
-        category: "Danışmanlık",
-        status: "Tamamlandı",
+        title: "A. Y.",
+        text: "Bir sorum olduğunda kime ulaşacağımı tam olarak bilmek en büyük farktı. Süreç boyunca yönlendirme açık, pratik ve güven vericiydi.",
+        category: "Danışan deneyimi",
+        status: "",
       },
       {
-        title: "Ev Arama",
-        text: "Aile önceliklerine göre şekillenen bölge araştırması, ilan değerlendirmesi ve görüntüleme koordinasyonu.",
-        category: "Emlak Desteği",
-        status: "Koordinasyon",
-      },
-      {
-        title: "Mülk Hazırlığı",
-        text: "Teslim öncesinde tutarlı ve davetkâr bir standarda hazırlanan evler ve kısa dönem kiralamalar.",
-        category: "Temizlik",
-        status: "Tamamlandı",
-      },
-      {
-        title: "Özel Grup Tasarımı",
-        text: "Tempo, ilgi alanları ve özenle seçilmiş sakin mekânlarla kurgulanan küçük özel gruplar.",
-        category: "Özel Butik Deneyimler",
-        status: "Planlama",
-      },
-      {
-        title: "Portekiz Deneyimi Planlaması",
-        text: "Mevsime ve temponuza göre kurgulanan Porto, Kuzey Portekiz ve Douro Vadisi rotaları.",
-        category: "Özel Butik Deneyimler",
-        status: "Planlama",
-      },
-      {
-        title: "Türkiye–Portekiz Program Geliştirme",
-        text: "Özel gruplar için Türkiye ve Portekiz'i birleştiren çoklu destinasyon butik programları.",
-        category: "Özel Butik Deneyimler",
-        status: "Konsept",
+        title: "S. K.",
+        text: "En çok takdir ettiğim şey kişisel ilgiydi. Pratik düzenlemelerden yerleşme ayrıntılarına kadar hiçbir zaman sıradan bir müşteri gibi hissetmedim.",
+        category: "Danışan deneyimi",
+        status: "",
       },
     ],
   },

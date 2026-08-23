@@ -1,20 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import aboutImage from "@/assets/about-hero.jpg";
-import founderImage from "@/assets/founder-portrait.jpg";
-import logo from "@/assets/terrasu-logo.png";
+import founderImage from "@/assets/gözde- katipoğlu.jpeg";
 import { ImageHero } from "@/components/site/premium";
 import { CtaLink, Eyebrow, Section } from "@/components/site/ui";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { brand } from "@/i18n/brand";
-import { siteCopy } from "@/i18n/site";
 
-
-
-const title = "Meet Gözde | Founder of TerraSu Living, Porto";
+const title = "Meet Gözde Katipoğlu | Founder of TerraSu Living, Porto";
 const description =
-  "The founder story behind TerraSu Living: why Terra means earth, Su means water, and why every Portugal relocation plan is written from scratch.";
-
+  "Meet Gözde Katipoğlu, founder of TerraSu Living, and discover the personal story and philosophy behind the boutique Portugal service.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -31,10 +26,7 @@ export const Route = createFileRoute("/about")({
 
 function About() {
   const { t, lang } = useLanguage();
-  const copy = siteCopy[lang];
   const b = brand[lang];
-
-
 
   return (
     <>
@@ -48,11 +40,26 @@ function About() {
       />
 
       <Section>
-        <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr]">
+        <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <img
+              src={founderImage}
+              alt="Gözde Katipoğlu, founder of TerraSu Living"
+              loading="lazy"
+              width={1024}
+              height={1280}
+              className="aspect-[4/5] w-full rounded-3xl object-cover shadow-lift"
+            />
+            <p className="mt-5 text-center font-serif text-lg italic text-primary">
+              {t.common.signature}
+            </p>
+          </div>
           <div>
             <Eyebrow>{b.meetEyebrow}</Eyebrow>
-            <h2 className="font-serif text-3xl text-foreground sm:text-4xl">{b.meetTitle}</h2>
-            <p className="mt-4 text-lg leading-relaxed text-foreground/80">{b.meetLead}</p>
+            <h2 className="font-serif text-4xl leading-tight text-foreground sm:text-5xl">
+              {b.meetTitle}
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-foreground/80">{b.meetLead}</p>
             <span className="divider-leaf my-8 block w-24" />
             <div className="space-y-5">
               {b.meetStory.map((paragraph) => (
@@ -61,89 +68,57 @@ function About() {
                 </p>
               ))}
             </div>
-            <p className="mt-8 font-serif text-lg italic text-primary">{t.common.signature}</p>
-          </div>
-
-          <div className="space-y-6">
-            <div className="rounded-3xl border border-border bg-card p-8 text-center shadow-soft">
-              <img
-                src={logo}
-                alt="TerraSu Living"
-                loading="lazy"
-                width={915}
-                height={1024}
-                className="mx-auto h-36 w-auto object-contain"
-              />
-              <span className="divider-leaf my-6 block" />
-              <p className="text-sm text-muted-foreground">{t.about.baseTitle}</p>
-              <p className="mt-1 font-serif text-xl text-foreground">{t.common.base}</p>
-            </div>
-            <div className="rounded-3xl border border-border bg-secondary/40 p-8">
-              <h3 className="font-serif text-xl leading-snug text-foreground">{b.meaningTitle}</h3>
-              <dl className="mt-6 space-y-5">
-                {b.meaning.map((entry) => (
-                  <div key={entry.term} className="border-l-2 border-primary/50 pl-4">
-                    <dt className="font-serif text-2xl text-foreground">{entry.term}</dt>
-                    <dd className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                      {entry.text}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-              <p className="mt-6 border-t border-border pt-5 text-sm leading-relaxed text-foreground/80">
-                {b.meaningNote}
-              </p>
-            </div>
+            <p className="mt-10 max-w-xl font-serif text-2xl leading-snug text-primary sm:text-3xl">
+              {lang === "en"
+                ? "Not every path is already there. Sometimes we create it simply by choosing to walk."
+                : "Bazı yollar hazır değildir. Bazen onları yürüdükçe kendimiz oluştururuz."}
+            </p>
           </div>
         </div>
       </Section>
 
-
       <Section className="bg-secondary/30">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="mx-auto max-w-4xl">
           <div>
-            <Eyebrow>{copy.founderEyebrow}</Eyebrow>
-            <h2 className="font-serif text-3xl text-foreground sm:text-4xl">{copy.founderTitle}</h2>
-            <div className="mt-5 space-y-4">
-              {copy.founderText.map((paragraph) => (
+            <Eyebrow>{b.whyEyebrow}</Eyebrow>
+            <h2 className="font-serif text-4xl leading-tight text-foreground sm:text-5xl">
+              {b.storyTitle}
+            </h2>
+            <div className="mt-8 space-y-5">
+              {b.story.map((paragraph) => (
                 <p key={paragraph} className="text-base leading-relaxed text-muted-foreground">
                   {paragraph}
                 </p>
               ))}
             </div>
-            <p className="mt-6 font-serif text-lg italic text-primary">{t.common.signature}</p>
           </div>
-          <img
-            src={founderImage}
-            alt="Calm workspace representing the TerraSu Living approach"
-            loading="lazy"
-            width={1024}
-            height={1280}
-            className="aspect-[4/5] w-full rounded-3xl object-cover shadow-lift"
-          />
-        </div>
-      </Section>
-
-      <Section>
-        <h2 className="font-serif text-3xl text-foreground sm:text-4xl">{t.about.valuesTitle}</h2>
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {t.about.values.map((value) => (
-            <div key={value.title} className="border-t border-border pt-6">
-              <h3 className="font-serif text-xl text-foreground">{value.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{value.text}</p>
+          <div className="mt-16 border-t border-border pt-10">
+            <div className="grid gap-x-10 gap-y-6 sm:grid-cols-2">
+              {b.meaning.map((entry) => (
+                <div key={entry.term} className="border-l-2 border-primary/50 pl-5">
+                  <h3 className="font-serif text-3xl text-foreground">{entry.term}</h3>
+                  <p className="mt-2 leading-relaxed text-muted-foreground">{entry.text}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </Section>
+            <p className="mt-8 font-serif text-xl italic text-primary">{b.meaningNote}</p>
+          </div>
 
-      <Section className="pb-4">
-        <div className="rounded-[2rem] border border-border bg-secondary/50 px-8 py-14 sm:px-14">
-          <div className="grid items-center gap-8 lg:grid-cols-[1.5fr_auto]">
-            <div>
-              <h2 className="font-serif text-3xl text-foreground">{t.about.baseTitle}</h2>
-              <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{t.about.baseText}</p>
+          <div className="mt-16 border-t border-border pt-10">
+            <Eyebrow>{lang === "en" ? "What I support" : "Sunduğum destek"}</Eyebrow>
+            <ul className="mt-6 grid gap-x-10 gap-y-4 sm:grid-cols-2">
+              {b.supportedServices.map((service) => (
+                <li key={service} className="border-b border-border/70 pb-3 text-foreground/80">
+                  {service}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-10 max-w-3xl font-serif text-2xl leading-snug text-foreground sm:text-3xl">
+              {b.closingStatement}
+            </p>
+            <div className="mt-8">
+              <CtaLink to="/contact">{t.home.ctaContact}</CtaLink>
             </div>
-            <CtaLink to="/contact">{t.home.ctaContact}</CtaLink>
           </div>
         </div>
       </Section>

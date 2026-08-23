@@ -1,11 +1,11 @@
 import { Link } from "@tanstack/react-router";
+import { Youtube } from "lucide-react";
 
 import logo from "@/assets/terrasu-logo.png";
 import { LanguageSwitcher } from "@/components/site/Header";
 import { useLanguage } from "@/i18n/LanguageProvider";
-import { navigation } from "@/i18n/site";
+import { navigation, YOUTUBE_URL } from "@/i18n/site";
 import { linkTo } from "@/components/site/ui";
-
 
 export function Footer() {
   const { t, lang, setLang } = useLanguage();
@@ -22,8 +22,19 @@ export function Footer() {
             height={1024}
             className="h-20 w-auto object-contain"
           />
-          <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">{t.footer.tagline}</p>
+          <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
+            {t.footer.tagline}
+          </p>
           <p className="mt-4 text-sm text-foreground/80">{t.common.base}</p>
+          <a
+            href={YOUTUBE_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-5 inline-flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary"
+          >
+            <Youtube className="h-4 w-4 text-primary" />
+            {lang === "tr" ? "YouTube’da Gözde K." : "Gözde K. on YouTube"}
+          </a>
           <div className="mt-5">
             <p className="mb-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">
               {t.footer.language}
@@ -56,7 +67,6 @@ export function Footer() {
           ))}
         </FooterColumn>
 
-
         <FooterColumn title={t.footer.legalTitle}>
           <FooterLink to="/privacy">{t.footer.privacy}</FooterLink>
           <FooterLink to="/cookies">{t.footer.cookies}</FooterLink>
@@ -72,7 +82,9 @@ export function Footer() {
             © {new Date().getFullYear()} TerraSu Living. {t.footer.rights}
           </p>
           <p className="font-serif text-sm italic text-foreground/70">
-            {lang === "tr" ? "Gözde K. tarafından kuruldu ve yönetiliyor" : "Created and managed by Gözde K."}
+            {lang === "tr"
+              ? "Gözde Katipoğlu tarafından kuruldu ve yönetiliyor"
+              : "Created and managed by Gözde Katipoğlu."}
           </p>
         </div>
       </div>
@@ -92,7 +104,10 @@ function FooterColumn({ title, children }: { title: string; children: React.Reac
 function FooterLink({ to, children }: { to: string; children: React.ReactNode }) {
   return (
     <li>
-      <Link to={linkTo(to)} className="text-sm text-foreground/80 transition-colors hover:text-primary">
+      <Link
+        to={linkTo(to)}
+        className="text-sm text-foreground/80 transition-colors hover:text-primary"
+      >
         {children}
       </Link>
     </li>

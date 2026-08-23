@@ -69,7 +69,7 @@ export function FounderMessage() {
             </p>
           ))}
         </div>
-        <p className="mt-8 font-serif text-xl text-foreground">Gözde K.</p>
+        <p className="mt-8 font-serif text-xl text-foreground">Gözde Katipoğlu</p>
         <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground">
           {p.founder.signature}
         </p>

@@ -9,7 +9,6 @@ import pageEveryday from "@/assets/page-everyday.jpg";
 import pageExpat from "@/assets/page-expat.jpg";
 import pageGroups from "@/assets/page-groups.jpg";
 import pageHomeSetup from "@/assets/page-homesetup.jpg";
-import pageNews from "@/assets/page-news.jpg";
 import pageNifNiss from "@/assets/page-nifniss.jpg";
 import pagePurchase from "@/assets/page-purchase.jpg";
 import pageRelocation from "@/assets/page-relocation.jpg";
@@ -32,7 +31,6 @@ export const images = {
   expat: pageExpat,
   groups: pageGroups,
   homeSetup: pageHomeSetup,
-  news: pageNews,
   nifniss: pageNifNiss,
   purchase: pagePurchase,
   relocation: pageRelocation,
