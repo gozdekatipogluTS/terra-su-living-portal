@@ -36,25 +36,35 @@ function Contact() {
   const f = p.contactForm;
   const [sent, setSent] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const line = (label: string, key: string) => `${label}: ${data.get(key) || "-"}`;
-    const body = [
-      line(f.fullName, "name"),
-      line(f.email, "email"),
-      line(f.phone, "phone"),
-      line(f.country, "country"),
-      line(f.language, "language"),
-      line(f.service, "service"),
-      line(f.people, "people"),
-      line(f.destination, "destination"),
-      line(f.startDate, "startDate"),
-      line(f.budget, "budget"),
-      line(f.supportLevel, "supportLevel"),
-      "",
-      String(data.get("message") ?? ""),
-    ].join("\n");
+ async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch(
+      "https://formsubmit.co/ajax/info@terrasuliving.com",
+      {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Form submission failed");
+    }
+
+    setSent(true);
+    form.reset();
+  } catch (error) {
+    console.error("Contact form error:", error);
+    alert("Your message could not be sent. Please try again.");
+  }
+}
 
     window.location.href = `mailto:info@terrasuliving.com?subject=${encodeURIComponent(
       `TerraSu Living — ${data.get("service")}`,
